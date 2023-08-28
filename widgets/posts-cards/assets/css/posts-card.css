@@ -9,18 +9,30 @@
 }
 
 .block--posts-items article .content{
-	overflow: hidden;
 	position: relative;
+}
+
+.block--posts-items article .wp-post-image{
+	width: 100%;
+	position: relative;
+	vertical-align: bottom;
+}
+
+.block--posts-items article .post-content{
+	flex: 1 1 auto;
 }
 
 .block--posts-items .entry-header .categories{
 	display: inline-flex;
     align-items: center;
-    gap: 0px;
+	flex-wrap: wrap;
+    gap: 8px;
 }
 
 .block--posts-items .entry-header .entry-title{
 	font-size: 18px;
+	margin-top: 0px;
+	margin-bottom: 8px;
 }
 
 .block--posts-items .entry-header .entry-term{
@@ -29,20 +41,21 @@
     align-items: center;
     justify-content: center;
     font-size: 12px;
-	gap: 5px;
+	gap: 8px;
 }
 
 .block--posts-items article .content .meta-data{
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	flex-wrap: wrap;
+	gap: 16px;
 }
 
 .block--posts-items article .content .meta-data .byline,
 .block--posts-items article .content .meta-data .posted-on{
 	display: inline-flex;
 	align-items: center;
-	gap: 8px;
+	gap: 2px;
 }
 
 .block--posts-items article .meta-data.hidden-icons svg{
@@ -64,7 +77,7 @@
 ------------------------------------------------------------- */
 .block--posts-items .layout-1 .thumb-background article,
 .block--posts-items .layout-1 .thumb-background article .content,
-.block--posts-items .layout-1 .thumb-background article .image-left{
+.block--posts-items .layout-1 .thumb-background article .media-image{
 	height: 100%;
 }
 
@@ -79,13 +92,13 @@
 .block--posts-items .layout-1 .omega-block .inner-items .content{
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
+	flex-wrap: wrap;
 	gap: 15px;
 }
 
-.block--posts-items .layout-2 .omega-block article .image-left,
-.block--posts-items .layout-3 .omega-block article .image-left,
-.block--posts-items .layout-1 .omega-block article .image-left{
+.block--posts-items .layout-2 .omega-block article .media-image,
+.block--posts-items .layout-3 .omega-block article .media-image,
+.block--posts-items .layout-1 .omega-block article .media-image{
 	flex: 0 0 200px;
     max-width: 200px;
 }
@@ -94,14 +107,6 @@
 .block--posts-items .layout-3 .omega-block .entry-header,
 .block--posts-items .layout-1 .omega-block .entry-header{
 	position: relative;
-}
-
-.block--posts-items .layout-1 .omega-block .entry-title,
-.block--posts-items .layout-2 .omega-block .entry-title,
-.block--posts-items .layout-3 .omega-block .entry-title,
-.block--posts-items .layout-5 .omega-block .entry-title{
-	margin-top: 5px;
-	margin-bottom: 10px;
 }
 
 /* Post Layout 1 & 2
@@ -115,18 +120,30 @@
 	margin-bottom: 0px;
 }
 
-.block--posts-items .layout-2 .alpha-block article .image-left img,
-.block--posts-items .layout-3 .alpha-block article .image-left img{
+.block--posts-items .layout-2 .alpha-block article .media-image img,
+.block--posts-items .layout-3 .alpha-block article .media-image img{
 	width: 100%;
 }
 
 /* Post Layout 4
 ------------------------------------------------------------- */
-.block--posts-items .layout-4 .thumb-background article .image-left{
+.block--posts-items .layout-4 article,
+.block--posts-items .layout-4 article .content{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.block--posts-items .layout-4 .post-content{
+	bottom: 0px;
+	position: absolute;
+}
+
+.block--posts-items .layout-4 article .media-image{
 	padding-top: 100%;
 }
 
-.block--posts-items .layout-4 .thumb-background article .image-left img{
+.block--posts-items .layout-4 article .media-image .wp-post-image{
 	top: 0;
 	left: 0px;
     width: 100%;
@@ -140,11 +157,11 @@
 ------------------------------------------------------------- */
 .block--posts-items .layout-5 .thumb-background article,
 .block--posts-items .layout-5 .thumb-background article .content,
-.block--posts-items .layout-5 .thumb-background article .image-left{
+.block--posts-items .layout-5 .thumb-background article .media-image{
 	height: 100%;
 }
 
-.block--posts-items .layout-5 .thumb-background article .image-left img{
+.block--posts-items .layout-5 .thumb-background article .media-image img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -161,4 +178,11 @@
 
 .block--posts-items .layout-5 .omega-block article .entry-header{
 	margin-top: 15px;
+}
+
+/* Featured Layout */
+.block--posts-items .thumb-background .post-content{
+	bottom: 0px;
+	width: 100%;
+	position: absolute;
 }

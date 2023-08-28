@@ -140,32 +140,61 @@ class Posts_Cards extends Widget_Base{
                     'layout-1' => [
                         'title' => esc_html__('Layout 1', 'designer'),
                         'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block1.png',
-                        'width' => '50%',
                     ],
                     'layout-2' => [
                         'title' => esc_html__('Layout 2', 'designer'),
                         'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block2.png',
-                        'width' => '50%',
                     ],
                     'layout-3' => [
                         'title' => esc_html__('Layout 3', 'designer'),
                         'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block3.png',
-                        'width' => '50%',
                     ],
 					'layout-4' => [
                         'title' => esc_html__('Layout 4', 'designer'),
                         'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block4.png',
-                        'width' => '50%',
                     ],
 					'layout-5' => [
                         'title' => esc_html__('Layout 5', 'designer'),
                         'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block5.png',
-                        'width' => '50%',
                     ]
                 ],
 				'separator' => 'after'
             ]
         );
+
+		$this->add_responsive_control(
+			'column',
+			[
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'label' => esc_html__( 'Column', 'designer' ),
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 5,
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' =>  [
+					'size' => 4,
+					'unit' => 'px',
+				],
+				'desktop_default' => [
+					'size' => 4,
+					'unit' => 'px',
+				],
+				'tablet_default' => [
+					'size' => 2,
+					'unit' => 'px',
+				],
+				'mobile_default' => [
+					'size' => 1,
+					'unit' => 'px',
+				],
+				'condition' => [
+                    'layout' => array('layout-4'),
+                ]
+			]
+		);
 
 		$this->add_control(
 			'query_heading',
@@ -198,6 +227,31 @@ class Posts_Cards extends Widget_Base{
 			]
 		);
 
+        $this->end_controls_section();
+
+		$this->start_controls_section(
+            '_primary_settings',
+            [
+                'label' => esc_html__('Primary', 'designer'),
+				'condition' => [
+                    'layout!' => array('layout-4'),
+                ],
+            ]
+        );
+
+		$this->add_control(
+			'featured_style',
+			[
+				'label' => esc_html__( 'Layout', 'designer' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'default',
+				'options' => [
+					'default'  	 		=> esc_html__( 'Layout 1', 'designer' ),
+					'thumb-background'  => esc_html__( 'Layout 2', 'designer' ),
+				],
+			]
+		);
+
 		$this->add_control(
             'alignment',
             [
@@ -221,9 +275,314 @@ class Posts_Cards extends Widget_Base{
                 'default'   => 'center'
             ]
         );
-		
 
-        $this->end_controls_section();
+		$this->add_control(
+			'featured_image',
+			[
+				'label' => esc_html__( 'Show featured image', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' 	=> esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' 	=> 'yes',
+				'default' 		=> 'yes',
+			]
+		);
+
+		$this->add_responsive_control(
+			'featured_image_spacing',
+			[
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'label' => esc_html__( 'Spacing', 'designer' ),
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 200,
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' =>  [
+					'size' => 24,
+					'unit' => 'px',
+				],
+				'desktop_default' => [
+					'size' => 24,
+					'unit' => 'px',
+				],
+				'tablet_default' => [
+					'size' => 18,
+					'unit' => 'px',
+				],
+				'mobile_default' => [
+					'size' => 16,
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .block--posts-items .alpha-block .media-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				]
+			]
+		);
+
+		$this->add_control(
+			'meta_heading',
+			[
+				'label' => esc_html__( 'Meta', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'date',
+			[
+				'label' => esc_html__( 'Show Date', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'author',
+			[
+				'label' => esc_html__( 'Show Author', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'meta_icons',
+			[
+				'label' => esc_html__( 'Show meta icons', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'category_heading',
+			[
+				'label' => esc_html__( 'Category', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'show_cat',
+			[
+				'label' => esc_html__( 'Show categories', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'cat_limit',
+			[
+				'label' => esc_html__( 'Category limit', 'designer' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'min' => 1,
+				'max' => 4,
+				'step' => 1,
+				'default' => 1,
+				'condition' => [
+                    'show_cat' => array( 'yes' ),
+                ],
+			]
+		);
+
+		$this->add_control(
+			'excerpt_heading',
+			[
+				'label' => esc_html__( 'Excerpt', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'show_excerpt',
+			[
+				'label' => esc_html__( 'Show excerpt', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+            '_default_settings',
+            [
+                'label' => esc_html__('General', 'designer'),
+            ]
+        );
+
+		$this->add_control(
+			'featured_image_general',
+			[
+				'label' => esc_html__( 'Show featured image', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' 	=> esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' 	=> 'yes',
+				'default' 		=> 'yes',
+			]
+		);
+
+		$this->add_responsive_control(
+			'featured_image_spacing_general',
+			[
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'label' => esc_html__( 'Spacing', 'designer' ),
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 200,
+					],
+				],
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'default' =>  [
+					'size' => 0,
+					'unit' => 'px',
+				],
+				'desktop_default' => [
+					'size' => 0,
+					'unit' => 'px',
+				],
+				'tablet_default' => [
+					'size' => 0,
+					'unit' => 'px',
+				],
+				'mobile_default' => [
+					'size' => 0,
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .block--posts-items .media-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				]
+			]
+		);
+
+		$this->add_control(
+			'meta_heading_general',
+			[
+				'label' => esc_html__( 'Meta', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'date_general',
+			[
+				'label' => esc_html__( 'Show Date', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'author_general',
+			[
+				'label' => esc_html__( 'Show Author', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'meta_icons_general',
+			[
+				'label' => esc_html__( 'Show meta icons', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'category_heading_general',
+			[
+				'label' => esc_html__( 'Category', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'show_cat_general',
+			[
+				'label' => esc_html__( 'Show categories', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'cat_limit_general',
+			[
+				'label' => esc_html__( 'Category limit', 'designer' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'min' => 1,
+				'max' => 4,
+				'step' => 1,
+				'default' => 1,
+				'condition' => [
+                    'show_cat_general' => array( 'yes' ),
+                ],
+			]
+		);
+
+		$this->add_control(
+			'excerpt_heading_general',
+			[
+				'label' => esc_html__( 'Excerpt', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'show_excerpt_general',
+			[
+				'label' => esc_html__( 'Show excerpt', 'designer' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'designer' ),
+				'label_off' => esc_html__( 'Hide', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->end_controls_section();
+
         $this->register_advanced_controls();
     }
 
@@ -251,21 +610,13 @@ class Posts_Cards extends Widget_Base{
             ]
         );
 
-		$this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'posts_default_typo',
-                'selector' => '{{WRAPPER}} .block--posts-grid .content'
-            ]
-		);
-
 		$this->add_control(
             'background',
             [
                 'label' => __( 'Background', 'designer' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .block--posts-grid .content' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .block--posts-items .content' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -281,7 +632,7 @@ class Posts_Cards extends Widget_Base{
                     'unit' => 'px'
                 ],
 				'selectors' => [
-					'{{WRAPPER}} .block--posts-grid article .content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .block--posts-items article .content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -291,7 +642,7 @@ class Posts_Cards extends Widget_Base{
 			[
 				'name' => 'border',
 				'label' => esc_html__( 'Border', 'designer' ),
-				'selector' => '{{WRAPPER}} .block--posts-grid article .content',
+				'selector' => '{{WRAPPER}} .block--posts-items article .content',
 			]
 		);
 
@@ -306,7 +657,7 @@ class Posts_Cards extends Widget_Base{
                     'unit' => 'px'
                 ],
 				'selectors' => [
-					'{{WRAPPER}} .block--posts-grid article .content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .block--posts-items article .content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -315,32 +666,7 @@ class Posts_Cards extends Widget_Base{
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'box_shadow',
-				'selector' => '{{WRAPPER}} .block--posts-grid article .content',
-			]
-		);
-
-		$this->add_control(
-			'content_heading',
-			[
-				'label' => esc_html__( 'Content', 'designer' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_responsive_control(
-			'content_padding',
-			[
-				'label' => esc_html__( 'Padding', 'designer' ),
-				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em' ],
-                'default' => [
-                    'size' => 10,
-                    'unit' => 'px'
-                ],
-				'selectors' => [
-					'{{WRAPPER}} .block--posts-grid article .post-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
+				'selector' => '{{WRAPPER}} .block--posts-items article .content',
 			]
 		);
 
@@ -350,42 +676,15 @@ class Posts_Cards extends Widget_Base{
 	protected function __primary_style_controls() {
 
         $this->start_controls_section(
-            '_section_style_featured',
+            '_style_featured',
             [
                 'label' => __( 'Primary', 'designer' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
-                    'layout!' => array('layout-0', 'layout-4'),
+                    'layout!' => array('layout-4'),
                 ],
             ]
         );
-
-		$this->add_control(
-			'featured_style',
-			[
-				'label' => esc_html__( 'Layout', 'designer' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => 'thumb-background',
-				'options' => [
-					'default'  	 		=> esc_html__( 'Layout 1', 'designer' ),
-					'thumb-left' 		=> esc_html__( 'Layout 2', 'designer' ),
-					'thumb-right' 		=> esc_html__( 'Layout 3', 'designer' ),
-					'thumb-background'  => esc_html__( 'Layout 4', 'designer' ),
-				],
-			]
-		);
-
-		$this->add_control(
-			'featured_image',
-			[
-				'label' => esc_html__( 'Show featured image', 'designer' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' 	=> esc_html__( 'Show', 'designer' ),
-				'label_off' => esc_html__( 'Hide', 'designer' ),
-				'return_value' 	=> 'yes',
-				'default' 		=> 'yes',
-			]
-		);
 
 		$this->add_control(
             'title_color',
@@ -429,6 +728,60 @@ class Posts_Cards extends Widget_Base{
             ]
         );
 
+		$this->add_control(
+			'category_style_heading_primary',
+			[
+				'label' => esc_html__( 'Category', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+            'category_color_default_primary',
+            [
+                'label' => __( 'Color', 'designer' ),
+                'type' => Controls_Manager::COLOR,
+				'default' 	=> '#020101',
+                'selectors' => [
+                    '{{WRAPPER}} .block--posts-items .alpha-block .categories a' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+		$this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'category_default_typo_primary',
+                'selector' => '{{WRAPPER}} .block--posts-items .alpha-block .categories a'
+            ]
+        );
+
+		$this->add_control(
+			'content_heading',
+			[
+				'label' => esc_html__( 'Content', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'content_padding',
+			[
+				'label' => esc_html__( 'Padding', 'designer' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em' ],
+                'default' => [
+                    'size' => 10,
+                    'unit' => 'px'
+                ],
+				'selectors' => [
+					'{{WRAPPER}} .block--posts-items .alpha-block .post-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
         $this->end_controls_section();
     }
 
@@ -441,18 +794,6 @@ class Posts_Cards extends Widget_Base{
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
-
-		$this->add_control(
-			'featured_image_default',
-			[
-				'label' => esc_html__( 'Show featured image', 'designer' ),
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'designer' ),
-				'label_off' => esc_html__( 'Hide', 'designer' ),
-				'return_value' => 'yes',
-				'default' => 'yes',
-			]
-		);
 
 		$this->add_control(
 			'title_style_heading',
@@ -469,7 +810,7 @@ class Posts_Cards extends Widget_Base{
                 'label' => __( 'Color', 'designer' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .block--posts-grid .entry-title a' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .block--posts-items .entry-title a' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -478,7 +819,7 @@ class Posts_Cards extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_default_typo',
-                'selector' => '{{WRAPPER}} .block--posts-grid .entry-title'
+                'selector' => '{{WRAPPER}} .block--posts-items .entry-title'
             ]
         );
 
@@ -498,9 +839,9 @@ class Posts_Cards extends Widget_Base{
                 'type' => Controls_Manager::COLOR,
 				'default' 	=> '#020101',
                 'selectors' => [
-                    '{{WRAPPER}} .block--posts-grid .meta-data' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .block--posts-grid .meta-data a' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .block--posts-grid .meta-data span' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .block--posts-items .meta-data' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .block--posts-items .meta-data a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .block--posts-items .meta-data span' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -509,7 +850,7 @@ class Posts_Cards extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name' => 'meta_default_typo',
-                'selector' => '{{WRAPPER}} .block--posts-grid .meta-data'
+                'selector' => '{{WRAPPER}} .block--posts-items .meta-data'
             ]
         );
 
@@ -529,7 +870,7 @@ class Posts_Cards extends Widget_Base{
                 'type' => Controls_Manager::COLOR,
 				'default' 	=> '#020101',
                 'selectors' => [
-                    '{{WRAPPER}} .block--posts-grid .categories a' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .block--posts-items .categories a' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -538,9 +879,34 @@ class Posts_Cards extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name' => 'category_default_typo',
-                'selector' => '{{WRAPPER}} .block--posts-grid .categories a'
+                'selector' => '{{WRAPPER}} .block--posts-items .categories a'
             ]
         );
+
+		$this->add_control(
+			'content_heading_general',
+			[
+				'label' => esc_html__( 'Content', 'designer' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'content_padding_general',
+			[
+				'label' => esc_html__( 'Padding', 'designer' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em' ],
+                'default' => [
+                    'size' => 10,
+                    'unit' => 'px'
+                ],
+				'selectors' => [
+					'{{WRAPPER}} .block--posts-items .omega-block .post-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
         $this->end_controls_section();
     }
