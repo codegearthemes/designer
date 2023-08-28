@@ -1,0 +1,164 @@
+/*-------------------------------------------------------------
+				Posts
+------------------------------------------------------------- */
+
+/* Common
+------------------------------------------------------------- */
+.block--posts-items article{
+	margin-bottom: 16px;
+}
+
+.block--posts-items article .content{
+	overflow: hidden;
+	position: relative;
+}
+
+.block--posts-items .entry-header .categories{
+	display: inline-flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.block--posts-items .entry-header .entry-title{
+	font-size: 18px;
+}
+
+.block--posts-items .entry-header .entry-term{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+	gap: 5px;
+}
+
+.block--posts-items article .content .meta-data{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.block--posts-items article .content .meta-data .byline,
+.block--posts-items article .content .meta-data .posted-on{
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.block--posts-items article .meta-data.hidden-icons svg{
+	display: none;
+}
+
+.block--posts-items article .content .meta-data a,
+.block--posts-slider article .content .meta-data a{
+    font-size: 13px;
+	font-weight: 500;
+    line-height: 1.2;
+}
+
+.block--posts-items article .content .read-more{
+	margin-top: 16px;
+}
+
+/* Post Default
+------------------------------------------------------------- */
+.block--posts-items .layout-1 .thumb-background article,
+.block--posts-items .layout-1 .thumb-background article .content,
+.block--posts-items .layout-1 .thumb-background article .image-left{
+	height: 100%;
+}
+
+.block--posts-items .layout-1 .alpha-block article img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.block--posts-items .layout-2 .omega-block .content,
+.block--posts-items .layout-3 .omega-block .content,
+.block--posts-items .layout-1 .omega-block .inner-items .content{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 15px;
+}
+
+.block--posts-items .layout-2 .omega-block article .image-left,
+.block--posts-items .layout-3 .omega-block article .image-left,
+.block--posts-items .layout-1 .omega-block article .image-left{
+	flex: 0 0 200px;
+    max-width: 200px;
+}
+
+.block--posts-items .layout-2 .omega-block .entry-header,
+.block--posts-items .layout-3 .omega-block .entry-header,
+.block--posts-items .layout-1 .omega-block .entry-header{
+	position: relative;
+}
+
+.block--posts-items .layout-1 .omega-block .entry-title,
+.block--posts-items .layout-2 .omega-block .entry-title,
+.block--posts-items .layout-3 .omega-block .entry-title,
+.block--posts-items .layout-5 .omega-block .entry-title{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+/* Post Layout 1 & 2
+------------------------------------------------------------- */
+.block--posts-items .layout-2 article,
+.block--posts-items .layout-3 article{
+	margin-bottom: 20px;
+}
+
+.block--posts-items .layout-2 .omega-block:last-child article{
+	margin-bottom: 0px;
+}
+
+.block--posts-items .layout-2 .alpha-block article .image-left img,
+.block--posts-items .layout-3 .alpha-block article .image-left img{
+	width: 100%;
+}
+
+/* Post Layout 4
+------------------------------------------------------------- */
+.block--posts-items .layout-4 .thumb-background article .image-left{
+	padding-top: 100%;
+}
+
+.block--posts-items .layout-4 .thumb-background article .image-left img{
+	top: 0;
+	left: 0px;
+    width: 100%;
+	height: 100%;
+	position: absolute;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Post Layout 5
+------------------------------------------------------------- */
+.block--posts-items .layout-5 .thumb-background article,
+.block--posts-items .layout-5 .thumb-background article .content,
+.block--posts-items .layout-5 .thumb-background article .image-left{
+	height: 100%;
+}
+
+.block--posts-items .layout-5 .thumb-background article .image-left img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.block--posts-items .layout-5 .omega-block article{
+	margin-bottom: 20px;
+}
+
+.block--posts-items .layout-5 .omega-block .grid__item:last-child article{
+	margin-bottom: 0px;
+}
+
+.block--posts-items .layout-5 .omega-block article .entry-header{
+	margin-top: 15px;
+}

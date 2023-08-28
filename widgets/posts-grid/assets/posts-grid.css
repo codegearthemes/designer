@@ -1,0 +1,90 @@
+/* Common
+------------------------------------------------------------- */
+.block--posts-grid .post-item{
+	margin-bottom: 32px;
+}
+
+.block--posts-grid article{
+	height: 100%;
+}
+
+.block--posts-grid .content{
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.block--posts-grid .categories{
+	display: inline-flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.block--posts-grid .entry-title,
+.block--posts-grid .entry-title{
+	font-size: 18px;
+	margin-bottom: 0px;
+}
+
+.block--posts-grid .entry-term{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+	gap: 5px;
+}
+
+.block--posts-grid .meta-data{
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.block--posts-grid .meta-data .byline,
+.block--posts-grid .meta-data .posted-on{
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.block--posts-grid .content .media-image img{
+	position: relative;
+	vertical-align: bottom;
+}
+
+.block--posts-grid .meta-data a{
+    font-size: 13px;
+	font-weight: 500;
+    line-height: 1.2;
+}
+
+.block--posts-grid .read-more{
+	margin-top: 16px;
+}
+
+/* Posts Grid
+------------------------------------------------------------- */
+.block--posts-grid .posts-grid .content-bottom{
+	padding: 16px 0;
+}
+
+.block--posts-grid .card-background .content-bottom {
+	bottom: 0px;
+	width: 100%;
+	position: absolute;
+}
+
+.block--posts-grid .card-layout-content .content{
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+/* Posts List
+------------------------------------------------------------- */
+.block--posts-grid .posts-list .content{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    grid-auto-columns: max-content;
+    column-gap: 32px;
+}
