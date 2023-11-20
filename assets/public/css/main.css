@@ -14,6 +14,7 @@
 # Breadcrumbs
 # Popup
 # Testimonials
+# Business Hours
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 	#General
@@ -498,4 +499,68 @@
 ------------------------------------------------------------- */
 .featherlight .featherlight-inner{
 	display: block !important;
+}
+
+/*-------------------------------------------------------------
+				Business Hours
+------------------------------------------------------------- */
+.block-business__hours {
+    overflow: hidden;
+}
+
+.block-business__hours-item {
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: all .1s;
+    -o-transition: all .1s;
+    transition: all .1s;
+}
+
+.designer-business-day {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
+    text-align: left;
+}
+
+.elementor-widget-business-hours .block-business__hours .designer-business-day,
+.elementor-widget-business-hours .block-business__hours .designer-business-time,
+.elementor-widget-business-hours .block-business__hours .designer-business-closed {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.designer-business-time,
+.designer-business-closed {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
+    text-align: right;
+}
+
+.block-business__hours-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.block-business__hours-item:last-of-type:after {
+    display: none;
+}
+
+
+/* Defaults */
+
+.elementor-widget-business-hours .designer-business-day,
+.elementor-widget-business-hours .designer-business-time,
+.elementor-widget-business-hours .designer-business-closed {
+    font-weight: 500;
 }

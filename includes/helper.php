@@ -152,5 +152,21 @@ class Helper{
 
         return $device.'--'.$classes;
     }
-}
 
+    /**
+     * Elementor templates
+     * @return array
+     */
+    public function elementor_templates_options() {
+        $templates = \Elementor\Plugin::$instance->templates_manager->get_source('local')->get_items();
+        $options = [];
+
+        foreach ($templates as $template) {
+           $options[$template['template_id']] = $template['title'];
+        }
+
+        return $options;
+    }
+
+
+}
