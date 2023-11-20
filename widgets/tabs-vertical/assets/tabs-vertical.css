@@ -1,0 +1,153 @@
+/* Tabs Vertical */
+
+.designer-tabs-vertical {
+    position: relative;
+    visibility: hidden;
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+  
+.designer-tabs-vertical.designer--init {
+    visibility: visible;
+}
+
+.designer-tabs-vertical .designer-tabs-vertical-navigation {
+    position: relative;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-shrink: 0;
+    display: block;
+}
+
+.designer-tabs-vertical .designer-tabs-vertical-navigation li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+  
+.designer-tabs-vertical .designer-tabs-vertical-navigation li .designer-tab-title {
+    margin: 0;
+}
+  
+.designer-tabs-vertical .designer-tabs-vertical-navigation li a {
+    position: relative;
+    color: #cacaca;
+    display: block;
+    padding: 0;
+    transition: color .25s ease-out;
+}
+
+.designer-tabs-vertical .designer-tabs-vertical-navigation li a:after {
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .25s ease-out;
+  }
+  
+  .designer-tabs-vertical .designer-tabs-vertical-navigation li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: transparent;
+    transition: opacity .25s ease-out;
+  }
+  
+  .designer-tabs-vertical .designer-tabs-vertical-navigation li.ui-state-active a,
+  .designer-tabs-vertical .designer-tabs-vertical-navigation li.ui-state-hover a {
+    color: #1e1e1e;
+  }
+  
+  .designer-tabs-vertical .designer-tabs-vertical-navigation li.ui-state-active a:after, .designer-tabs-vertical .designer-tabs-vertical-navigation li.ui-state-active a:before,
+  .designer-tabs-vertical .designer-tabs-vertical-navigation li.ui-state-hover a:after,
+  .designer-tabs-vertical .designer-tabs-vertical-navigation li.ui-state-hover a:before {
+    opacity: 1;
+  }
+  
+  .designer-tabs-vertical .designer-tabs-vertical-navigation li .d-text {
+    z-index: 1;
+    position: relative;
+  }
+  
+  .designer-tabs-vertical .designer-tabs-vertical-content {
+    position: relative;
+    padding: 0 0 0 26px;
+  }
+  
+  .designer-tabs-vertical.designer-title-hover--sideline-draw .designer-tabs-vertical-navigation li a:after {
+    opacity: 1;
+    transform: scaleY(0);
+    transition: transform 0.36s cubic-bezier(0.51, 0.5, 0.07, 0.99);
+  }
+  
+  .designer-tabs-vertical.designer-title-hover--sideline-draw .designer-tabs-vertical-navigation li.ui-state-active a:after, .designer-tabs-vertical.designer-title-hover--sideline-draw .designer-tabs-vertical-navigation li.ui-state-hover a:after {
+    transform: scaleY(1);
+  }
+  
+  .designer-tabs-vertical.designer-title-hover--sideline-draw.designer-title-sideline-from-top .designer-tabs-vertical-navigation li a:after {
+    transform-origin: top;
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .designer-tabs-vertical.designer-responsive--1024 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .designer-tabs-vertical.designer-responsive--1024 .designer-tabs-vertical-navigation {
+      width: 100%;
+    }
+    .designer-tabs-vertical.designer-responsive--1024 .designer-tabs-vertical-content {
+      padding: 26px 0 0;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .designer-tabs-vertical.designer-responsive--768 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .designer-tabs-vertical.designer-responsive--768 .designer-tabs-vertical-navigation {
+      width: 100%;
+    }
+    .designer-tabs-vertical.designer-responsive--768 .designer-tabs-vertical-content {
+      padding: 26px 0 0;
+    }
+  }
+  
+  @media only screen and (max-width: 680px) {
+    .designer-tabs-vertical.designer-responsive--680 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .designer-tabs-vertical.designer-responsive--680 .designer-tabs-vertical-navigation {
+      width: 100%;
+    }
+    .designer-tabs-vertical.designer-responsive--680 .designer-tabs-vertical-content {
+      padding: 26px 0 0;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .designer-tabs-vertical.designer-responsive--480 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .designer-tabs-vertical.designer-responsive--480 .designer-tabs-vertical-navigation {
+      width: 100%;
+    }
+    .designer-tabs-vertical.designer-responsive--480 .designer-tabs-vertical-content {
+      padding: 26px 0 0;
+    }
+  }
