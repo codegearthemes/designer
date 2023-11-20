@@ -32,6 +32,7 @@ class Widget_Lists {
             'scroll-down',
             'breadcrumb',
             'testimonial-slider',
+            'business-hours',
         ];
 
         foreach ( $widgets as $widget ) {
