@@ -556,11 +556,719 @@
     display: none;
 }
 
-
-/* Defaults */
-
 .elementor-widget-business-hours .designer-business-day,
 .elementor-widget-business-hours .designer-business-time,
 .elementor-widget-business-hours .designer-business-closed {
     font-weight: 500;
+}
+
+
+
+/*-------------------------------------------------------------
+				Button Advanced
+------------------------------------------------------------- */
+.block-action__advanced{
+	display: flex;
+	align-items: center;
+}
+
+.block-action__advanced .btn-link__text.text-link{
+	padding: 0px;
+}
+
+.block-action__advanced .btn-link__text .designer-m-icon-inner{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.block-advanced__btn {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    width: auto;
+    margin: 0;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 2em;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: none;
+    border-radius: 4px;
+    outline: 0;
+    transition: color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 46px;
+    overflow: hidden;
+}
+
+.block-advanced__btn.designer-size--small {
+    padding: 9px 33px;
+}
+
+.block-advanced__btn.designer-size--large {
+    padding: 15px 52px;
+}
+
+.block-advanced__btn.designer-size--full-width {
+    width: 100%;
+    text-align: center;
+}
+
+.block-advanced__btn.designer-layout--btn-link {
+    color: #111;
+    background-color: #f4f4f4;
+    border: 0;
+    font-size: 16px;
+    border-style: solid;
+}
+
+.block-advanced__btn.designer-layout--btn-link:hover {
+    color: #fff;
+    background-color: #111
+}
+
+.block-advanced__btn.designer-layout--outlined {
+    color: #111;
+    background-color: transparent;
+    border: 2px solid #111;
+}
+
+.block-advanced__btn.designer-layout--outlined:hover {
+    color: #111;
+    background-color: #f4f4f4;
+    border-color: #f4f4f4;
+}
+
+.block-advanced__btn.designer-layout--text-link {
+    padding: 0!important;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.block-advanced__btn.designer-layout--text-link .label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.block-advanced__btn.designer-layout--text-link:hover {
+    color: #111;
+}
+
+.block-advanced__btn.designer-icon--row-reverse {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.block-advanced__btn.designer-text-underline .label {
+    position: relative;
+}
+
+.block-advanced__btn.designer-text-underline .label:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transition: background-color .25s ease-in-out,width .36s cubic-bezier(.51,.5,.07,.99);
+    backface-visibility: hidden;
+}
+
+.block-advanced__btn.designer-text-underline:not(.designer-button-underline-draw):hover .label:after{
+    width: 0;
+}
+
+.block-advanced__btn.designer-text-underline.designer-underline--center .label:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.block-advanced__btn.designer-text-underline.designer-underline--right .label:after {
+    left: auto;
+    right: 0;
+}
+
+.block-advanced__btn.designer-button-underline-draw .label {
+    overflow: hidden;
+}
+
+.block-advanced__btn.designer-button-underline-draw.designer-underline--left:hover .label:after,
+.block-advanced__btn.designer-button-underline-draw.designer-underline--right:hover .label:after {
+    animation: designer-animate-underline-from-left .7s cubic-bezier(.45,.29,0,.82) forwards;
+}
+
+.block-advanced__btn.designer-button-underline-draw.designer-underline--right:hover .label:after {
+    animation: designer-animate-underline-from-right .7s cubic-bezier(.45,.29,0,.82) forwards;
+}
+
+@keyframes designer-animate-underline-from-left {
+	0% {
+	  transform: scaleX(1);
+	  transform-origin: right;
+	}
+	37% {
+	  transform: scaleX(0);
+	  transform-origin: right;
+	}
+	38% {
+	  transform: scaleX(0);
+	  transform-origin: left;
+	}
+	100% {
+	  transform: scaleX(1);
+	  transform-origin: left;
+	}
+  }
+
+  @keyframes designer-animate-underline-from-right {
+	0% {
+	  transform: scaleX(1);
+	  transform-origin: left;
+	}
+	37% {
+	  transform: scaleX(0);
+	  transform-origin: left;
+	}
+	38% {
+	  transform: scaleX(0);
+	  transform-origin: right;
+	}
+	100% {
+	  transform: scaleX(1);
+	  transform-origin: right;
+	}
+  }
+
+.block-advanced__btn .designer-m-icon {
+    color: currentColor;
+    line-height: 0;
+}
+
+.block-advanced__btn .designer-m-icon.designer--icon-color-set {
+    transition: color .25s ease-in-out,background-color .25s ease-in-out;
+}
+
+.block-advanced__btn .designer-m-icon svg {
+    width: 1em;
+    fill: currentColor;
+    stroke: currentColor;
+    vertical-align: middle;
+}
+
+.block-advanced__btn.designer-icon--row:not(.designer-type--icon-boxed) .designer-m-icon {
+    margin-left: 10px;
+}
+
+.block-advanced__btn.designer-icon--row-reverse:not(.designer-type--icon-boxed) .designer-m-icon {
+    margin-right: 10px;
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner,
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner,
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner {
+    position: relative;
+    overflow: hidden;
+    display: inherit;
+    padding: 1px;
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner i,
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner svg,
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner i,
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner svg,
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner i,
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner svg {
+    transition: transform .38s cubic-bezier(.37,.08,.02,.93),opacity .18s ease-in-out;
+    will-change: transform;
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner svg:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner svg:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner svg:nth-child(1) {
+    transform: translateX(0) translateY(0);
+    transition-delay: .1s;
+    opacity: 1;
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner svg:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner svg:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner svg:nth-child(2) {
+    position: absolute;
+    opacity: 0;
+    left: 1px;
+    top: 1px;
+    transition-delay: 0s;
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal:hover .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-diagonal:hover .designer-m-icon-inner svg:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-horizontal:hover .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-horizontal:hover .designer-m-icon-inner svg:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-vertical:hover .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-vertical:hover .designer-m-icon-inner svg:nth-child(1) {
+    opacity: 0;
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal:hover .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-diagonal:hover .designer-m-icon-inner svg:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-horizontal:hover .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-horizontal:hover .designer-m-icon-inner svg:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-vertical:hover .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-vertical:hover .designer-m-icon-inner svg:nth-child(2) {
+    transform: translateX(0) translateY(0) translatez(0);
+    transition-delay: .25s;
+    opacity: 1;
+}
+
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner svg:nth-child(2) {
+    transform: translateX(-150%) translateY(0);
+}
+
+.block-advanced__btn.designer-hover--icon-move-horizontal:hover .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-horizontal:hover .designer-m-icon-inner svg:nth-child(1) {
+    transform: translateX(200%) translateY(0);
+}
+
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner i,
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner svg {
+    will-change: transform;
+}
+
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner svg:nth-child(2) {
+    transform: translateX(0) translateY(150%) translateZ(0);
+}
+
+.block-advanced__btn.designer-hover--icon-move-vertical:hover .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-vertical:hover .designer-m-icon-inner svg:nth-child(1) {
+    transform: translateX(0) translateY(-150%) translateZ(0);
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner i,
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner svg {
+    will-change: transform;
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner i:nth-child(2),
+.block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner svg:nth-child(2) {
+    transform: translateX(-100%) translateY(100%) translateZ(0);
+}
+
+.block-advanced__btn.designer-hover--icon-move-diagonal:hover .designer-m-icon-inner i:nth-child(1),
+.block-advanced__btn.designer-hover--icon-move-diagonal:hover .designer-m-icon-inner svg:nth-child(1) {
+    transform: translateX(100%) translateY(-100%) translateZ(0);
+}
+
+.block-advanced__btn.designer-hover--icon-move-horizontal-short .designer-m-icon-inner i,
+.block-advanced__btn.designer-hover--icon-move-horizontal-short .designer-m-icon-inner svg {
+    transition: transform .3s cubic-bezier(.37,.08,.02,.93),opacity .2s ease-in-out;
+    transform: translateX(0);
+    will-change: transform;
+}
+
+.block-advanced__btn.designer-hover--icon-move-horizontal-short:hover .designer-m-icon-inner i,
+.block-advanced__btn.designer-hover--icon-move-horizontal-short:hover .designer-m-icon-inner svg {
+    transform: translateX(4px);
+}
+
+.block-advanced__btn.designer-hover--reveal:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s cubic-bezier(.54,.3,.02,1.01);
+}
+
+.block-advanced__btn.designer-hover--reveal .designer-m-icon,.block-advanced__btn.designer-hover--reveal .label {
+    z-index: 1;
+}
+
+.block-advanced__btn.designer-hover--reveal:hover:after {
+    transform: scaleX(1) scaleY(1);
+}
+
+.block-advanced__btn.designer-hover--reveal.designer-layout--outlined:hover {
+    background-color: initial;
+}
+
+.block-advanced__btn.designer--reveal-horizontal:after {
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.block-advanced__btn.designer--reveal-vertical:after {
+    transform-origin: bottom;
+    transform: scaleY(0);
+}
+
+.block-advanced__btn.designer-icon-background-hover--reveal .designer-m-icon:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s cubic-bezier(.54,.3,.02,1.01);
+}
+
+.block-advanced__btn.designer-icon-background-hover--reveal .designer-m-icon .designer-m-icon-inner {
+    z-index: 1;
+}
+
+.block-advanced__btn.designer-icon-background-hover--reveal:hover .designer-m-icon:after {
+    transform: scaleX(1) scaleY(1);
+}
+
+.block-advanced__btn.designer-icon-background-hover--reveal-horizontal .designer-m-icon:after {
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.block-advanced__btn.designer-icon-background-hover--reveal-vertical .designer-m-icon:after {
+    transform-origin: bottom;
+    transform: scaleY(0);
+}
+
+.block-advanced__btn.designer-type--icon-boxed {
+    padding: 0!important;
+    align-items: stretch;
+}
+
+.block-advanced__btn.designer-type--icon-boxed .label {
+    align-self: center;
+    padding: 11px 28px;
+}
+
+.block-advanced__btn.designer-type--icon-boxed.designer-size--small .label {
+    padding: 7px 15px;
+}
+
+.block-advanced__btn.designer-type--icon-boxed.designer-size--large .label {
+    padding: 13px 40px;
+}
+
+.block-advanced__btn.designer-type--icon-boxed .designer-m-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 11px 0;
+}
+
+.block-advanced__btn.designer-type--icon-boxed .designer-m-icon i {
+    line-height: initial;
+}
+
+.block-advanced__btn.designer-type--icon-boxed .designer-m-icon svg {
+    width: 1em;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.block-advanced__btn.designer-type--icon-boxed .designer-m-border {
+    width: 2px;
+    background-color: #111;
+    transition: background-color .25s ease-in-out;
+}
+
+.block-advanced__btn.designer-type--inner-border .designer-m-inner-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #111;
+    font-size: 4px;
+    transition: color .25s ease-in-out;
+}
+
+.block-advanced__btn.designer-type--inner-border .designer-m-border-bottom,
+.block-advanced__btn.designer-type--inner-border .designer-m-border-left,
+.block-advanced__btn.designer-type--inner-border .designer-m-border-right,
+.block-advanced__btn.designer-type--inner-border .designer-m-border-top {
+    position: absolute;
+    background-color: currentColor;
+    transition: background-color .25s ease-in-out;
+}
+
+.block-advanced__btn.designer-type--inner-border .designer-m-border-top {
+    top: 1em;
+    left: 1em;
+    height: 2px;
+    width: calc(100% - 2em);
+}
+
+.block-advanced__btn.designer-type--inner-border .designer-m-border-right {
+    top: 1em;
+    right: 1em;
+    width: 2px;
+    height: calc(100% - 2em);
+}
+
+.block-advanced__btn.designer-type--inner-border .designer-m-border-bottom {
+    bottom: 1em;
+    right: 1em;
+    height: 2px;
+    width: calc(100% - 2em);
+}
+
+.block-advanced__btn.designer-type--inner-border .designer-m-border-left {
+    bottom: 1em;
+    left: 1em;
+    width: 2px;
+    height: calc(100% - 2em);
+}
+
+.designer-inner-border-hover--draw .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw .designer-m-inner-border-copy .designer-m-border-right,
+.designer-inner-border-hover--draw .designer-m-inner-border-copy .designer-m-border-top {
+    transition: transform .36s ease-out;
+}
+
+.designer-inner-border-hover--draw.d-draw-center .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-center .designer-m-inner-border-copy .designer-m-border-top,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-top,
+.designer-inner-border-hover--draw.d-draw-two-points .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-two-points .designer-m-inner-border-copy .designer-m-border-top {
+    transform: scaleX(0);
+}
+
+.designer-inner-border-hover--draw.d-draw-center .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-center .designer-m-inner-border-copy .designer-m-border-right,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-right,
+.designer-inner-border-hover--draw.d-draw-two-points .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-two-points .designer-m-inner-border-copy .designer-m-border-right {
+    transform: scaleY(0);
+}
+
+.designer-inner-border-hover--draw.d-draw-center:hover .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-center:hover .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-center:hover .designer-m-inner-border-copy .designer-m-border-right,
+.designer-inner-border-hover--draw.d-draw-center:hover .designer-m-inner-border-copy .designer-m-border-top,
+.designer-inner-border-hover--draw.d-draw-one-point:hover .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-one-point:hover .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-one-point:hover .designer-m-inner-border-copy .designer-m-border-right,
+.designer-inner-border-hover--draw.d-draw-one-point:hover .designer-m-inner-border-copy .designer-m-border-top,
+.designer-inner-border-hover--draw.d-draw-two-points:hover .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-two-points:hover .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-two-points:hover .designer-m-inner-border-copy .designer-m-border-right,
+.designer-inner-border-hover--draw.d-draw-two-points:hover .designer-m-inner-border-copy .designer-m-border-top {
+    transform: scaleX(1) scaleY(1);
+}
+
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-right,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-top {
+    transition-duration: .28s;
+}
+
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-top {
+    transform-origin: left;
+}
+
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-right {
+    transform-origin: top;
+}
+
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-top {
+    transition-delay: .28s;
+}
+
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-right {
+    transition-delay: 0s;
+}
+
+.designer-inner-border-hover--draw.d-draw-one-point:hover .designer-m-inner-border-copy .designer-m-border-left,
+.designer-inner-border-hover--draw.d-draw-one-point:hover .designer-m-inner-border-copy .designer-m-border-top {
+    transition-delay: 0s
+}
+
+.designer-inner-border-hover--draw.d-draw-one-point:hover .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-inner-border-hover--draw.d-draw-one-point:hover .designer-m-inner-border-copy .designer-m-border-right {
+    transition-delay: .28s;
+}
+
+.designer-inner-border-hover--draw.d-draw-two-points .designer-m-border-top {
+    transform-origin: left;
+}
+
+.designer-inner-border-hover--draw.d-draw-two-points .designer-m-border-bottom {
+    transform-origin: right;
+}
+
+.designer-inner-border-hover--draw.d-draw-two-points .designer-m-border-left {
+    transform-origin: top;
+}
+
+.designer-inner-border-hover--draw.d-draw-two-points .designer-m-border-right {
+    transform-origin: bottom;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points .designer-m-inner-border .designer-m-border-top {
+    transition: background-color .25s ease-in-out,transform .36s ease-out;
+    transform: scaleX(1) scaleY(1);
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center:hover .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center:hover .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points:hover .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points:hover .designer-m-inner-border .designer-m-border-top {
+    transform: scaleX(0);
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center:hover .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center:hover .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points:hover .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points:hover .designer-m-inner-border .designer-m-border-right {
+    transform: scaleY(0);
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-top {
+    transition: background-color .25s ease-in-out,transform .28s ease-out;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-top {
+    transform-origin: left;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-right {
+    transform-origin: top;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-top,.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-left,.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-top,.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-left,.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-top {
+    transition-delay: 0s,0s;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-right {
+    transition-delay: 0s,.28s;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-top {
+    transition-delay: 0s,.28s;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point:hover .designer-m-inner-border .designer-m-border-right {
+    transition-delay: 0s,0s;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-two-points .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-two-points .designer-m-border-top,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-two-points .designer-m-border-top {
+    transform-origin: left;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-two-points .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-two-points .designer-m-border-bottom,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-two-points .designer-m-border-bottom {
+    transform-origin: right;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-two-points .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-two-points .designer-m-border-left,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-two-points .designer-m-border-left {
+    transform-origin: top;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-two-points .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-two-points .designer-m-border-right,
+.designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-two-points .designer-m-border-right {
+    transform-origin: bottom;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--move-outer-edge {
+    overflow: visible;
+}
+
+.designer-type--inner-border.designer-inner-border-hover--move-outer-edge .designer-m-inner-border {
+    top: 1em;
+    left: 1em;
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
+    border: 1px solid currentColor;
+    transition: all .3s cubic-bezier(.46,.03,.52,.96);
+}
+
+.designer-type--inner-border.designer-inner-border-hover--move-outer-edge:hover .designer-m-inner-border {
+    top: -1em;
+    left: -1em;
+    width: calc(100% + 2em);
+    height: calc(100% + 2em);
 }

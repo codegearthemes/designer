@@ -31,7 +31,8 @@ class Elementor{
 
           #elementor-panel-category-header .elementor-element::after,
           #elementor-panel-category-designer .elementor-element::after,
-          #elementor-panel-category-footer .elementor-element::after{
+          #elementor-panel-category-footer .elementor-element::after,
+          .designer-icon::after{
             content: "";
             width: 20px;
             height: 20px;

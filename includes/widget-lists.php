@@ -35,6 +35,7 @@ class Widget_Lists {
             'business-hours',
             'tabs-horizontal',
             'tabs-vertical',
+            'button-advanced',
         ];
 
         foreach ( $widgets as $widget ) {

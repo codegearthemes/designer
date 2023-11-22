@@ -9,6 +9,7 @@ use Elementor\Group_Control_Border;
 use Elementor\Repeater;
 use Elementor\Core\Schemes\Typography;
 use Elementor\Widget_Base;
+use Designer\Includes\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -101,7 +102,7 @@ class Tabs_Vertical extends Widget_Base {
 			[
 				'label'	=> esc_html__( 'Select Template', 'designer' ),
 				'type' => Controls_Manager::SELECT,
-				'options' => \Designer\Includes\Helper::instance()->elementor_templates_options(),
+				'options' => Helper::instance()->elementor_templates_options(),
 				'label_block' => true,
 				'condition' => [
 					'tab_content_type' => 'template',

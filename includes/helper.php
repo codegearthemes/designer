@@ -168,5 +168,63 @@ class Helper{
         return $options;
     }
 
+    
+    /**
+     * Button Classes
+     * @return array
+     */
+    public function get_button_classes( $settings){
+		$button_classes = array();
+
+		$button_classes[]	= 'block-advanced__btn';
+		$button_classes[]	= 'btn-link__text';
+		$button_classes[]	= !empty($settings['button_layout'])? 'designer-layout--' .$settings['button_layout'] : '';
+		$button_classes[]	= !empty($settings['button_type']) ? 'designer-type--'	.$settings['button_type']	: '';
+		$button_classes[]	=  !empty($settings['button_size']) ? 'designer-size--'.$settings['button_size']	: '';
+		$button_classes[]	= !empty($settings['button_hover_reveal'])? 'designer-hover--reveal designer--'.$settings['button_hover_reveal'] : '';
+		$button_classes[]	=  !empty($settings['button_icon_align']) ? 'designer-icon--' .$settings['button_icon_align']: '';
+		$button_classes[]	= !empty($settings['button_icon_move'])? 'designer-hover--icon-' .$settings['button_icon_move'] : '';
+		$button_classes[]	= !empty($settings['inner_border_hover_animation'])? 'designer-inner-border-hover--' .$settings['inner_border_hover_animation'] : '';
+		$button_classes[]	= 'yes'	=== $settings['show_underline']? 'designer-text-underline' : '';
+		$button_classes[]	= !empty($settings['underline_alignment'])? 'designer-underline--'.$settings['underline_alignment'] : '';
+		$button_classes[]	= 'yes'	=== $settings['show_hover_underline_draw'] ? 'designer-button-underline-draw' : '';
+
+		$button_classes = array_filter($button_classes, function($class) {
+			return !empty($class);
+		});
+
+		return implode(' ', $button_classes );
+	}
+
+    /**
+     * Button Inner Border
+     */
+
+	public function render_button_inner_border($settings){
+		$inner_border = '';
+
+		$inner_border .= '<div class="designer-m-inner-border">';
+
+			if('move-outer-edge' !== $settings['inner_border_hover_animation']){
+				$inner_border .= '<span class="designer-m-border-top"></span>';
+				$inner_border .= '<span class="designer-m-border-right"></span>';
+				$inner_border .= '<span class="designer-m-border-bottom"></span>';
+				$inner_border .= '<span class="designer-m-border-left"></span>';
+			}
+		$inner_border .= '</div>';
+
+		if ( ! empty( $settings['inner_border_hover_animation'] ) && ( ( 'draw d-draw-center' == $settings['inner_border_hover_animation'] ) || ( 'draw d-draw-one-point' == $settings['inner_border_hover_animation'] ) || ( 'draw d-draw-two-points' == $settings['inner_border_hover_animation'] ) ) ) {
+			$inner_border .= '<div class="designer-m-inner-border designer-m-inner-border-copy">';
+				$inner_border .= '<span class="designer-m-border-top"></span>';
+				$inner_border .= '<span class="designer-m-border-right"></span>';
+				$inner_border .= '<span class="designer-m-border-bottom"></span>';
+				$inner_border .= '<span class="designer-m-border-left"></span>';
+			$inner_border .= '</div>';
+		}
+
+		return $inner_border;
+
+	}
+
 
 }
