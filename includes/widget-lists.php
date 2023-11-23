@@ -36,6 +36,15 @@ class Widget_Lists {
             'tabs-horizontal',
             'tabs-vertical',
             'button-advanced',
+            'pricing-table',
+            'promo-box',
+            'image-hotspots',
+            'text-marquee',
+            'image-marquee',
+            'countdown',
+            'contact',
+
+
         ];
 
         foreach ( $widgets as $widget ) {

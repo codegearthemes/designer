@@ -466,6 +466,7 @@ class Button_Advanced extends Widget_Base {
 					'' => esc_html__( 'None', 'designer' ),
 					'reveal-horizontal' => esc_html__( 'Horizontal', 'designer' ),
 					'reveal-vertical'  => esc_html__( 'Vertical', 'designer' ),
+					'shutter-out'  => esc_html__( 'Shutter Out', 'designer' ),
 				],
 				'condition'	=> [
 					'button_layout!'	=> 'text-link',

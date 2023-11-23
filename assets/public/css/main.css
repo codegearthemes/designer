@@ -15,6 +15,11 @@
 # Popup
 # Testimonials
 # Business Hours
+# Button Advanced
+# Pricing Table
+# Promo Box
+# Countdown
+# Contact
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 	#General
@@ -918,6 +923,12 @@
     transform: scaleY(0);
 }
 
+.block-advanced__btn.designer--shutter-out:after {
+    transform-origin: center;
+    transform: scaleX(0);
+}
+
+
 .block-advanced__btn.designer-icon-background-hover--reveal .designer-m-icon:after {
     content: '';
     position: absolute;
@@ -1271,4 +1282,794 @@
     left: -1em;
     width: calc(100% + 2em);
     height: calc(100% + 2em);
+}
+
+/*-------------------------------------------------------------
+				Pricing Table
+------------------------------------------------------------- */
+.elementor-widget-pricing-table .designer-pricing-table-heading,
+.elementor-widget-pricing-table .designer-pricing-table-text {
+    background-color: #f9f9f9;
+}
+
+  .designer-pricing-table {
+    position: relative;
+}
+
+
+/* Heading */
+
+.designer-pricing-table-heading {
+    text-align: center;
+}
+
+
+.designer-pricing-table-inner {
+    display: inline-block;
+}
+
+.designer-pricing-table-heading-left .designer-pricing-table-inner>div,
+.designer-pricing-table-heading-right .designer-pricing-table-inner>div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.designer-pricing-table-heading-left .designer-pricing-table-icon {
+    float: left;
+}
+
+.designer-pricing-table-heading-right .designer-pricing-table-icon {
+    float: right;
+}
+
+.designer-pricing-table-heading-left .designer-pricing-table-title-wrap,
+.designer-pricing-table-heading-right .designer-pricing-table-title-wrap {
+    text-align: left;
+}
+
+.designer-pricing-table-heading-center .designer-pricing-table-icon img {
+    margin: 0 auto;
+}
+
+.designer-pricing-table-icon img {
+    display: block;
+    border-style: none;
+}
+
+.elementor-widget-designer-pricing-table .designer-pricing-table-title-wrap .designer-pricing-table-title {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.elementor-widget-designer-pricing-table .designer-pricing-table-title-wrap .designer-pricing-table-sub-title {
+    font-size: 14px;
+}
+
+.designer-pricing-table-price {
+    text-align: center;
+    font-size: 65px;
+    font-weight: 500;
+    line-height: 0.9;
+}
+
+.designer-pricing-table-price-inner {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.designer-pricing-table-sub-price,
+.designer-pricing-table-currency,
+.designer-pricing-table-old-price,
+.designer-pricing-table-period,
+.designer-prbar-counter-value-suffix {
+    line-height: 1;
+}
+
+.designer-pricing-table-period {
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+}
+
+.designer-pricing-table-old-price {
+    text-decoration: line-through !important;
+}
+
+
+/* Feature */
+
+.elementor-widget-pricing-table .designer-pricing-table-price,
+.elementor-widget-progress-bar .designer-prbar-hr-line-inner,
+.elementor-widget-progress-bar .designer-prbar-vr-line-inner{
+    background-color: #333333;
+}
+
+.designer-pricing-table-feature {
+    position: relative;
+    font-size: 15px;
+}
+
+.designer-pricing-table-feature-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.designer-pricing-table-feature-inner span {
+    position: relative;
+}
+
+.designer-pricing-table-feature-inner span.designer-pricing-table-ftext-line-yes {
+    text-decoration: line-through;
+}
+
+.designer-pricing-table-feature:after {
+    content: "";
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.designer-pricing-table section:last-of-type:after {
+    display: none;
+}
+
+.designer-pricing-table-feature-text,
+.designer-pricing-table-feature-icon {
+    display: inline;
+}
+
+.designer-pricing-table-feature-icon {
+    margin-right: 8px;
+}
+
+.designer-pricing-table-feature-tooltip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-radius: 4px;
+    padding: 6px 10px;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 15px;
+    -webkit-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    -webkit-transition: all 230ms ease-in-out 0s;
+    -o-transition: all 230ms ease-in-out 0s;
+    transition: all 230ms ease-in-out 0s;
+    text-align: center;
+}
+
+.designer-pricing-table-feature-tooltip:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -5px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top-style: solid;
+    border-top-width: 6px;
+}
+
+.designer-pricing-table-feature:hover .designer-pricing-table-feature-tooltip {
+    visibility: visible;
+    opacity: 1;
+    top: 5px;
+    -ms-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    -webkit-transform: translate(-50%, -100%);
+}
+
+.designer-pricing-table-feature-tooltip:before {
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%) !important;
+}
+
+.designer-pricing-table-badge {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    z-index: 2;
+}
+
+.elementor-widget-designer-pricing-table .designer-pricing-table-badge .designer-pricing-table-badge-inner,
+.elementor-widget-designer-promo-box .designer-promo-box-badge .designer-promo-box-badge-inner {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.designer-pricing-table-badge-circle,
+.designer-promo-box-badge-circle {
+    top: 0;
+}
+
+.designer-pricing-table-badge-left,
+.designer-promo-box-badge-left {
+    left: 0;
+    right: auto;
+}
+
+.designer-pricing-table-badge-right,
+.designer-promo-box-badge-right {
+    left: auto;
+    right: 0;
+}
+
+.designer-pricing-table-badge-corner,
+.designer-promo-box-badge-corner {
+    top: 0;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.designer-pricing-table-badge-corner .designer-pricing-table-badge-inner,
+.designer-promo-box-badge-corner .designer-promo-box-badge-inner {
+    width: 200%;
+}
+
+.designer-pricing-table-badge-corner.designer-pricing-table-badge-right,
+.designer-promo-box-badge-corner.designer-promo-box-badge-right {
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+.designer-pricing-table-badge-circle .designer-pricing-table-badge-inner,
+.designer-promo-box-badge-circle .designer-promo-box-badge-inner{
+    border-radius: 100%;
+}
+
+.designer-pricing-table-badge-flag,
+.designer-promo-box-badge-flag {
+    border-right: 5px;
+}
+
+.designer-pricing-table-badge-flag.designer-pricing-table-badge-left,
+.designer-promo-box-badge-flag.designer-promo-box-badge-left {
+    margin-left: -10px;
+}
+
+.designer-pricing-table-badge-flag.designer-pricing-table-badge-right,
+.designer-promo-box-badge-flag.designer-promo-box-badge-right {
+    margin-right: -10px;
+}
+
+.designer-pricing-table-badge-flag:before,
+.designer-promo-box-badge-flag:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: -5px;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top-style: solid;
+    border-top-width: 10px;
+}
+
+.designer-pricing-table-badge-flag .designer-pricing-table-badge-inner,
+.designer-promo-box-badge-flag .designer-promo-box-badge-inner {
+    position: relative;
+    z-index: 2;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.designer-pricing-table-badge-flag.designer-pricing-table-badge-left:before,
+.designer-promo-box-badge-flag.designer-promo-box-badge-left:before {
+    left: 5px;
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+.designer-pricing-table-badge-flag.designer-pricing-table-badge-right:before,
+.designer-promo-box-badge-flag.designer-promo-box-badge-right:before {
+    right: -5px;
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+
+.designer-pricing-table-badge-flag.designer-pricing-table-badge-left .designer-pricing-table-badge-inner,
+.designer-promo-box-badge-flag.designer-promo-box-badge-left .designer-promo-box-badge-inner {
+    border-bottom-right-radius: 3px;
+}
+
+.designer-pricing-table-badge-flag.designer-pricing-table-badge-right .designer-pricing-table-badge-inner,
+.designer-promo-box-badge-flag.designer-promo-box-badge-right .designer-promo-box-badge-inner {
+    border-bottom-left-radius: 3px;
+}
+
+.designer-pricing-table-text {
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.designer-pricing-table-divider {
+    margin: 0 auto;
+    border: 0;
+}
+
+.designer-pricing-table-animation-slide {
+    -webkit-transition-property: margin;
+    -o-transition-property: margin;
+    transition-property: margin;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+.designer-pricing-table-animation-bounce {
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.designer-pricing-table-animation-slide:hover {
+    margin-top: -5px;
+}
+
+.designer-pricing-table-animation-bounce:hover {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+/*-------------------------------------------------------------
+				Promo Box
+------------------------------------------------------------- */
+.designer-promo-box {
+    display: flex;
+    position: relative;
+}
+
+.designer-promo-box-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.designer-promo-box-style-cover .designer-promo-box-image,
+.designer-promo-box-style-pro-cs .designer-promo-box-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.designer-promo-box-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.designer-promo-box-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    -webkit-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+}
+
+.designer-promo-box-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.elementor-widget-designer-promo-box.designer-promo-box-style-classic .designer-promo-box-content {
+    background-color: #212121;
+}
+
+.elementor-widget-designer-promo-box.designer-promo-box-style-classic .designer-promo-box:hover .designer-promo-box-content {
+    background-color: #ddb34f;
+}
+
+.designer-promo-box-image-position-right .designer-promo-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse;
+}
+
+.designer-promo-box-image-position-center .designer-promo-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 640px) {
+    .designer-promo-box-style-classic .designer-promo-box {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .designer-promo-box-style-classic .designer-promo-box-image {
+        min-width: auto !important;
+    }
+}
+
+.designer-promo-box-link {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.designer-promo-box-btn {
+    display: inline-block;
+}
+
+.designer-promo-box-icon,
+.designer-promo-box-title,
+.designer-promo-box-description,
+.designer-promo-box-btn-wrap {
+    width: 100%;
+}
+
+.designer-promo-box-icon,
+.designer-promo-box-title,
+.designer-promo-box-description {
+    z-index: 2;
+}
+
+.designer-promo-box-btn-wrap .block-action__advanced {
+    display: unset;
+}
+
+.designer-promo-box-btn-wrap{
+    z-index: 4;
+}
+
+.designer-promo-box-btn-icon {
+    margin-left: 5px;
+}
+
+.designer-promo-box-icon img {
+    display: inline-block;
+}
+
+.elementor .elementor-widget-designer-promo-box .designer-promo-box:hover .designer-promo-box-bg-image {
+    -webkit-filter: brightness( 100%) contrast( 100%) saturate( 100%) hue-rotate( 0deg);
+    filter: brightness( 100%) contrast( 100%) saturate( 100%) hue-rotate( 0deg);
+}
+
+
+/* Promo box Badge */
+.designer-promo-box-badge {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    z-index: 1;
+}
+
+.designer-promo-box-badge-left {
+    left: 0;
+    right: auto;
+}
+
+.designer-promo-box-badge-right {
+    left: auto;
+    right: 0;
+}
+
+.designer-promo-box-badge-corner {
+    top: 0;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.designer-promo-box-badge-corner .designer-promo-box-badge-inner {
+    width: 200%;
+}
+
+.designer-promo-box-badge-corner.designer-promo-box-badge-right {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.designer-promo-box-badge-cyrcle {
+    top: 0;
+}
+
+.designer-promo-box-badge-cyrcle.designer-promo-box-badge-left {
+    -webkit-transform: translateX(-40%) translateY(-40%);
+    -ms-transform: translateX(-40%) translateY(-40%);
+    transform: translateX(-40%) translateY(-40%);
+}
+
+.designer-promo-box-badge-cyrcle.designer-promo-box-badge-right {
+    -webkit-transform: translateX(40%) translateY(-40%);
+    -ms-transform: translateX(40%) translateY(-40%);
+    transform: translateX(40%) translateY(-40%);
+}
+
+.designer-promo-box-badge-cyrcle .designer-promo-box-badge-inner {
+    border-radius: 100%;
+}
+
+.designer-promo-box-badge-flag {
+    border-right: 5px;
+}
+
+.designer-promo-box-badge-flag.designer-promo-box-badge-left {
+    margin-left: -10px;
+}
+
+.designer-promo-box-badge-flag.designer-promo-box-badge-right {
+    margin-right: -10px;
+}
+
+.designer-promo-box-badge-flag:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: -5px;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top-style: solid;
+    border-top-width: 10px;
+}
+
+.designer-promo-box-badge-flag .designer-promo-box-badge-inner {
+    position: relative;
+    z-index: 1;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.designer-promo-box-badge-flag.designer-promo-box-badge-left:before {
+    left: 5px;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.designer-promo-box-badge-flag.designer-promo-box-badge-right:before {
+    right: -5px;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.designer-promo-box-badge-flag.designer-promo-box-badge-left .designer-promo-box-badge-inner {
+    border-bottom-right-radius: 3px;
+}
+
+.designer-promo-box-badge-flag.designer-promo-box-badge-right .designer-promo-box-badge-inner {
+    border-bottom-left-radius: 3px;
+}
+
+
+/* Defaults */
+.elementor-widget-designer-promo-box .designer-promo-box-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.elementor-widget-designer-promo-box .designer-promo-box-description {
+    font-size: 15px;
+}
+
+.elementor-widget-designer-promo-box .designer-promo-box-btn,
+.elementor-widget-designer-promo-box .designer-promo-box-badge {
+    font-size: 14px;
+}
+
+.elementor-widget-designer-promo-box .designer-promo-box-badge .designer-promo-box-badge-inner {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.elementor-widget-designer-promo-box .designer-promo-box-badge-corner .designer-promo-box-badge-inner {
+    line-height: 1.6;
+}
+
+/* Promo Box Classic */
+
+.elementor-widget-promo-box.designer-promo-box-style-classic .designer-promo-box-content {
+    background-color: #111111;
+}
+
+.elementor-widget-promo-box.designer-promo-box-style-classic .designer-promo-box:hover .designer-promo-box-content {
+    background-color: #333333;
+}
+
+
+.designer-promo-box-image-position-right .designer-promo-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.designer-promo-box-image-position-center .designer-promo-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+/*-------------------------------------------------------------
+				Countdown
+------------------------------------------------------------- */
+.designer-countdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0 auto;
+	flex-wrap: wrap;
+}
+
+.elementor-widget-countdown .designer-digit{
+	font-size: 70px;
+}
+
+.designer-countdown-separator{
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center
+}
+
+.designer-countdown-separator span{
+	display: block;
+}
+
+.digit-wrapper {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+/*-------------------------------------------------------------
+				Contact
+------------------------------------------------------------- */
+.block-contact-form form div {
+    position: relative;
+}
+
+
+@media (min-width: 1024px) {
+    .block-contact-form .grid {
+        flex-wrap: nowrap;
+    }
+}
+
+.block-contact-form .grid--col-auto {
+    flex: auto;
+}
+
+.block-contact-form.designer-button__full-width input[type=submit],
+.block-contact-form.designer-button__full-width button{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+  
+.block-contact-form .wpcf7-form-control-wrap {
+    width: 100%;
+    display: block;
+}
+  
+.block-contact-form textarea {
+    resize: vertical;
+}
+  
+.block-contact-form .wpcf7-list-item.first {
+    margin-left: 0;
+}
+  
+.block-contact-form .wpcf7-radio,
+.block-contact-form .wpcf7-checkbox {
+    line-height: 1;
+    display: block;
+}
+  
+.block-contact-form .wpcf7-radio label,
+.block-contact-form .wpcf7-checkbox label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.block-contact-form .wpcf7-spinner {
+    position: absolute;
+    right: 0;
+    margin: 10px 0 0;
+}
+  
+.block-contact-form label {
+    margin-bottom: 0;
+}
+  
+.block-contact-form input[type=date],
+.block-contact-form input[type=email],
+.block-contact-form input[type=number],
+.block-contact-form input[type=password],
+.block-contact-form input[type=search],
+.block-contact-form input[type=tel],
+.block-contact-form input[type=text],
+.block-contact-form input[type=url],
+.block-contact-form textarea,
+.block-contact-form select {
+    margin: 0;
+    height: auto;
+}
+
+.block-contact-form textarea {
+    height: 150px;
+}
+  
+.block-contact-form input[type=checkbox],
+.block-contact-form input[type=radio] {
+    margin: 0;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+  
+.block-contact-form button[type=submit]:focus,
+.block-contact-form button[type=submit]:hover,
+.block-contact-form input[type=submit]:focus,
+.block-contact-form input[type=submit]:hover {
+    color: unset;
+    background-color: unset;
+}
+  
+.block-contact-form input[type=submit] {
+    transition: all .3s ease-out;
+    display: inline-block;
+}
+  
+.block-contact-form textarea {
+    vertical-align: middle;
 }

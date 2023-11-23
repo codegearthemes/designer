@@ -173,7 +173,7 @@ class Helper{
      * Button Classes
      * @return array
      */
-    public function get_button_classes( $settings){
+    public function get_button_classes( $settings ){
 		$button_classes = array();
 
 		$button_classes[]	= 'block-advanced__btn';
@@ -200,7 +200,7 @@ class Helper{
      * Button Inner Border
      */
 
-	public function render_button_inner_border($settings){
+	public function render_button_inner_border( $settings ){
 		$inner_border = '';
 
 		$inner_border .= '<div class="designer-m-inner-border">';

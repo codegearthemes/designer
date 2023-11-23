@@ -1,0 +1,103 @@
+.designer-text-marquee {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.designer-text-marquee .designer-marquee-content {
+    display: flex;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.designer-text-marquee .designer-marquee-text {
+    display: flex;
+    align-items: baseline;
+}
+
+.designer-text-marquee .designer-text--original {
+    animation: designer-move-horizontal-normal-text 20s linear infinite;
+}
+
+.designer-text-marquee .designer-text--clone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateX(100%) translateZ(0);
+    animation: designer-move-horizontal-text-clone 20s linear infinite;
+}
+
+.designer-text-marquee .designer-text-item {
+    font-size: 100px;
+    line-height: 1.1em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+}
+
+.designer-text-marquee .designer-icon-holder {
+    display: flex;
+    font-size: 30px;
+    align-self: center;
+    align-items: center;
+}
+
+.designer-text-marquee .designer-icon-holder svg {
+    fill: currentColor;
+    stroke: currentColor;
+    width: 1em;
+    height: auto;
+}
+
+.designer-text-marquee.designer-text-stroke-effect .designer-text-item {
+    color: transparent !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #333333;
+    text-shadow: none;
+}
+
+
+
+
+
+/* Animation */
+
+@keyframes designer-move-horizontal-normal-text {
+    0% {
+      transform: translateX(0%) translateZ(0);
+    }
+    100% {
+      transform: translateX(-100%) translateZ(0);
+    }
+}
+
+@keyframes designer-move-horizontal-normal-text-clone {
+    0% {
+        transform: translateX(100%) translateZ(0);
+    }
+    100% {
+        transform: translateX(0%) translateZ(0);
+    }
+}
+
+@keyframes designer-move-horizontal-reverse-text {
+    0% {
+      transform: translateX(0%) translateZ(0);
+    }
+    100% {
+      transform: translateX(100%) translateZ(0);
+    }
+  }
+  
+  @keyframes designer-move-horizontal-reverse-text-clone {
+    0% {
+      transform: translateX(-100%) translateZ(0);
+    }
+    100% {
+      transform: translateX(0%) translateZ(0);
+    }
+  }
