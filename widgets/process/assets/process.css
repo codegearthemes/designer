@@ -1,0 +1,887 @@
+.designer-process > .designer-process-inner > .designer-process-item:last-child .designer-process-line {
+    display: none;
+}
+
+.designer-process .designer-process-icon-holder {
+    position: relative;
+    z-index: 5;
+}
+
+.designer-process .designer-process-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+    font-size: 60px;
+    background: #f6f6f6;
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: 3;
+}
+
+.designer-process .designer-process-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #333;
+    width: 2.8em;
+    height: 2.8em;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.designer-process .designer-process-line {
+    position: absolute;
+    z-index: 2;
+}
+  
+.designer-process .designer-process-title {
+    margin: 2em 0 0;
+}
+  
+.designer-process .designer-process-text {
+    margin: .3em 0 0;
+}
+
+/* Horizontal */
+
+.designer-process.designer-item-layout--horizontal .designer-process-item-number {
+    width: 2.8em;
+    height: 2.8em;
+    font-size: 20px;
+  }
+  
+  .designer-process.designer-item-layout--horizontal .designer-process-line {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+  }
+  
+  .designer-process.designer-item-layout--horizontal .designer-process-line-inner {
+    width: 100%;
+    height: 100%;
+    border-bottom: #acacac;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item .designer-process-line-inner {
+    transition: transform 1s;
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item .designer-process-icon {
+    transition: transform .35s, opacity .2s;
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item .designer-process-text {
+    transition: transform .35s, opacity .2s;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(1) {
+    transition-delay: 0s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(1) .designer-process-line-inner {
+    transition-delay: 0.25s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(1) .designer-process-icon {
+    transition-delay: 0s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(1) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(1) .designer-process-text {
+    transition-delay: 0.1s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(2) {
+    transition-delay: 0.35s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(2) .designer-process-line-inner {
+    transition-delay: 0.6s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(2) .designer-process-icon {
+    transition-delay: 0.35s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(2) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(2) .designer-process-text {
+    transition-delay: 0.45s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(3) {
+    transition-delay: 0.7s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(3) .designer-process-line-inner {
+    transition-delay: 0.95s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(3) .designer-process-icon {
+    transition-delay: 0.7s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(3) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(3) .designer-process-text {
+    transition-delay: 0.8s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(4) {
+    transition-delay: 1.05s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(4) .designer-process-line-inner {
+    transition-delay: 1.3s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(4) .designer-process-icon {
+    transition-delay: 1.05s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(4) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(4) .designer-process-text {
+    transition-delay: 1.15s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(5) {
+    transition-delay: 1.4s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(5) .designer-process-line-inner {
+    transition-delay: 1.65s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(5) .designer-process-icon {
+    transition-delay: 1.4s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(5) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(5) .designer-process-text {
+    transition-delay: 1.5s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(6) {
+    transition-delay: 1.75s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(6) .designer-process-line-inner {
+    transition-delay: 2s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(6) .designer-process-icon {
+    transition-delay: 1.75s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(6) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(6) .designer-process-text {
+    transition-delay: 1.85s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(7) {
+    transition-delay: 2.1s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(7) .designer-process-line-inner {
+    transition-delay: 2.35s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(7) .designer-process-icon {
+    transition-delay: 2.1s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(7) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(7) .designer-process-text {
+    transition-delay: 2.2s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(8) {
+    transition-delay: 2.45s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(8) .designer-process-line-inner {
+    transition-delay: 2.7s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(8) .designer-process-icon {
+    transition-delay: 2.45s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(8) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(8) .designer-process-text {
+    transition-delay: 2.55s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(9) {
+    transition-delay: 2.8s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(9) .designer-process-line-inner {
+    transition-delay: 3.05s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(9) .designer-process-icon {
+    transition-delay: 2.8s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(9) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(9) .designer-process-text {
+    transition-delay: 2.9s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(10) {
+    transition-delay: 3.15s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(10) .designer-process-line-inner {
+    transition-delay: 3.4s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(10) .designer-process-icon {
+    transition-delay: 3.15s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(10) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(10) .designer-process-text {
+    transition-delay: 3.25s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(11) {
+    transition-delay: 3.5s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(11) .designer-process-line-inner {
+    transition-delay: 3.75s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(11) .designer-process-icon {
+    transition-delay: 3.5s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(11) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(11) .designer-process-text {
+    transition-delay: 3.6s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(12) {
+    transition-delay: 3.85s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(12) .designer-process-line-inner {
+    transition-delay: 4.1s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(12) .designer-process-icon {
+    transition-delay: 3.85s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(12) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(12) .designer-process-text {
+    transition-delay: 3.95s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(13) {
+    transition-delay: 4.2s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(13) .designer-process-line-inner {
+    transition-delay: 4.45s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(13) .designer-process-icon {
+    transition-delay: 4.2s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(13) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(13) .designer-process-text {
+    transition-delay: 4.3s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(14) {
+    transition-delay: 4.55s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(14) .designer-process-line-inner {
+    transition-delay: 4.8s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(14) .designer-process-icon {
+    transition-delay: 4.55s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(14) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(14) .designer-process-text {
+    transition-delay: 4.65s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(15) {
+    transition-delay: 4.9s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(15) .designer-process-line-inner {
+    transition-delay: 5.15s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(15) .designer-process-icon {
+    transition-delay: 4.9s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(15) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(15) .designer-process-text {
+    transition-delay: 5s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(16) {
+    transition-delay: 5.25s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(16) .designer-process-line-inner {
+    transition-delay: 5.5s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(16) .designer-process-icon {
+    transition-delay: 5.25s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(16) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(16) .designer-process-text {
+    transition-delay: 5.35s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(17) {
+    transition-delay: 5.6s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(17) .designer-process-line-inner {
+    transition-delay: 5.85s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(17) .designer-process-icon {
+    transition-delay: 5.6s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(17) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(17) .designer-process-text {
+    transition-delay: 5.7s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(18) {
+    transition-delay: 5.95s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(18) .designer-process-line-inner {
+    transition-delay: 6.2s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(18) .designer-process-icon {
+    transition-delay: 5.95s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(18) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(18) .designer-process-text {
+    transition-delay: 6.05s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(19) {
+    transition-delay: 6.3s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(19) .designer-process-line-inner {
+    transition-delay: 6.55s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(19) .designer-process-icon {
+    transition-delay: 6.3s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(19) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(19) .designer-process-text {
+    transition-delay: 6.4s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(20) {
+    transition-delay: 6.65s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(20) .designer-process-line-inner {
+    transition-delay: 6.9s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(20) .designer-process-icon {
+    transition-delay: 6.65s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(20) .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear .designer-process-item:nth-child(20) .designer-process-text {
+    transition-delay: 6.75s;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear.designer-process--appeared .designer-process-item .designer-process-line-inner {
+    transform: scaleX(1);
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear.designer-process--appeared .designer-process-item .designer-process-icon {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear.designer-process--appeared .designer-process-item .designer-process-title,
+  .designer-process.designer-item-layout--horizontal.designer--process-has-appear.designer-process--appeared .designer-process-item .designer-process-text {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+.designer-process .designer-process-inner {
+    position: relative;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax( 0 , 1fr));
+    overflow: hidden;
+}
+
+
+
+@media (max-width: 767px) {
+  .designer-process .designer-process-inner {
+      grid-template-columns: repeat(1,minmax( 0,1fr));
+  }
+}
+
+
+/* ==========================================================================
+   Vertical Process  styles
+   ========================================================================== */
+
+.designer-process.designer-item-layout--vertical .designer-process-inner {
+    grid-template-columns: minmax(0,1fr);
+}
+
+.designer-process.designer-item-layout--vertical .designer-process-inner {
+    grid-row-gap: 0;
+}
+
+.designer-process.designer-item-layout--vertical .designer-process-content {
+    display: flex;
+    align-items: stretch;
+}
+
+.designer-process.designer-item-layout--vertical .designer-process-text-wrapper {
+    margin-left: 30px;
+}
+
+.designer-process.designer-item-layout--vertical .designer-process-item:not(:last-child) .designer-process-icon-holder {
+    padding-bottom: 50px;
+}
+
+.designer-process.designer-item-layout--vertical .designer-process-icon {
+    font-size: 40px;
+}
+
+.designer-process.designer-item-layout--vertical .designer-process-line {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.designer-process.designer-item-layout--vertical .designer-process-line-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 1px solid #acacac;
+}
+
+.designer-process.designer-item-layout--vertical .designer-process-title {
+    margin: 0;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item .designer-process-line-inner {
+    transition: transform .8s;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item .designer-process-icon {
+    transition: opacity .35s;
+    opacity: 0;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item .designer-process-text {
+    transition: transform .35s, opacity .25s;
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(1) .designer-process-line-inner {
+    transition-delay: 0s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(1) .designer-process-icon {
+    transition-delay: 0s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(1) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(1) .designer-process-text {
+    transition-delay: 0.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(2) {
+    transition-delay: 0.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(2) .designer-process-line-inner {
+    transition-delay: 0.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(2) .designer-process-icon {
+    transition-delay: 0.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(2) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(2) .designer-process-text {
+    transition-delay: 0.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(3) {
+    transition-delay: 1s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(3) .designer-process-line-inner {
+    transition-delay: 1s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(3) .designer-process-icon {
+    transition-delay: 1s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(3) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(3) .designer-process-text {
+transition-delay: 1.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(4) {
+    transition-delay: 1.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(4) .designer-process-line-inner {
+    transition-delay: 1.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(4) .designer-process-icon {
+    transition-delay: 1.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(4) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(4) .designer-process-text {
+    transition-delay: 1.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(5) {
+    transition-delay: 2s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(5) .designer-process-line-inner {
+    transition-delay: 2s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(5) .designer-process-icon {
+    transition-delay: 2s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(5) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(5) .designer-process-text {
+    transition-delay: 2.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(6) {
+    transition-delay: 2.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(6) .designer-process-line-inner {
+    transition-delay: 2.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(6) .designer-process-icon {
+    transition-delay: 2.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(6) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(6) .designer-process-text {
+    transition-delay: 2.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(7) {
+    transition-delay: 3s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(7) .designer-process-line-inner {
+    transition-delay: 3s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(7) .designer-process-icon {
+    transition-delay: 3s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(7) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(7) .designer-process-text {
+    transition-delay: 3.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(8) {
+    transition-delay: 3.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(8) .designer-process-line-inner {
+    transition-delay: 3.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(8) .designer-process-icon {
+    transition-delay: 3.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(8) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(8) .designer-process-text {
+    transition-delay: 3.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(9) {
+    transition-delay: 4s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(9) .designer-process-line-inner {
+    transition-delay: 4s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(9) .designer-process-icon {
+    transition-delay: 4s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(9) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(9) .designer-process-text {
+    transition-delay: 4.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(10) {
+    transition-delay: 4.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(10) .designer-process-line-inner {
+    transition-delay: 4.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(10) .designer-process-icon {
+    transition-delay: 4.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(10) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(10) .designer-process-text {
+    transition-delay: 4.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(11) {
+    transition-delay: 5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(11) .designer-process-line-inner {
+    transition-delay: 5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(11) .designer-process-icon {
+transition-delay: 5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(11) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(11) .designer-process-text {
+    transition-delay: 5.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(12) {
+    transition-delay: 5.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(12) .designer-process-line-inner {
+    transition-delay: 5.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(12) .designer-process-icon {
+    transition-delay: 5.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(12) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(12) .designer-process-text {
+    transition-delay: 5.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(13) {
+    transition-delay: 6s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(13) .designer-process-line-inner {
+transition-delay: 6s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(13) .designer-process-icon {
+    transition-delay: 6s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(13) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(13) .designer-process-text {
+    transition-delay: 6.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(14) {
+    transition-delay: 6.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(14) .designer-process-line-inner {
+    transition-delay: 6.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(14) .designer-process-icon {
+    transition-delay: 6.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(14) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(14) .designer-process-text {
+    transition-delay: 6.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(15) {
+    transition-delay: 7s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(15) .designer-process-line-inner {
+    transition-delay: 7s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(15) .designer-process-icon {
+    transition-delay: 7s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(15) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(15) .designer-process-text {
+    transition-delay: 7.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(16) {
+    transition-delay: 7.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(16) .designer-process-line-inner {
+    transition-delay: 7.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(16) .designer-process-icon {
+    transition-delay: 7.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(16) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(16) .designer-process-text {
+    transition-delay: 7.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(17) {
+    transition-delay: 8s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(17) .designer-process-line-inner {
+transition-delay: 8s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(17) .designer-process-icon {
+    transition-delay: 8s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(17) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(17) .designer-process-text {
+    transition-delay: 8.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(18) {
+    transition-delay: 8.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(18) .designer-process-line-inner {
+    transition-delay: 8.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(18) .designer-process-icon {
+    transition-delay: 8.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(18) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(18) .designer-process-text {
+    transition-delay: 8.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(19) {
+    transition-delay: 9s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(19) .designer-process-line-inner {
+    transition-delay: 9s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(19) .designer-process-icon {
+    transition-delay: 9s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(19) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(19) .designer-process-text {
+    transition-delay: 9.15s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(20) {
+    transition-delay: 9.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(20) .designer-process-line-inner {
+    transition-delay: 9.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(20) .designer-process-icon {
+    transition-delay: 9.5s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(20) .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear .designer-process-item:nth-child(20) .designer-process-text {
+    transition-delay: 9.65s;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear.designer-process--appeared .designer-process-item .designer-process-line-inner {
+    transform: scaleY(1);
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear.designer-process--appeared .designer-process-item .designer-process-icon {
+    opacity: 1;
+}
+
+.designer-process.designer-item-layout--vertical.designer--process-has-appear.designer-process--appeared .designer-process-item .designer-process-title,
+.designer-process.designer-item-layout--vertical.designer--process-has-appear.designer-process--appeared .designer-process-item .designer-process-text {
+    transform: translateX(0);
+    opacity: 1;
+}

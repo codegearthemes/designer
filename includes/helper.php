@@ -168,7 +168,20 @@ class Helper{
         return $options;
     }
 
-    
+    /**
+     * Button Hover Reveal Background
+     * More options to add in future
+     */
+
+     public function button_hover_background_reveal() {
+        return [
+            '' => esc_html__( 'None', 'designer' ),
+            'reveal-horizontal' => esc_html__( 'Horizontal', 'designer' ),
+            'reveal-vertical' => esc_html__( 'Vertical', 'designer' ),
+            'shutter-out' => esc_html__( 'Shutter Out', 'designer' ),
+        ];
+    }
+
     /**
      * Button Classes
      * @return array

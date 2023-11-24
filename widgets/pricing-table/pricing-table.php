@@ -2026,12 +2026,7 @@ class Pricing_Table extends Widget_Base {
 				'label' => esc_html__( 'Background Reveal', 'designer' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
-				'options' => [
-					'' => esc_html__( 'None', 'designer' ),
-					'reveal-horizontal' => esc_html__( 'Horizontal', 'designer' ),
-					'reveal-vertical'  => esc_html__( 'Vertical', 'designer' ),
-					'shutter-out'  => esc_html__( 'Shutter Out', 'designer' ),
-				],
+				'options' => Helper::instance()->button_hover_background_reveal(),
 				'condition'	=> [
 					'button_layout!'	=> 'text-link',
 				]

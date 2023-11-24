@@ -43,9 +43,20 @@ class Widget_Lists {
             'image-marquee',
             'countdown',
             'contact',
-
-
+            'process',
+            'pricing-list',
+            'video-popup',
+            'progress-bar',
         ];
+
+        if ( class_exists('woocommerce') ) {
+
+            $woo_widgets = [
+                'products',
+            ];
+
+            $widgets = array_merge( $widgets, $woo_widgets );
+        }
 
         foreach ( $widgets as $widget ) {
 
