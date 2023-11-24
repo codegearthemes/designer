@@ -53,6 +53,7 @@ class Widget_Lists {
 
             $woo_widgets = [
                 'products',
+                'products-slider',
             ];
 
             $widgets = array_merge( $widgets, $woo_widgets );
