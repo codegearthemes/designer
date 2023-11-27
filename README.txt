@@ -19,14 +19,17 @@ Build a beautiful website with Designer in less time without any coding skills.
 
 ## 42+ Elementor Widgets
 
+= Pricing table =
+Elementor's Pricing Table widget streamlines pricing presentation, offering customization and responsiveness. Ideal for showcasing products or services, it enhances websites with visually appealing and user-friendly pricing information.
+
+= Image hotspots =
+Elementor's Image Hotspots widget boosts engagement by adding clickable points to images, ideal for dynamic product showcases or interactive content.
+
 = Slider =
 Enhance your website with a sophisticated yet lightweight image slider featuring advanced functionalities and customizable settings. Elevate your user experience by seamlessly integrating this dynamic element into your site.
 
 = Product slider =
-Products Slider Elementor widget is a versatile tool designed to effortlessly showcase your range of products. With sleek and customizable features, this widget allows for seamless integration into your website, enabling you to highlight your offerings in a visually appealing and dynamic slider format. Tailor the display to suit your brand's aesthetics and captivate your audience with a captivating presentation of your products.
-
-= Requirements =
-* WordPress 5.1 or later.
+Effortlessly showcase your products using the Products Slider Elementor widget. Customize the slider to match your brand and engage your audience with a dynamic presentation.
 
 == Installation ==
 
