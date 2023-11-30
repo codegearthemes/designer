@@ -1,0 +1,340 @@
+
+
+.block-collection .caption .title,
+.block-collection .caption .block-action__advanced {
+    display: inline-block;
+    width: 100%;
+}
+
+.designer-collection-button-row .block-collection__layout-1 .caption-inner{
+    width: 100%;
+}
+
+.designer-collection-button-row .block-collection .caption .title,
+.designer-collection-button-row .block-collection .caption .block-action__advanced {
+    width: auto;
+}
+
+/* Image Hover Style */
+
+.block-collection .collection-image:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color .35s ease-out;
+    pointer-events: none;
+}
+
+.block-collection.designer-image--hover-zoom .collection-image img {
+    display: block;
+    width: calc(100% + 2px);
+    transform: scale(1.01) translateZ(0);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.block-collection.designer-image--hover-zoom .collection-inner:hover .collection-image img {
+    transform: scale(1.03);
+}
+
+.block-collection.designer-image--hover-zoom-out .collection-image img {
+    display: block;
+    width: calc(100% + 2px);
+    transform: scale(1.03) translateZ(0);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.block-collection.designer-image--hover-zoom-out .collection-inner:hover .collection-image img {
+    transform: scale(1);
+}
+
+.block-collection.designer-image--hover-move .collection-image img {
+    display: block;
+    width: calc(100% + 2px);
+    transform: scale(1.2);
+    transition: transform 0.5s cubic-bezier(0.33, 0.02, 0, 0.93);
+    will-change: transform;
+}
+
+.block-collection.designer-image--hover-move .collection-inner:hover .collection-image img {
+    transform: scale(1.2) translateX(12px);
+}
+
+.block-collection.designer-image--hover-from-top .collection-image img {
+    transform-origin: top;
+}
+
+.block-collection.designer-image--hover-from-bottom .collection-image img {
+    transform-origin: bottom;
+}
+
+.block-collection.designer-image--hover-from-left .collection-image img {
+    transform-origin: left;
+}
+
+.block-collection.designer-image--hover-from-right .collection-image img {
+    transform-origin: right;
+}
+
+
+/* Button */
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-layout--btn-link{
+    color: #fff;
+    background-color: #111;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-layout--outlined{
+    color: #111;
+    background-color: #f4f4f4;
+    border-color: #f4f4f4;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-layout--text-link{
+    color: #111;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-text-underline:not(.designer-button-underline-draw) .label:after{
+    width: 0;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-button-underline-draw.designer-underline--left .label:after,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-button-underline-draw.designer-underline--right .label:after{
+    animation: designer-animate-underline-from-left .7s cubic-bezier(.45,.29,0,.82) forwards;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-button-underline-draw.designer-underline--right .label:after{
+    animation: designer-animate-underline-from-right .7s cubic-bezier(.45,.29,0,.82) forwards;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner i:nth-child(1),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner svg:nth-child(1),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner i:nth-child(1),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner svg:nth-child(1),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner i:nth-child(1),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner svg:nth-child(1) {
+    opacity: 0;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner i:nth-child(2),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner svg:nth-child(2),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner i:nth-child(2),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner svg:nth-child(2),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner i:nth-child(2),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner svg:nth-child(2) {
+    transform: translateX(0) translateY(0) translatez(0);
+    transition-delay: .25s;
+    opacity: 1;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner i:nth-child(1),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-horizontal .designer-m-icon-inner svg:nth-child(1) {
+    transform: translateX(200%) translateY(0);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner i:nth-child(1),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-vertical .designer-m-icon-inner svg:nth-child(1) {
+    transform: translateX(0) translateY(-150%) translateZ(0);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner i:nth-child(1),
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-diagonal .designer-m-icon-inner svg:nth-child(1) {
+    transform: translateX(100%) translateY(-100%) translateZ(0);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-horizontal-short .designer-m-icon-inner i,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--icon-move-horizontal-short .designer-m-icon-inner svg {
+    transform: translateX(4px);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--reveal:after {
+    transform: scaleX(1) scaleY(1);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-hover--reveal.designer-layout--outlined {
+    background-color: initial;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .block-advanced__btn.designer-icon-background-hover--reveal .designer-m-icon:after {
+    transform: scaleX(1) scaleY(1);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-center .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-center .designer-m-inner-border-copy .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-center .designer-m-inner-border-copy .designer-m-border-right,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-center .designer-m-inner-border-copy .designer-m-border-top,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-right,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-top,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-two-points .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-two-points .designer-m-inner-border-copy .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-two-points .designer-m-inner-border-copy .designer-m-border-right,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-two-points .designer-m-inner-border-copy .designer-m-border-top {
+    transform: scaleX(1) scaleY(1);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-top {
+    transition-delay: 0s
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-inner-border-hover--draw.d-draw-one-point .designer-m-inner-border-copy .designer-m-border-right {
+    transition-delay: .28s;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center .designer-m-inner-border .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center .designer-m-inner-border .designer-m-border-top,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point .designer-m-inner-border .designer-m-border-top,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points .designer-m-inner-border .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points .designer-m-inner-border .designer-m-border-top {
+    transform: scaleX(0);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center .designer-m-inner-border .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center .designer-m-inner-border .designer-m-border-right,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points .designer-m-inner-border .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points .designer-m-inner-border .designer-m-border-right {
+    transform: scaleY(0);
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-top,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-top,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-left,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-top {
+    transition-delay: 0s,.28s;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-center.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-one-point.d-remove-one-point .designer-m-inner-border .designer-m-border-right,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-bottom,
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--remove.d-remove-two-points.d-remove-one-point .designer-m-inner-border .designer-m-border-right {
+    transition-delay: 0s,0s;
+}
+
+.designer-button-hover-control-box .block-collection .collection-inner:hover .designer-type--inner-border.designer-inner-border-hover--move-outer-edge .designer-m-inner-border {
+    top: -1em;
+    left: -1em;
+    width: calc(100% + 2em);
+    height: calc(100% + 2em);
+}
+
+/* Navigation Arrow */
+.block-collection__slider .slide-next i,
+.block-collection__slider .slide-next svg{
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+
+.block-collection__slider .swiper-pagination{
+	position: relative;
+	bottom: 0px;
+}
+
+.block-collection__slider .swiper-scrollbar-horizontal{
+	top: 20px;
+	position: relative !important;
+}
+
+.block-collection__slider.designer-navigation__outside .slide-next{
+	right: -75px;
+    z-index: 1;
+}
+
+.block-collection__slider.designer-navigation__outside .slide-previous{
+	left: -75px;
+    z-index: 1;
+}
+
+.block-collection__slider.designer-navigation__inside .slide-next {
+    right: 30px;
+}
+
+.block-collection__slider.designer-navigation__inside .slide-previous {
+    left: 30px;
+}
+
+.block-collection__slider .designer-swiper-together-nav {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 30px;
+    z-index: 1
+}
+
+.block-collection__slider .designer-swiper-together-nav .designer-swiper-together-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.block-collection__slider .designer-swiper-together-nav .slide-next,
+.block-collection__slider .designer-swiper-together-nav .slide-previous {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    z-index: 15
+}
+
+.block-collection__slider .designer-swiper-together-nav .slide-previous{
+    margin-right: 20px!important
+}
+
+.designer-navigation-alignment--flex-start .designer-swiper-together-nav {
+    justify-content: flex-start;
+    right: auto!important;
+}
+
+.designer-navigation-alignment--flex-end .designer-swiper-together-nav {
+    justify-content: flex-end;
+    left: auto!important;
+}
+
+.designer-navigation-together--top .designer-swiper-together-nav {
+    bottom: 100%;
+    margin-top: 0!important;
+    margin-bottom: 30px;
+}
+
+
+@media screen and (max-width: 1440px) {
+    .block-collection__slider .slide-next{
+        right: 15px;
+    }
+
+    .block-collection__slider .slide-previous{
+        left: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .designer-hide-navigation__1024 .designer-swiper-together-nav,
+    .designer-hide-navigation__1024 .slide-next,
+    .designer-hide-navigation__1024 .slide-previous {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .designer-hide-navigation__1024 .designer-swiper-together-nav,
+    .designer-hide-navigation__1024 .slide-next,
+    .designer-hide-navigation__1024 .slide-previous {
+        display: none;
+    }
+}

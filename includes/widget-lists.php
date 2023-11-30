@@ -47,6 +47,7 @@ class Widget_Lists {
             'pricing-list',
             'video-popup',
             'progress-bar',
+           
         ];
 
         if ( class_exists('woocommerce') ) {
@@ -54,6 +55,8 @@ class Widget_Lists {
             $woo_widgets = [
                 'products',
                 'products-slider',
+                'collection',
+                'collection-slider',
             ];
 
             $widgets = array_merge( $widgets, $woo_widgets );
