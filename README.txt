@@ -68,7 +68,9 @@ This plugin adds custom made elementor widgets which helps to customize with ele
 == Changelog ==
 
 = 1.2.6 (Released: December 05, 2023) =
-* [Update]
+* [New] Product category
+* [New] Product category slider
+* [Fix] Minor compatibility fixes
 
 = 1.2.5 (Released: November 27, 2023) =
 * [New] Process
