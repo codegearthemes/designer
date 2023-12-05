@@ -36,7 +36,7 @@ final class Designer{
 	 *
 	 */
 	public static function version() {
-		return '1.2.5';
+		return '1.2.6';
 	}
 
     /**
