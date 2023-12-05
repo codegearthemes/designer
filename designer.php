@@ -9,7 +9,7 @@
  * Text Domain: designer
  * Domain Path: /languages
  * Requires at least: 5.1
- * Tested up to: 6.3
+ * Tested up to: 6.4.1
  * Requires PHP: 7.2
  * License:  GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
