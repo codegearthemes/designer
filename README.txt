@@ -1,10 +1,10 @@
-=== Designer ===
+=== Designer - Addons for Elementor ===
 Contributors: CodeGearThemes
 Tags: codegearthemes, codegear, elementor, page builder, import, sites
 Requires at least: 5.1
-Tested up to: 6.3
+Tested up to: 6.4.1
 Requires PHP: 7.2
-Stable tag: 1.2.2
+Stable tag: 1.2.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://www.buymeacoffee.com/codegearthemes
@@ -17,8 +17,19 @@ Designer is a powerful and advanced all in one Elementor addons that help you to
 
 Build a beautiful website with Designer in less time without any coding skills.
 
-= Requirements =
-* WordPress 5.1 or later.
+## 42+ Elementor Widgets
+
+= Pricing table =
+Elementor's Pricing Table widget streamlines pricing presentation, offering customization and responsiveness. Ideal for showcasing products or services, it enhances websites with visually appealing and user-friendly pricing information.
+
+= Image hotspots =
+Elementor's Image Hotspots widget boosts engagement by adding clickable points to images, ideal for dynamic product showcases or interactive content.
+
+= Slider =
+Enhance your website with a sophisticated yet lightweight image slider featuring advanced functionalities and customizable settings. Elevate your user experience by seamlessly integrating this dynamic element into your site.
+
+= Product slider =
+Effortlessly showcase your products using the Products Slider Elementor widget. Customize the slider to match your brand and engage your audience with a dynamic presentation.
 
 == Installation ==
 
@@ -41,11 +52,39 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 == Frequently Asked Questions ==
 
-= Will this Designer plugin work with Elementor? =
+= Does it work with any theme?
+
+It will work with any theme as long as Elementor plugin is installed.
+
+= Can I use the plugin without Elementor Page Builder?
+
+No. You cannot use without Elementor since it’s an addon for Elementor.
+
+= Will this plugin work with Elementor? =
 
 This plugin adds custom made elementor widgets which helps to customize with elementor builder with ease.
 
+
 == Changelog ==
+
+= 1.2.6 (Released: December 05, 2023) =
+* [Update]
+
+= 1.2.5 (Released: November 27, 2023) =
+* [New] Process
+* [New] Promo box
+* [New] Countdown
+* [New] Contact form
+* [New] Text marquee
+* [New] Image marquee
+* [New] Pricing table
+* [New] Image hotspots
+* [New] Button Advanced
+* [New] Pricing list
+* [New] Video popup
+* [New] Progress bar
+* [New] Products
+* [New] Products slider
 
 = 1.2.2 (Released: November 20, 2023) =
 * [New] Vertical tabs
