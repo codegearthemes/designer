@@ -3,7 +3,7 @@
  * Plugin Name: Designer - Elementor Addons
  * Plugin URI:  https://codegearthemes.com/products/designer
  * Description: Designer is the most-complete addon for Elementor.
- * Version: 1.2.5
+ * Version: 1.2.6
  * Author: CodeGearThemes
  * Author URI:  https://codegearthemes.com
  * Text Domain: designer
