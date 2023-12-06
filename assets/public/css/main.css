@@ -3331,6 +3331,11 @@
 /*-------------------------------------------------------------
 				Icon Text
 ------------------------------------------------------------- */
+.designer-icon-text .block-action__advanced {
+    display: inline-flex;
+}
+
+.designer-icon-text
 .designer-icon-text .designer-title {
     margin: 0;
 }
@@ -3462,6 +3467,25 @@
     }
 }
 
+.designer-icon-text.designer-layout--before-title .designer-title {
+    line-height: 1;
+}
+  
+.designer-icon-text.designer-layout--before-title .designer-title a {
+    transition: color 0.2s ease-out;
+}
+  
+.designer-icon-text.designer-layout--before-title .designer-title-inner {
+    display: flex;
+    align-items: center;
+}
+  
+.designer-icon-text.designer-layout--before-title .designer-m-icon-wrapper {
+    flex-shrink: 0;
+    margin-right: .15em;
+    transition: color 0.2s ease-out;
+}
+
 .designer-icon-text.designer-layout--top.designer-alignment--center {
     text-align: center;
 }
@@ -3490,9 +3514,9 @@
     height: auto;
     font-size: 0;
     line-height: 1;
-  }
+}
   
-  .designer-separator .designer-line {
+.designer-separator .designer-line {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -3501,19 +3525,71 @@
     color: #111;
     border-bottom: 1em solid currentColor;
     margin: 10px 0;
-  }
+}
   
-  .designer-separator.designer-position--center {
+.designer-separator.designer-position--center {
     text-align: center;
-  }
+}
   
-  .designer-separator.designer-position--left {
+.designer-separator.designer-position--left {
     text-align: left;
-  }
+}
   
-  .designer-separator.designer-position--right {
+.designer-separator.designer-position--right {
     text-align: right;
-  }
+}
+
+.designer-separator.designer-separator--border-image .designer-line {
+    font-size: 12px;
+    height: 1em;
+    border-bottom: none;
+    margin: 10px 0;
+    background-size: contain;
+    background-repeat: round;
+}
+
+.designer-separator.designer-separator--with-icon {
+    display: flex;
+}
+  
+.designer-separator.designer-separator--with-icon .designer-line {
+    display: flex;
+    align-items: center;
+    border-width: 0;
+}
+  
+.designer-separator.designer-separator--with-icon .designer-separator-icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+    margin: 0 1em;
+}
+  
+.designer-separator.designer-separator--with-icon .designer-separator-icon svg {
+    width: 1em;
+    fill: currentColor;
+    stroke: currentColor;
+}
+  
+.designer-separator.designer-separator--with-icon .designer-inner-line {
+    width: 50%;
+    border-color: currentColor;
+    border-style: inherit;
+    border-width: 1em;
+}
+  
+.designer-separator.designer-separator--with-icon.designer-position--center {
+    justify-content: center;
+}
+  
+.designer-separator.designer-separator--with-icon.designer-position--left {
+    justify-content: flex-start;
+}
+  
+.designer-separator.designer-separator--with-icon.designer-position--right {
+    justify-content: flex-end;
+}
+
+
 
 
 

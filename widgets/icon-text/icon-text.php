@@ -147,7 +147,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::ICONS,
                 'default' => [
 					'value' => 'far fa-paper-plane',
-					'library' => 'fa-solid',
+					'library' => 'fa-regular',
 				],
 			]
 		);
@@ -221,7 +221,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'label' => __( 'Title', 'designer' ),
-				'default' => __( 'Title Here', 'designer' ),
+				'default' => __( 'Sample Title', 'designer' ),
 			]
 		);
 
@@ -392,35 +392,6 @@ class Icon_Text extends Widget_Base {
 
 		);
 
-		$this->add_responsive_control(
-            'button_alignment',
-            [
-                'label' => __( 'Button Alignment', 'designer' ),
-                'type' => Controls_Manager::CHOOSE,
-                'label_block' => false,
-                'default' => 'flex-start',
-                'options' => [
-                    'flex-start' => [
-                        'title' => __( 'Left', 'designer' ),
-                        'icon' => 'eicon-h-align-left',
-                    ],
-                    'center' => [
-                        'title' => __( 'Center', 'designer' ),
-                        'icon' => 'eicon-h-align-center',
-                    ],
-                    'flex-end' => [
-                        'title' => __( 'Right', 'designer' ),
-                        'icon' => 'eicon-h-align-right',
-                    ],
-                ],
-                'toggle' => true,
-				'separator'	=> 'before',
-				'selectors' => [
-                    '{{WRAPPER}} .block-action__advanced ' => 'justify-content: {{VALUE}};',
-                ],
-            ]
-        );
-
         $this->add_control(
 			'accessibility',
 			[
@@ -471,8 +442,9 @@ class Icon_Text extends Widget_Base {
 			[
 				'label'   => __( 'Position', 'designer' ),
 				'type'    => Controls_Manager::SELECT,
-				'default' => 'left',
+				'default' => '',
 				'options' => [
+					'' => __( 'Default', 'designer' ),
 					'center'	=> __( 'Center', 'designer' ),
 					'left'		=> __( 'Left', 'designer' ),
                     'right'		=> __( 'Right', 'designer' ),
@@ -518,7 +490,7 @@ class Icon_Text extends Widget_Base {
                     'contain'		=> __( 'Contain', 'designer' ),
                 ],
 				'selectors'	=> [
-					'{{WRAPPER}}' => '',
+					'{{WRAPPER}} .designer-line' => 'background-size: {{VALUE}};',
 				],
 				'condition' => [
 					'separator_layout' => 'border-image',
@@ -539,7 +511,7 @@ class Icon_Text extends Widget_Base {
                     'right'		=> __( 'Right', 'designer' ),
                 ],
 				'selectors'	=> [
-					'{{WRAPPER}}' => '',
+					'{{WRAPPER}} .designer-line' => 'background-position: top {{VALUE}};',
 				],
 				'condition' => [
 					'separator_layout' => 'border-image',
@@ -562,7 +534,7 @@ class Icon_Text extends Widget_Base {
 					'no-repeat'		=> __( 'None', 'designer' ),
                 ],
 				'selectors'	=> [
-					'{{WRAPPER}}' => '',
+					'{{WRAPPER}} .designer-line' => 'background-repeat: {{VALUE}};',
 				],
 				'condition' => [
 					'separator_layout' => 'border-image',
@@ -638,7 +610,7 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Title Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-title .designer-title-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -649,7 +621,7 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Title Hover Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-title:hover .designer-title-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -660,7 +632,7 @@ class Icon_Text extends Widget_Base {
 				'name' => 'title_typography',
 				'label' => esc_html__( 'Title Typography', 'designer' ),
 				'scheme' => Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} ',
+				'selector' => '{{WRAPPER}} .designer-title .designer-title-text',
 			]
 		);
 
@@ -670,7 +642,7 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Text Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-content .designer-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -681,11 +653,38 @@ class Icon_Text extends Widget_Base {
 				'name' => 'text_typography',
 				'label' => esc_html__( 'Text Typography', 'designer' ),
 				'scheme' => Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} ',
+				'selector' => '{{WRAPPER}} .designer-content .designer-text',
 			]
 		);
 
-
+		$this->add_responsive_control(
+            'content_alignment',
+            [
+                'label'     => __( 'Content Alignment', 'designer' ),
+                'type'      => Controls_Manager::CHOOSE,
+                'options'   => [
+                    'left' => [
+                        'title' => __( 'Left', 'designer' ),
+                        'icon'  => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => __( 'Center', 'designer' ),
+                        'icon'  => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => __( 'Right', 'designer' ),
+                        'icon'  => 'eicon-text-align-right',
+                    ],
+                ],
+                'default'   => 'center',
+				'selectors' => [
+					'{{WRAPPER}} .designer-icon-text.designer-layout--top' => 'text-align: {{VALUE}};',
+				],
+				'condition' => [
+					'layout' => 'top',
+				],
+            ]
+        );
 
 		$this->end_controls_section();
 	}
@@ -718,7 +717,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .designer-title' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-text' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -730,7 +729,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} ' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .designer-icon-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],	
 			]
 		);
@@ -742,7 +741,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} ' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .block-action__advanced' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -780,7 +779,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px','em'],
 				'selectors' => [
-					'{{WRAPPER}} .designer-title' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-icon-holder' => 'font-size: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -809,7 +808,7 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Icon Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-icon-holder' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -820,7 +819,7 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Icon Background Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-icon-holder' => 'background-color: {{VALUE}}',
 				],
 				'condition'	=> [
 					'icon_boxed' => ['yes']
@@ -834,11 +833,25 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Icon Border Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .designer-icon-holder' => 'border-color: {{VALUE}}',
 				],
 				'condition'	=> [
 					'icon_boxed' => ['yes']
 				]
+			]
+		);
+
+		$this->add_control(
+			'icon_stroke_color',
+			[
+				'label' => esc_html__( 'Icon Stroke  Color', 'designer' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .designer-icon-holder svg' => 'stroke: {{VALUE}}',
+				],
+				'condition' => [
+					'icon_type[library]' => 'svg',
+				],
 			]
 		);
 
@@ -858,7 +871,7 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Icon Hover Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-icon-text:hover .designer-icon-holder' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -869,7 +882,7 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Icon Background Hover Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .designer-icon-text:hover .designer-icon-holder' => 'background-color: {{VALUE}}',
 				],
 				'condition'	=> [
 					'icon_boxed' => ['yes']
@@ -883,11 +896,25 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Icon Border Hover Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-icon-text:hover .designer-icon-holder' => 'border-color: {{VALUE}}',
 				],
 				'condition'	=> [
 					'icon_boxed' => ['yes']
 				]
+			]
+		);
+
+		$this->add_control(
+			'icon_stroke_hover_color',
+			[
+				'label' => esc_html__( 'Icon Stroke Hover Color', 'designer' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .designer-icon-text:hover .designer-icon-holder svg' => 'stroke: {{VALUE}}',
+				],
+				'condition' => [
+					'icon_type[library]' => 'svg',
+				],
 			]
 		);
 
@@ -928,7 +955,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px','em', 'vw'],
 				'selectors' => [
-					'{{WRAPPER}} ' => ': {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-icon-holder' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -940,7 +967,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px','em', 'vw'],
 				'selectors' => [
-					'{{WRAPPER}} ' => ': {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-icon-holder' => 'border-width: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -952,7 +979,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} ' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .designer-icon-holder' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],	
 			]
 		);
@@ -963,16 +990,11 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Icon Stroke Width', 'designer' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 1,
-				'dependency' => [
-					'show' => [
-						'icon_type[library]' => [
-							'values'        => 'svg',
-						]	
-					],
-					
+				'condition' => [
+					'icon_type[library]' => 'svg',
 				],
 				'selectors' => [
-					'{{WRAPPER}} ' => 'stroke-width: {{VALUE}};',
+					'{{WRAPPER}} .designer-icon-holder svg' => 'stroke-width: {{VALUE}};',
 				],	
 			]
 		);
@@ -1753,7 +1775,7 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-line' => 'color: {{VALUE}}',
 				],
 				'condition'	=> [
 					'separator_layout!' => 'border-image'
@@ -1773,6 +1795,9 @@ class Icon_Text extends Widget_Base {
 					'dashed' => esc_html__( 'Dashed', 'designer' ),
 					'dotted' => esc_html__( 'Dotted', 'designer' ),
                 ],
+				'selectors' => [
+					'{{WRAPPER}} .designer-line' => 'border-style: {{VALUE}}',
+				],
                 'condition'	=> [
 					'separator_layout!' => 'border-image',
 				],
@@ -1793,7 +1818,7 @@ class Icon_Text extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .designer-title' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-line' => 'width: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -1805,7 +1830,7 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .designer-title' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-line' => 'font-size: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -1823,7 +1848,7 @@ class Icon_Text extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .designer-title' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-line' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -1841,7 +1866,7 @@ class Icon_Text extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .designer-title' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-line' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],	
 			]
 		);
@@ -1868,7 +1893,10 @@ class Icon_Text extends Widget_Base {
 				'label' => esc_html__( 'Icon Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .designer-separator-icon' => 'color: {{VALUE}}',
+				],
+				'condition' => [
+					'separator_layout' => 'with-icon',
 				],
 			]
 		);
@@ -1880,7 +1908,10 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .designer-title' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .designer-separator-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'separator_layout' => 'with-icon',
 				],	
 			]
 		);
@@ -1892,7 +1923,10 @@ class Icon_Text extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} ' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .designer-separator-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'condition' => [
+					'separator_layout' => 'with-icon',
 				],	
 			]
 		);
@@ -1908,6 +1942,10 @@ class Icon_Text extends Widget_Base {
 		$holder_classes[] = ! empty( $settings['before_content_column_responsive'] ) ? 'designer-column-responsive--' . $settings['before_content_column_responsive'] : '';
 		$holder_classes[] = ( 'yes' === $settings['icon_boxed'] ) ? 'designer-icon-boxed' : '';
 		$holder_classes[] = ! empty( $settings['icon_hover_move'] ) ? 'designer-icon--hover-' . $settings['icon_hover_move'] : '';
+
+		if ( 'top' === $settings['layout'] ) {
+			$holder_classes[] = ! empty( $settings['content_alignment'] ) ? 'designer-alignment--' . $settings['content_alignment'] : 'designer-alignment--center';
+		}
 
 		$icon_class = '';
 
@@ -1946,7 +1984,7 @@ class Icon_Text extends Widget_Base {
 
 		// Get Settings
 		$settings = $this->get_settings();
-
+		
 		$icon_box_style = '';
 
 		if($settings['button_type'] === 'icon-boxed'){

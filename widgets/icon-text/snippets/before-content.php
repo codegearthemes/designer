@@ -1,16 +1,12 @@
-<?php 
-use Designer\Includes\Helper;
-if ( isset( $settings['icon_type'] ) && ! empty( $settings['icon_type']['value'] ) ) : ?>
-    <div class="designer-icon-wrapper">
-        <div class="designer-icon-holder">
-            <?php \Elementor\Icons_Manager::render_icon( $settings['icon_type'], [ 'aria-hidden' => 'true' ] );  ?>
-        </div>
+<div class="designer-icon-wrapper">
+    <div class="designer-icon-holder">
+        <?php \Elementor\Icons_Manager::render_icon( $settings['icon_type'], [ 'aria-hidden' => 'true' ] );  ?>
     </div>
-<?php endif; ?>
+</div>
 <div class="designer-content">
     <?php if ( ! empty( $settings['title']  ) ) : ?>
         <<?php echo esc_attr( $settings['title_tag'] ); ?> class="designer-title">
-            <?php if ( ! empty( $link['url'] ) ) : ?>
+            <?php if ( ! empty( $link_url ) ) : ?>
                 <a <?php echo $this->get_render_attribute_string( 'link_attribute' ); ?> >
             <?php endif; ?>
                 <span class="designer-title-text"><?php echo esc_html( $settings['title'] ); ?></span>
@@ -19,35 +15,38 @@ if ( isset( $settings['icon_type'] ) && ! empty( $settings['icon_type']['value']
             <?php endif; ?>
         </<?php echo esc_attr( $settings['title_tag'] ); ?>>
     <?php endif;?>
-    <div class="designer-separator designer-clear">
-        <div class="<?php echo $this->get_separator_classes($settings);?>">
+    <?php if( 'yes' === $settings['enable_separator']):?>
+        <div class="designer-separator designer-clear">
+            <div class="<?php echo $this->get_separator_classes($settings);?>">
 
-            <?php if( 'standard' === $settings['separator_layout']):?>
-                <div class="designer-line"></div>
-            <?php endif;?>
+                <?php if( 'standard' === $settings['separator_layout']):?>
+                    <div class="designer-line"></div>
+                <?php endif;?>
 
-            <?php if( 'border-image' === $settings['separator_layout']):
-                $border_image_src = $settings['separator_border_image']['url'];   
-            ?>
-                <div class="designer-line" <?php if( $border_image_src ) { echo 'style="background-image:url('.$border_image_src.')"'; } ?> ></div>
-            <?php endif;?>
+                <?php if( 'border-image' === $settings['separator_layout']):
+                    $border_image_src = $settings['separator_border_image']['url'];   
+                ?>
+                    <div class="designer-line" <?php if( $border_image_src ) { echo 'style="background-image:url('.$border_image_src.')"'; } ?> ></div>
+                <?php endif;?>
 
-            <?php if( 'with-icon' === $settings['separator_layout']):?>
-                <div class="designer-line">
-                    <div class="designer-inner-line"></div>
-                    <?php if ( isset( $settings['separator_icon'] ) && ! empty( $settings['separator_icon']['value'] ) ) : ?>
-                        <div class="designer-separator-icon">
-                            <?php \Elementor\Icons_Manager::render_icon( $settings['separator_icon'], [ 'aria-hidden' => 'true' ] );  ?>
-                        </div>
-                    <?php endif;?>
-                        
-                    <div class="designer-inner-line"></div>
-                </div>
-            <?php endif;?>
-            
+                <?php if( 'with-icon' === $settings['separator_layout']):?>
+                    <div class="designer-line">
+                        <div class="designer-inner-line"></div>
+                        <?php if ( isset( $settings['separator_icon'] ) && ! empty( $settings['separator_icon']['value'] ) ) : ?>
+                            <div class="designer-separator-icon">
+                                <?php \Elementor\Icons_Manager::render_icon( $settings['separator_icon'], [ 'aria-hidden' => 'true' ] );  ?>
+                            </div>
+                        <?php endif;?>
+                            
+                        <div class="designer-inner-line"></div>
+                    </div>
+                <?php endif;?>
+                
+            </div>
+
         </div>
-
-    </div>
+    <?php endif;?>
+    
 
     <?php if ( ! empty( $settings['text'] ) ) : ?>
 	    <div class="designer-text"><?php echo wp_kses_post( $settings['text'] ); ?></div>
@@ -77,7 +76,7 @@ if ( isset( $settings['icon_type'] ) && ! empty( $settings['icon_type']['value']
             <?php endif; ?>
 
             <?php if( $settings['button_type'] === 'inner-border'):?>
-                <?php echo Helper::instance()->render_button_inner_border($settings); ?>
+                <?php echo \Designer\Includes\Helper::instance()->render_button_inner_border($settings); ?>
             <?php endif;?>
         </a>
     </div>
