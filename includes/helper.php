@@ -239,5 +239,20 @@ class Helper{
 
 	}
 
+     /**
+     * Column Options
+     * @return array
+     */
+    public function column_options() {
+        $columns_options = [];
+        $numberWords = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight'];
+
+       for( $i = 1; $i <= 8; $i++) {
+            $columns_options[$i] = __($numberWords[$i-1], 'designer');
+       }
+
+        return $columns_options;
+    }
+
 
 }
