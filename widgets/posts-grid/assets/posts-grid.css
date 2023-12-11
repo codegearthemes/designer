@@ -9,21 +9,26 @@
 }
 
 .block--posts-grid .content{
-	height: 100%;
-	overflow: hidden;
-	position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .block--posts-grid .categories{
 	display: inline-flex;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
     gap: 0px;
+	margin-bottom: 5px;
 }
 
-.block--posts-grid .entry-title,
 .block--posts-grid .entry-title{
 	font-size: 18px;
-	margin-bottom: 0px;
+	margin: 0 0 10px 0;
 }
 
 .block--posts-grid .entry-term{
@@ -36,9 +41,11 @@
 }
 
 .block--posts-grid .meta-data{
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
+	position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
 }
 
 .block--posts-grid .meta-data .byline,
@@ -48,43 +55,199 @@
 	gap: 8px;
 }
 
+
+.block--posts-grid .content .media-image {
+	position: relative;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
 .block--posts-grid .content .media-image img{
 	position: relative;
 	vertical-align: bottom;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.block--posts-grid .content .media-image a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color .35s ease-out;
+}
+
+.block--posts-grid.designer-image--hover-zoom .media-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.005) translateZ(0);
+    transition: transform .35s cubic-bezier(.25,.46,.45,.94);
+    will-change: transform;
+}
+
+.block--posts-grid.designer-image--hover-zoom .content:hover .media-image a {
+    transform: scale(1.03);
+}
+
+.block--posts-grid.designer-image--hover-zoom-out .media-image a {
+    display: block;
+    width: 100%;
+    transform: scale(1.03) translateZ(0);
+    transition: transform .35s cubic-bezier(.25,.46,.45,.94);
+    will-change: transform;
+}
+
+.block--posts-grid.designer-image--hover-zoom-out .content:hover .media-image a {
+    transform: scale(1);
+}
+
+.block--posts-grid.designer-image--hover-move .media-image a {
+    display: block;
+    width: 100%;
+    transform: scale(1.2);
+    transition: transform .5s cubic-bezier(.33,.02,0,.93);
+    will-change: transform;
+}
+
+.block--posts-grid.designer-image--hover-move .content:hover .media-image a {
+    transform: scale(1.2) translateX(12px);
+}
+
+.block--posts-grid.designer-image--hover-from-top a {
+    transform-origin: top;
+}
+
+.block--posts-grid.designer-image--hover-from-bottom a {
+    transform-origin: bottom;
+}
+
+.block--posts-grid.designer-image--hover-from-left a {
+    transform-origin: left;
+}
+
+.block--posts-grid.designer-image--hover-from-right a {
+    transform-origin: right;
+}
+
+
+.block--posts-grid .meta-data {
+	font-size: 13px;
+	line-height: 1.2;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+body .block--posts-grid .entry-content {
+	margin-bottom: 20px;
 }
 
 .block--posts-grid .meta-data a{
-    font-size: 13px;
-	font-weight: 500;
-    line-height: 1.2;
+	display: inline-flex;
+    align-items: center;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
 }
 
 .block--posts-grid .read-more{
 	margin-top: 16px;
 }
 
-/* Posts Grid
+.block--posts-grid.designer-title--hover-underline .entry-title a {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(transparent calc(100% - 2px),currentColor 2px);
+    transition: .9s cubic-bezier(.32,.32,.15,1.17);
+    background-size: 0 100%;
+}
+
+.block--posts-grid.designer-title--hover-underline .entry-title:hover a {
+    background-size: 100% 100%;
+}
+
+
+/* Classic
 ------------------------------------------------------------- */
-.block--posts-grid .posts-grid .content-bottom{
-	padding: 16px 0;
+
+.designer-item-layout--classic .content,
+.designer-item-layout--info-top .content  {
+	box-shadow: 0 0 10px 0 rgba(0,0,0,.08);
+	background-color: #fff;
 }
 
-.block--posts-grid .card-background .content-bottom {
-	bottom: 0px;
-	width: 100%;
-	position: absolute;
+.designer-item-layout--classic .post-content {
+    padding: 30px 25px;
 }
 
-.block--posts-grid .card-layout-content .content{
-	display: flex;
-	flex-direction: column-reverse;
-}
 
-/* Posts List
+
+/* Side Image
 ------------------------------------------------------------- */
-.block--posts-grid .posts-list .content{
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
-    grid-auto-columns: max-content;
-    column-gap: 32px;
+
+.block--posts-grid.designer-item-layout--side-image .content {
+    display: flex;
+	align-items: center;
+}
+
+.block--posts-grid.designer-item-layout--side-image .media-image{
+    width: 50%;
+}
+
+.block--posts-grid.designer-item-layout--side-image .post-content {
+    flex: 1;
+    padding: 20px 27px;
+}
+
+/* Info on image
+------------------------------------------------------------- */
+
+.block--posts-grid.designer-item-layout--info-image .post-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 40px;
+    z-index: 5;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.block--posts-grid.designer-item-layout--info-image .post-content .meta-data {
+    color: #fff;
+}
+
+.block--posts-grid.designer-item-layout--info-image .post-content .meta-data a:hover {
+    color: inherit;
+}
+
+.block--posts-grid.designer-item-layout--info-image .entry-title {
+    color: #fff;
+}
+
+.block--posts-grid.designer-item-layout--info-image .entry-title a {
+    color: inherit;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .block--posts-grid.designer-item-layout--side-image .content {
+        flex-direction:column !important;
+        align-items: flex-start !important;
+    }
+	.block--posts-grid.designer-item-layout--side-image .media-image {
+		width: 100%;
+	}
 }

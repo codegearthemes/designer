@@ -47,6 +47,7 @@ class Widget_Lists {
             'pricing-list',
             'video-popup',
             'progress-bar',
+            'icon-text',
            
         ];
 
