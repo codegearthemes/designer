@@ -23,7 +23,7 @@ class Helper{
 		);
 		$posted_on = sprintf(
 			/* translators: %s: post date */
-			__( '<span class="date-label"> </span>%s', 'designer' ),
+			__( '<span class="date-label">%s</span>', 'designer' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
