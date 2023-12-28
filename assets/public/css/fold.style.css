@@ -1,27 +1,4 @@
 /*============================================================================
-  #Grid Setup
-    - Based on csswizardry grid, but with floated columns, a fixed gutter size, and BEM classes
-    - Breakpoints defined above, under #Breakpoint and Grid Variables
-    - Note the inclusion of .grid-uniform to take care of clearfixes on evenly sized grid items
-==============================================================================*/
-/* Force clearfix on grids */
-.grid,
-.grid--rev,
-.grid--full,
-.grid-uniform {
-	*zoom: 1;
-}
-
-/* Manual grid__item clearfix */
-.grid__item.clear {
-	clear: both;
-}
-
-/*============================================================================
-  Drop relative positioning into silent classes which can't take advantage of
-  the `[class*="push--"]` and `[class*="pull--"]` selectors.
-==============================================================================*/
-/*============================================================================
   Grid Setup
     1. Allow the grid system to be used on lists.
     2. Remove any margins and paddings that might affect the grid system.

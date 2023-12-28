@@ -67,6 +67,10 @@ This plugin adds custom made elementor widgets which helps to customize with ele
 
 == Changelog ==
 
+= 1.3.0 (Released: January 01, 2024) =
+* [New] Section import
+* [New] Full-page template import
+
 = 1.2.8 (Released: December 20, 2023) =
 * [Fix] Post grid meta fix
 

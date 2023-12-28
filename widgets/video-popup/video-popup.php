@@ -40,7 +40,7 @@ class Video_Popup extends Widget_Base{
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'video-popup';
+		return 'code-video-popup';
 	}
 
     /**
@@ -242,7 +242,7 @@ class Video_Popup extends Widget_Base{
 			[
 				'label' => esc_html__( 'Icon', 'designer' ),
 				'conditions' => [
-					'relation' => 'or', 
+					'relation' => 'or',
 					'terms' => [
 						[
 							'name' => 'popup_type',
@@ -316,7 +316,7 @@ class Video_Popup extends Widget_Base{
 		);
 
 		$this->add_control(
-			'ripple_animation', 
+			'ripple_animation',
 			[
 				'label' => esc_html__( 'Ripple Animation', 'designer' ),
 				'type' => Controls_Manager::SELECT,
@@ -394,7 +394,7 @@ class Video_Popup extends Widget_Base{
 				'options' => [
 					'btn-link'   => __( 'Filled', 'designer' ),
 					'text-link'  	 => __( 'Text', 'designer' ),
-					'outlined'		 => __('Outlined', 'designer'),	
+					'outlined'		 => __('Outlined', 'designer'),
 				]
 
 			]
@@ -409,7 +409,7 @@ class Video_Popup extends Widget_Base{
 				'options' => [
 					'standard'   	=> __( 'Standard', 'designer' ),
 					'inner-border' 	=> __( 'Inner Border', 'designer' ),
-					'icon-boxed'		=> __('Icon Boxed', 'designer'),	
+					'icon-boxed'		=> __('Icon Boxed', 'designer'),
 				],
 				'condition'	=> [
 					'button_layout!'	=>	'text-link',
@@ -431,7 +431,7 @@ class Video_Popup extends Widget_Base{
 			]
 		);
 
-		
+
 		$this->add_control(
 			'button_size',
 			[
@@ -442,7 +442,7 @@ class Video_Popup extends Widget_Base{
 					'normal'	=> __( 'Normal', 'designer' ),
 					'small'		=> __( 'Small', 'designer' ),
 					'large'		=> __('Large', 'designer'),
-					'full-width'	=> __('Full Width', 'designer'),	
+					'full-width'	=> __('Full Width', 'designer'),
 				]
 
 			]
@@ -516,9 +516,9 @@ class Video_Popup extends Widget_Base{
 					'button_type'	=> 'icon-boxed',
 				]
 			]
-			
+
 		);
-		
+
 		$this->end_controls_section();
 
         $this->register_style_controls();
@@ -597,7 +597,7 @@ class Video_Popup extends Widget_Base{
 				'label' => esc_html__( 'Icon', 'designer' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'conditions' => [
-					'relation' => 'or', 
+					'relation' => 'or',
 					'terms' => [
 						[
 							'name' => 'popup_type',
@@ -1103,7 +1103,7 @@ class Video_Popup extends Widget_Base{
 					'button_icon_enable'	=> 'yes',
 				]
 			]
-			
+
 		);
 
         $this->add_responsive_control(
@@ -1159,7 +1159,7 @@ class Video_Popup extends Widget_Base{
 				],
 			]
 		);
-		
+
 
 		$this->end_controls_tab();
 
@@ -1183,7 +1183,7 @@ class Video_Popup extends Widget_Base{
 				],
 			]
 		);
-		
+
 
 		$this->add_control(
 			'button_icon_move',
@@ -1285,7 +1285,7 @@ class Video_Popup extends Widget_Base{
             ]
         );
 
-		
+
 
 		$this->end_controls_section();
 	}
@@ -1301,7 +1301,7 @@ class Video_Popup extends Widget_Base{
 					'button_type'	=> 'inner-border',
 				]
 			]
-			
+
 		);
 
 		$this->start_controls_tabs(
@@ -1348,7 +1348,7 @@ class Video_Popup extends Widget_Base{
 			]
 		);
 
-		
+
 		$this->add_control(
 			'inner_border_hover_animation',
 			[
@@ -1446,7 +1446,7 @@ class Video_Popup extends Widget_Base{
 					'show_underline'	=> 'yes',
 				]
 			]
-			
+
 		);
 
 		$this->start_controls_tabs(
@@ -1471,7 +1471,7 @@ class Video_Popup extends Widget_Base{
 			]
 		);
 
-		
+
 		$this->add_responsive_control(
             'underline_width',
             [
@@ -1500,7 +1500,7 @@ class Video_Popup extends Widget_Base{
         );
 		$this->end_controls_tab();
 
-		
+
 		$this->start_controls_tab(
 			'underline_hover_tab',
 			[
@@ -1559,7 +1559,7 @@ class Video_Popup extends Widget_Base{
 					'underline_alignment!'	=> 'center',
 				]
 			]
-			
+
 		);
 
 		$this->end_controls_tab();
@@ -1617,7 +1617,7 @@ class Video_Popup extends Widget_Base{
             ]
         );
 
-		
+
 		$this->add_responsive_control(
 			'underline_alignment',
 			[
@@ -1655,7 +1655,7 @@ class Video_Popup extends Widget_Base{
 					'popup_type'	=> 'img',
 				]
 			]
-			
+
 		);
 
 		$this->add_responsive_control(
@@ -1794,7 +1794,7 @@ class Video_Popup extends Widget_Base{
 					'bottom-center' => 'bottom center',
 					'bottom-left' => 'bottom left',
 					'bottom-right' => 'bottom right',
-					
+
 				],
 				'condition' => [
 					'image_height[size]!' => '',
@@ -1886,7 +1886,7 @@ class Video_Popup extends Widget_Base{
 		$inner_border = '';
 
 		$inner_border .= '<div class="designer-m-inner-border">';
-		
+
 			if('move-outer-edge' !== $settings['inner_border_hover_animation']){
 				$inner_border .= '<span class="designer-m-border-top"></span>';
 				$inner_border .= '<span class="designer-m-border-right"></span>';
@@ -1924,7 +1924,7 @@ class Video_Popup extends Widget_Base{
 
 		//Define Variables
 		$popup_url = isset( $settings['popup_url'] ) && !empty( $settings['popup_url'] ) ? $settings['popup_url'] : ''; ?>
-		<div id = "block_video_popup_<?php echo esc_attr( $this->get_id() ); ?>" data-selector="<?php echo esc_attr( $this->get_id() ); ?>"  class="block--video-popup-wrapper ">
+		<div id = "block_video_popup_<?php echo esc_attr( $this->get_id() ); ?>" data-selector="<?php echo esc_attr( $this->get_id() ); ?>"  class="block--video-popup-wrapper">
 			<?php
 				switch ($settings['popup_type']) {
 					case "icon":
@@ -1936,11 +1936,11 @@ class Video_Popup extends Widget_Base{
 						if ( ! empty( $settings['hover_animation'] ) ) {
 							$this->add_render_attribute( 'icon-wrapper', 'class', 'elementor-animation-'.$settings['hover_animation'] );
 						}
-						
+
 						echo '<a '. $this->get_render_attribute_string( 'icon-wrapper' ) .'>';
 								\Elementor\Icons_Manager::render_icon( $settings['selected_icon'], [ 'aria-hidden' => 'true' ] );
 						echo '</a>';
-						
+
 					break;
 
 					case "btn":
@@ -1963,12 +1963,12 @@ class Video_Popup extends Widget_Base{
 								endif;
 
 								if ( $settings['button_icon_enable'] == 'yes' ):
-								
+
 									echo '<span class="designer-m-icon"'.esc_attr($icon_box_style).' >';
 										echo '<span class="designer-m-icon-inner">';
-											\Elementor\Icons_Manager::render_icon( $settings['button_arrow_icon'], [ 'aria-hidden' => 'true' ] ); 
+											\Elementor\Icons_Manager::render_icon( $settings['button_arrow_icon'], [ 'aria-hidden' => 'true' ] );
 											if($settings['button_icon_move'] !== 'move-horizontal-short' && $settings['button_icon_move'] !== ''){
-												\Elementor\Icons_Manager::render_icon( $settings['button_arrow_icon'], [ 'aria-hidden' => 'true' ] ); 
+												\Elementor\Icons_Manager::render_icon( $settings['button_arrow_icon'], [ 'aria-hidden' => 'true' ] );
 											}
 										echo '</span>';
 									echo '</span>';
@@ -1997,7 +1997,7 @@ class Video_Popup extends Widget_Base{
 								if ( ! empty( $settings['hover_animation'] ) ) {
 									$this->add_render_attribute( 'image-icon-wrapper', 'class', 'elementor-animation-'.$settings['hover_animation'] );
 								}
-								
+
 							?>
 								<div <?php echo $this->get_render_attribute_string('image-icon-wrapper');?>>
 									<?php if( $settings['selected_icon'] ):?>

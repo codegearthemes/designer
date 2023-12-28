@@ -60,7 +60,7 @@ class Loader{
 	 * @access public
 	 */
     public function register_fold_styles(){
-        wp_enqueue_style( 'designer-fold-style', \Designer::plugin_url().'assets/public/css/fold-style.css', array(), '1.0.0', 'all' );
+        wp_enqueue_style( 'designer-fold-style', \Designer::plugin_url().'assets/public/css/fold.style.css', array(), '1.0.0', 'all' );
     }
 
     /**

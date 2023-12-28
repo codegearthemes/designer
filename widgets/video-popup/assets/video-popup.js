@@ -9,14 +9,14 @@
                     loop: false,
                     autoplayVideos: true,
                     selector: '#block_video_popup_'+ id + ' ' + '.video-glightbox',
-                    
+
                 });
             })
         }
     }
-    
+
     $(window).on('elementor/frontend/init', () => {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/video-popup.default', videoPopup );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/code-video-popup.default', videoPopup );
     });
 
 })(jQuery);
