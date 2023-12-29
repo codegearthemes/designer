@@ -156,25 +156,25 @@ class Posts_Carousel extends Widget_Base{
                 'options' => [
 					'classic' => [
                         'title' => esc_html__('Classic', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/classic.svg',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/classic.svg',
                     ],
                     'side-image' => [
                         'title' => esc_html__('Side Image', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/side-image.svg',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/side-image.svg',
 					],
 					'info-image' => [
                         'title' => esc_html__('Info on Image', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/card-layout-2.svg',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/card-layout-2.svg',
 					],
 					'info-top' => [
                         'title' => esc_html__('Info on Top', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/card-layout-3.svg',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/card-layout-3.svg',
                     ]
                 ],
             ]
         );
 
-		
+
 		$this->add_control(
 			'meta_heading',
 			[
@@ -218,7 +218,7 @@ class Posts_Carousel extends Widget_Base{
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'conditions' => [
-					'relation' => 'or', 
+					'relation' => 'or',
 					'terms' => [
 						[
 							'name' => 'date',
@@ -327,7 +327,7 @@ class Posts_Carousel extends Widget_Base{
 				'default' => 'yes',
 			]
 		);
-		
+
 		// Read More Button
 
 		$this->add_control(
@@ -504,7 +504,7 @@ class Posts_Carousel extends Widget_Base{
 			]
 
 		);
-		
+
 		$this->end_controls_section();
 
     }
@@ -952,7 +952,7 @@ class Posts_Carousel extends Widget_Base{
                 'label' => esc_html__('Meta Style', 'designer'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'conditions' => [
-					'relation' => 'or', 
+					'relation' => 'or',
 					'terms' => [
 						[
 							'name' => 'date',
@@ -1036,7 +1036,7 @@ class Posts_Carousel extends Widget_Base{
                 'label' => esc_html__('Category Style', 'designer'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'show_cat' => 'yes', 
+					'show_cat' => 'yes',
 				],
             ]
         );
@@ -1090,7 +1090,7 @@ class Posts_Carousel extends Widget_Base{
                 'label' => esc_html__('Image Style', 'designer'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'featured_image_default' => 'yes', 
+					'featured_image_default' => 'yes',
 				],
             ]
         );
@@ -1117,7 +1117,7 @@ class Posts_Carousel extends Widget_Base{
 					'{{WRAPPER}} .block--posts-carousel .media-image' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
-					'layout' => 'side-image', 
+					'layout' => 'side-image',
 				],
 			]
 		);
@@ -1205,7 +1205,7 @@ class Posts_Carousel extends Widget_Base{
                 'size_units' => ['px', 'em', 'rem'],
                 'selectors' => [
                     '{{WRAPPER}}  .block--posts-carousel .categories ' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					
+
                 ]
             ]
         );
@@ -1218,7 +1218,7 @@ class Posts_Carousel extends Widget_Base{
                 'size_units' => ['px', 'em', 'rem'],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-carousel .meta-data ' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					
+
                 ]
             ]
         );
@@ -1231,7 +1231,7 @@ class Posts_Carousel extends Widget_Base{
                 'size_units' => ['px', 'em', 'rem'],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-carousel .entry-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					
+
                 ]
             ]
         );
@@ -1244,7 +1244,7 @@ class Posts_Carousel extends Widget_Base{
                 'size_units' => ['px', 'em', 'rem'],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-carousel .entry-content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					
+
                 ]
             ]
         );
@@ -1269,7 +1269,7 @@ class Posts_Carousel extends Widget_Base{
 				],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-carousel .media-image' => 'width: {{SIZE}}{{UNIT}};',
-					
+
 				],
             ]
         );
@@ -1294,12 +1294,12 @@ class Posts_Carousel extends Widget_Base{
 				],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-carousel .media-image' => 'height: {{SIZE}}{{UNIT}};',
-					
+
 				],
             ]
         );
 
-		
+
 
         $this->end_controls_section();
     }
@@ -2127,7 +2127,7 @@ class Posts_Carousel extends Widget_Base{
                     '{{WRAPPER}} .block--posts-carousel .content' => 'background-color: {{VALUE}}',
                 ],
 				'condition' => [
-					'layout' => ['classic', 'info-top'], 
+					'layout' => ['classic', 'info-top'],
 				],
             ]
         );
@@ -2139,7 +2139,7 @@ class Posts_Carousel extends Widget_Base{
 				'label' => esc_html__( 'Border', 'designer' ),
 				'selector' => '{{WRAPPER}} .block--posts-carousel article .content',
 				'condition' => [
-					'layout' => ['classic', 'info-top'], 
+					'layout' => ['classic', 'info-top'],
 				],
 			]
 		);
@@ -2158,7 +2158,7 @@ class Posts_Carousel extends Widget_Base{
 					'{{WRAPPER}} .block--posts-carousel article .content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
-					'layout' => ['classic', 'info-top'], 
+					'layout' => ['classic', 'info-top'],
 				],
 			]
 		);
@@ -2169,7 +2169,7 @@ class Posts_Carousel extends Widget_Base{
 				'name' => 'box_shadow',
 				'selector' => '{{WRAPPER}} .block--posts-carousel article .content',
 				'condition' => [
-					'layout' => ['classic', 'info-top'], 
+					'layout' => ['classic', 'info-top'],
 				],
 			]
 		);
@@ -2366,7 +2366,7 @@ class Posts_Carousel extends Widget_Base{
 						'step'	=> 1,
                     ],
                 ],
-                
+
                 'selectors' => [
                     '{{WRAPPER}} .slide-previous' => 'left: {{SIZE}}{{UNIT}};',
                     '{{WRAPPER}} .slide-next' => 'right: {{SIZE}}{{UNIT}};',
@@ -2445,7 +2445,7 @@ class Posts_Carousel extends Widget_Base{
 						'step'	=> 1,
                     ],
                 ],
-                
+
                 'selectors' => [
                     '{{WRAPPER}} .designer-swiper-together-nav' => 'left:{{SIZE}}{{UNIT}};right:{{SIZE}}{{UNIT}};',
                 ],
@@ -2874,7 +2874,7 @@ class Posts_Carousel extends Widget_Base{
             ]
         );
 
-		
+
         $this->add_responsive_control(
             'progressbar_width_size',
             [
@@ -3183,7 +3183,7 @@ class Posts_Carousel extends Widget_Base{
 			<?php if( $settings['scrollbar'] == 'yes' ): ?>
 				<div class="swiper-scrollbar swiper-scrollbar-<?php echo esc_attr( $this->get_id() ) ?>"></div>
 			<?php endif; ?>
-		
+
 		</div>
 		<?php
     }
