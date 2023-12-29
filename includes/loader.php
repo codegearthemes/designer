@@ -21,8 +21,11 @@ class Loader{
         add_action( 'elementor/widgets/register', [ $this, 'register_elementor_widgets'] );
         add_action( 'elementor/widgets/register', [ $this, 'unregister_widgets' ] );
 
+        add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'enqueue_editor_scripts' ] );
+        add_action( 'elementor/preview/enqueue_styles', [ $this, 'enqueue_editor_styles' ] );
+
         add_action( 'wp_enqueue_scripts', [ $this, 'register_fold_styles' ]);
-        add_action('wp_footer', [ $this, 'register_styles' ]);
+        add_action( 'wp_footer', [ $this, 'register_styles' ]);
     }
 
     /**
@@ -52,6 +55,50 @@ class Loader{
     public function register_elementor_control( $controls_manager ) {
 		$controls_manager->register( new \Designer\Includes\Modules\Image_Select() );
 	}
+
+    /**
+	 * Enqueue Editor Scripts.
+	 *
+	 * Enqueues required scripts in Elementor edit mode.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return void
+	 */
+    public function enqueue_editor_scripts(){
+        wp_enqueue_script(
+			'designer-template-script',
+			\Designer::plugin_url().'assets/admin/js/template.script.js',
+			[
+				'jquery',
+				'backbone-radio',
+				'elementor-dialog',
+				'backbone-marionette',
+				'elementor-common-modules'
+			],
+			'1.0.0',
+			true
+		);
+
+		wp_localize_script( 'designer-template-script', 'designer_templates_library', array(
+			'logo'	=> \Designer::plugin_url().'assets/admin/src/logo.svg',
+		) );
+    }
+
+    /**
+	 * Enqueue Editor Styles.
+	 *
+	 * Enqueues required styles in Elementor edit mode.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return void
+	 */
+    public function enqueue_editor_styles(){
+        wp_enqueue_style( 'designer-template-style', \Designer::plugin_url().'assets/admin/css/template.style.css', array(), '1.0.0', 'all' );
+    }
 
     /**
 	 * Fold Style
@@ -92,7 +139,7 @@ class Loader{
      * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
      * @return void
      */
-    function unregister_widgets( $widgets_manager ) {
+    public function unregister_widgets( $widgets_manager ) {
 
         $widgets_manager->unregister( 'element--promotion' );
 
