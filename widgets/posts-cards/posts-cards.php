@@ -139,23 +139,23 @@ class Posts_Cards extends Widget_Base{
                 'options' => [
                     'layout-1' => [
                         'title' => esc_html__('Layout 1', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block1.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/block1.png',
                     ],
                     'layout-2' => [
                         'title' => esc_html__('Layout 2', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block2.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/block2.png',
                     ],
                     'layout-3' => [
                         'title' => esc_html__('Layout 3', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block3.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/block3.png',
                     ],
 					'layout-4' => [
                         'title' => esc_html__('Layout 4', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block4.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/block4.png',
                     ],
 					'layout-5' => [
                         'title' => esc_html__('Layout 5', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/block5.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/block5.png',
                     ]
                 ],
 				'separator' => 'after'

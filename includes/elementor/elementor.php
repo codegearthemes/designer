@@ -42,7 +42,7 @@ class Elementor{
             background-color: #fff;
             background-size: 100%;
             border-radius: 5px;
-            background-image: url(<?php echo esc_url(\Designer::plugin_url().'assets/src/icon.png'); ?>);
+            background-image: url(<?php echo esc_url(\Designer::plugin_url().'assets/admin/src/logo.svg'); ?>);
           }
         </style>
     <?php

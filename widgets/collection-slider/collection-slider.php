@@ -211,7 +211,7 @@ class Collection_Slider extends Widget_Base {
 			]
 		);
 
-       
+
 
 
         $repeater->add_control(
@@ -221,11 +221,11 @@ class Collection_Slider extends Widget_Base {
 				'label_block' => true,
 				'label' => __( 'Link label', 'designer' ),
 				'default' => __( 'View', 'designer' ),
-				
+
 			]
 		);
 
-		
+
 
         $repeater->add_control(
 			'accessibility',
@@ -288,7 +288,7 @@ class Collection_Slider extends Widget_Base {
 
     protected function __button_settings_controls_section(){
 		$this->start_controls_section(
-            'section_button_settings', 
+            'section_button_settings',
             [
                 'label' => esc_html__('Button Settings', 'designer'),
                 'type'  => Controls_Manager::SECTION,
@@ -395,7 +395,7 @@ class Collection_Slider extends Widget_Base {
 			]
         );
 
-       
+
 		$this->add_control(
 			'button_icon_enable',
 			[
@@ -689,7 +689,7 @@ class Collection_Slider extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-   
+
 
 	/**
 	 * Register style controls.
@@ -719,12 +719,12 @@ class Collection_Slider extends Widget_Base {
                 'options' => [
                     'layout-1' => [
                         'title' => esc_html__('Layout 1', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/collection/layout-1.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/collection/layout-1.png',
                         'width' => '50%',
                     ],
                     'layout-2' => [
                         'title' => esc_html__('Layout 2', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/collection/layout-2.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/collection/layout-2.png',
                         'width' => '50%',
                     ],
                 ],
@@ -2039,7 +2039,7 @@ class Collection_Slider extends Widget_Base {
 						'step'	=> 1,
                     ],
                 ],
-                
+
                 'selectors' => [
                     '{{WRAPPER}} .slide-previous' => 'left: {{SIZE}}{{UNIT}};',
                     '{{WRAPPER}} .slide-next' => 'right: {{SIZE}}{{UNIT}};',
@@ -2118,7 +2118,7 @@ class Collection_Slider extends Widget_Base {
 						'step'	=> 1,
                     ],
                 ],
-                
+
                 'selectors' => [
                     '{{WRAPPER}} .designer-swiper-together-nav' => 'left:{{SIZE}}{{UNIT}};right:{{SIZE}}{{UNIT}};',
                 ],
@@ -2547,7 +2547,7 @@ class Collection_Slider extends Widget_Base {
             ]
         );
 
-		
+
         $this->add_responsive_control(
             'progressbar_width_size',
             [
@@ -2727,11 +2727,11 @@ class Collection_Slider extends Widget_Base {
 		$this->add_render_attribute(
             'wrapper',
             [
-                'class' => [ 'block-collection', 
-					'block-collection__slider', 
+                'class' => [ 'block-collection',
+					'block-collection__slider',
 					'block-collection__'.$settings['layout'],
 					!empty( $settings['image_hover_style'] ) ? 'designer-image--hover-' . $settings['image_hover_style'] : '',
-					! empty( $settings['image_hover_zoom_origin'] ) ? 'designer-image--hover-from-' . $settings['image_hover_zoom_origin'] : '', 
+					! empty( $settings['image_hover_zoom_origin'] ) ? 'designer-image--hover-from-' . $settings['image_hover_zoom_origin'] : '',
                     ! empty( $settings['_navigation_position'] ) ? 'designer-navigation__' . $settings['_navigation_position'] : '',
 					($settings['_navigation_hide'] !== 'default') && $settings['arrow'] == 'yes' ? 'designer-hide-navigation__'.$settings['_navigation_hide'] : '',
                 ],
@@ -2740,7 +2740,7 @@ class Collection_Slider extends Widget_Base {
 
 
             ]
-        ); 
+        );
 		?>
 
 		<div <?= $this->get_render_attribute_string( 'wrapper' ); ?> >
@@ -2835,8 +2835,8 @@ class Collection_Slider extends Widget_Base {
 			<?php if( $settings['scrollbar'] == 'yes' ): ?>
 				<div class="swiper-scrollbar swiper-scrollbar-<?php echo esc_attr( $this->get_id() ) ?>"></div>
 			<?php endif; ?>
-				
-			
+
+
 		</div>
 	<?php
 	}

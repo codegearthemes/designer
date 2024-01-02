@@ -393,7 +393,7 @@ class Collection extends Widget_Base {
 		$this->_register_style_controls();
         $this->_register_caption_controls();
 		$this->__image_style_controls();
-		
+
         $this->register_button_style_controls();
     }
 
@@ -425,12 +425,12 @@ class Collection extends Widget_Base {
                 'options' => [
                     'layout-1' => [
                         'title' => esc_html__('Layout 1', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/collection/layout-1.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/collection/layout-1.png',
                         'width' => '50%',
                     ],
                     'layout-2' => [
                         'title' => esc_html__('Layout 2', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/collection/layout-2.png',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/collection/layout-2.png',
                         'width' => '50%',
                     ],
                 ],
@@ -719,7 +719,7 @@ class Collection extends Widget_Base {
                 'label' => esc_html__('Image Style', 'designer'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'image_hover_enable!' => 'yes', 
+					'image_hover_enable!' => 'yes',
 				],
             ]
         );
@@ -1632,14 +1632,14 @@ class Collection extends Widget_Base {
             'wrapper',
             [
 				'id'	=> 'block_collection_'.$this->get_id(),
-                'class' => [ 'block-collection', 
-					'block-products__collection', 
+                'class' => [ 'block-collection',
+					'block-products__collection',
 					'block-collection__'.$settings['layout'],
 					!empty( $settings['image_hover_style'] ) ? 'designer-image--hover-' . $settings['image_hover_style'] : '',
-					! empty( $settings['image_hover_zoom_origin'] ) ? 'designer-image--hover-from-' . $settings['image_hover_zoom_origin'] : '', 
+					! empty( $settings['image_hover_zoom_origin'] ) ? 'designer-image--hover-from-' . $settings['image_hover_zoom_origin'] : '',
 				]
             ]
-        ); 
+        );
 		?>
 
 		<div <?= $this->get_render_attribute_string( 'wrapper' ); ?> >

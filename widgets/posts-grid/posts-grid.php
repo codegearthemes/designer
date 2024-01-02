@@ -141,19 +141,19 @@ class Posts_Grid extends Widget_Base{
                 'options' => [
 					'classic' => [
                         'title' => esc_html__('Classic', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/classic.svg',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/classic.svg',
                     ],
                     'side-image' => [
                         'title' => esc_html__('Side Image', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/side-image.svg',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/side-image.svg',
 					],
 					'info-image' => [
                         'title' => esc_html__('Info on Image', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/card-layout-2.svg',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/card-layout-2.svg',
 					],
 					'info-top' => [
                         'title' => esc_html__('Info on Top', 'designer'),
-                        'imagesmall' => \Designer::plugin_url() .'assets/src/post-block/card-layout-3.svg',
+                        'imagesmall' => \Designer::plugin_url() .'assets/admin/src/post-block/card-layout-3.svg',
                     ]
                 ],
             ]
@@ -208,7 +208,7 @@ class Posts_Grid extends Widget_Base{
 			]
 		);
 
-		
+
 		$this->add_control(
 			'columns_1024',
 			[
@@ -386,7 +386,7 @@ class Posts_Grid extends Widget_Base{
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'conditions' => [
-					'relation' => 'or', 
+					'relation' => 'or',
 					'terms' => [
 						[
 							'name' => 'date',
@@ -495,7 +495,7 @@ class Posts_Grid extends Widget_Base{
 				'default' => 'yes',
 			]
 		);
-		
+
 		// Read More Button
 
 		$this->add_control(
@@ -674,7 +674,7 @@ class Posts_Grid extends Widget_Base{
 			]
 
 		);
-		
+
 		$this->end_controls_section();
 
     }
@@ -704,8 +704,8 @@ class Posts_Grid extends Widget_Base{
 
 		$this->__layout_content_style_controls();
 
-		
-		
+
+
     }
 
 	protected function __query_controls() {
@@ -907,7 +907,7 @@ class Posts_Grid extends Widget_Base{
                 'label' => esc_html__('Meta Style', 'designer'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'conditions' => [
-					'relation' => 'or', 
+					'relation' => 'or',
 					'terms' => [
 						[
 							'name' => 'date',
@@ -991,7 +991,7 @@ class Posts_Grid extends Widget_Base{
                 'label' => esc_html__('Category Style', 'designer'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'show_cat' => 'yes', 
+					'show_cat' => 'yes',
 				],
             ]
         );
@@ -1045,7 +1045,7 @@ class Posts_Grid extends Widget_Base{
                 'label' => esc_html__('Image Style', 'designer'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'featured_image_default' => 'yes', 
+					'featured_image_default' => 'yes',
 				],
             ]
         );
@@ -1072,7 +1072,7 @@ class Posts_Grid extends Widget_Base{
 					'{{WRAPPER}} .block--posts-grid .media-image' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
-					'layout' => 'side-image', 
+					'layout' => 'side-image',
 				],
 			]
 		);
@@ -1160,7 +1160,7 @@ class Posts_Grid extends Widget_Base{
                 'size_units' => ['px', 'em', 'rem'],
                 'selectors' => [
                     '{{WRAPPER}}  .block--posts-grid .categories ' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					
+
                 ]
             ]
         );
@@ -1173,7 +1173,7 @@ class Posts_Grid extends Widget_Base{
                 'size_units' => ['px', 'em', 'rem'],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-grid .meta-data ' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					
+
                 ]
             ]
         );
@@ -1186,7 +1186,7 @@ class Posts_Grid extends Widget_Base{
                 'size_units' => ['px', 'em', 'rem'],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-grid .entry-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					
+
                 ]
             ]
         );
@@ -1199,7 +1199,7 @@ class Posts_Grid extends Widget_Base{
                 'size_units' => ['px', 'em', 'rem'],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-grid .entry-content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					
+
                 ]
             ]
         );
@@ -1224,7 +1224,7 @@ class Posts_Grid extends Widget_Base{
 				],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-grid .media-image' => 'width: {{SIZE}}{{UNIT}};',
-					
+
 				],
             ]
         );
@@ -1249,12 +1249,12 @@ class Posts_Grid extends Widget_Base{
 				],
                 'selectors' => [
                     '{{WRAPPER}} .block--posts-grid .media-image' => 'height: {{SIZE}}{{UNIT}};',
-					
+
 				],
             ]
         );
 
-		
+
 
         $this->end_controls_section();
     }
@@ -2082,7 +2082,7 @@ class Posts_Grid extends Widget_Base{
                     '{{WRAPPER}} .block--posts-grid .content' => 'background-color: {{VALUE}}',
                 ],
 				'condition' => [
-					'layout' => ['classic', 'info-top'], 
+					'layout' => ['classic', 'info-top'],
 				],
             ]
         );
@@ -2094,7 +2094,7 @@ class Posts_Grid extends Widget_Base{
 				'label' => esc_html__( 'Border', 'designer' ),
 				'selector' => '{{WRAPPER}} .block--posts-grid article .content',
 				'condition' => [
-					'layout' => ['classic', 'info-top'], 
+					'layout' => ['classic', 'info-top'],
 				],
 			]
 		);
@@ -2113,7 +2113,7 @@ class Posts_Grid extends Widget_Base{
 					'{{WRAPPER}} .block--posts-grid article .content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
-					'layout' => ['classic', 'info-top'], 
+					'layout' => ['classic', 'info-top'],
 				],
 			]
 		);
@@ -2124,7 +2124,7 @@ class Posts_Grid extends Widget_Base{
 				'name' => 'box_shadow',
 				'selector' => '{{WRAPPER}} .block--posts-grid article .content',
 				'condition' => [
-					'layout' => ['classic', 'info-top'], 
+					'layout' => ['classic', 'info-top'],
 				],
 			]
 		);
@@ -2196,7 +2196,7 @@ class Posts_Grid extends Widget_Base{
 			$holder_classes[] = ! empty( $settings['columns_680'] ) ? 'designer-col-num--680--' . $settings['columns_680'] : '';
 			$holder_classes[] = ! empty( $settings['columns_480'] ) ? 'designer-col-num--480--' . $settings['columns_480'] : '';
 		}
-		
+
 		return implode(' ', $holder_classes);
 
 	}
@@ -2225,12 +2225,12 @@ class Posts_Grid extends Widget_Base{
 		$this->add_render_attribute( 'button_attribute', 'class', Helper::instance()->get_button_classes( $settings) );
 
 		$readmore__button_label = ! empty( $settings['button_label'] ) ? $settings['button_label']  : 'Read More';
-		
+
 		?>
 
 		<div class="<?php echo $this->get_holder_class($settings); ?>">
 			<div class="designer-grid-inner">
-				<?php 
+				<?php
 					$categories = $settings['categories'];
 					$args = [
 						'posts_per_page' => $settings['post_per_page'],
@@ -2248,11 +2248,11 @@ class Posts_Grid extends Widget_Base{
 							'offset' => $settings[ 'post_offset' ],
 						];
 					}
-					
+
 					$query = new \WP_Query($args);
 						while ( $query->have_posts() ) : $query->the_post();
 							$categories = get_the_category( get_the_ID() );
-								require \Designer::plugin_dir().'widgets/posts-grid/snippets/'.$settings['layout'].'.php'; 
+								require \Designer::plugin_dir().'widgets/posts-grid/snippets/'.$settings['layout'].'.php';
 						endwhile;
     			wp_reset_postdata();?>
 			</div>
