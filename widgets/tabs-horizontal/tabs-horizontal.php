@@ -9,7 +9,6 @@ use Elementor\Group_Control_Border;
 use Elementor\Repeater;
 use Elementor\Core\Schemes\Typography;
 use Elementor\Widget_Base;
-use Designer\Includes\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -101,8 +100,8 @@ class Tabs_Horizontal extends Widget_Base {
 			'select_template' ,
 			[
 				'label'	=> esc_html__( 'Select Template', 'designer' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => Helper::instance()->elementor_templates_options(),
+				'type' => 'designer-ajax-select2',
+				'options' => 'ajaxselect2/get_elementor_templates',
 				'label_block' => true,
 				'condition' => [
 					'tab_content_type' => 'template',
@@ -523,11 +522,15 @@ class Tabs_Horizontal extends Widget_Base {
 
                             case 'template':
                                 if (!empty($tab['select_template'])) {
-                                    echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display($tab['select_template']);
+                                    $edit_link = '<span class="designer-template-edit-btn" data-permalink="'. esc_url(get_permalink($tab['select_template'])) .'">Edit Template</span>';
+                                
+                                    $has_css = 'internal' === get_option( 'elementor_css_print_method' );
+                        
+                                    echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $tab['select_template'], $has_css ) . $edit_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                 }
                                 break;
                             default:
-                                echo '<span class="d-content">'.wp_kses_post( $tab['tab_content'] ).'</span>';
+                                echo '<p class="d-content">'.wp_kses_post( $tab['tab_content'] ).'</p>';
                             break;
 
                         }

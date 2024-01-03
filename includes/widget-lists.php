@@ -49,6 +49,7 @@ class Widget_Lists {
             'progress-bar',
             'icon-text',
             'separator',
+            'template',
            
         ];
 

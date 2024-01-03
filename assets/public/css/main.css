@@ -3808,3 +3808,29 @@
 .block-products__collection .caption .link-label:not(.has-label){
 	justify-content: center;
 }
+
+/* Template Edit button */
+
+.designer-template-edit-btn {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  display: none;
+  line-height: 1;
+  padding: 8px 13px;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.elementor-editor-active .designer-template-edit-btn {
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.elementor-editor-active .elementor-element-edit-mode:hover .designer-template-edit-btn {
+  opacity: 1;
+  visibility: visible;
+}
