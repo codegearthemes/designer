@@ -788,7 +788,7 @@ class Team_Card extends Widget_Base {
 					'size' => 16,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .block--team-card .social-item .icon-link' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .block--team-card .social-item .icon-link svg' => 'width: {{SIZE}}{{UNIT}}',
 				]
 			]
 		);
