@@ -33,7 +33,7 @@ class Gallery extends Widget_Base{
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'gallery';
+		return 'designer-gallery';
 	}
 
     /**
