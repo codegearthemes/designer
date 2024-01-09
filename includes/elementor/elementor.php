@@ -34,14 +34,14 @@ class Elementor{
           #elementor-panel-category-footer .elementor-element::after,
           .designer-icon::after{
             content: "";
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             position: absolute;
             top: 5px;
             right: 5px;
             background-color: #fff;
             background-size: 100%;
-            border-radius: 5px;
+            border-radius: 2px;
             background-image: url(<?php echo esc_url(\Designer::plugin_url().'assets/admin/src/logo.svg'); ?>);
           }
         </style>
