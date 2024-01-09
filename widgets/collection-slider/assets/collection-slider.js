@@ -31,7 +31,7 @@
     }
 
     $(window).on('elementor/frontend/init', () => {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/collection-slider.default', collectionSlider );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-collection-slider.default', collectionSlider );
     });
 
 })(jQuery);

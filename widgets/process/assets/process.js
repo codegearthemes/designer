@@ -36,7 +36,7 @@
     }
     
     $(window).on('elementor/frontend/init', () => {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/process.default', processAppearAnimation );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-process.default', processAppearAnimation );
     });
 
 })(jQuery);

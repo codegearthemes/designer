@@ -27,7 +27,7 @@ class Process extends Widget_Base {
     }
 
     public function get_name() {
-		return 'process';
+		return 'designer-process';
 	}
 
     public function get_title() {

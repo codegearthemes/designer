@@ -125,7 +125,7 @@
 
 
     $(window).on('elementor/frontend/init', function () {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/progress-bar.default', blockProgressBar );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-progress-bar.default', blockProgressBar );
     });
 
 })(jQuery);

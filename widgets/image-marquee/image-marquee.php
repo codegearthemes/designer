@@ -22,7 +22,7 @@ class Image_Marquee extends Widget_Base {
     }
 
     public function get_name() {
-		return 'image-marquee';
+		return 'designer-image-marquee';
 	}
 
     public function get_title() {

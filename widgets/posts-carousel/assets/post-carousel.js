@@ -31,7 +31,7 @@
     }
     
     $(window).on('elementor/frontend/init', function () {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/posts-carousel.default', postCarousel );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-posts-carousel.default', postCarousel );
     });
 
 })(jQuery);

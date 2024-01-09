@@ -27,7 +27,7 @@ class Progress_Bar extends Widget_Base{
     }
 
     public function get_name() {
-		return 'progress-bar';
+		return 'designer-progress-bar';
 	}
 
     public function get_title() {

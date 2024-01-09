@@ -50,7 +50,7 @@
     }
   
     $(window).on('elementor/frontend/init', function () {
-      elementorFrontend.hooks.addAction('frontend/element_ready/tabs-vertical.default', blockVerticalTabs);
+      elementorFrontend.hooks.addAction('frontend/element_ready/designer-tabs-vertical.default', blockVerticalTabs);
     });
   
 })(jQuery);

@@ -23,7 +23,7 @@ class Tabs_Horizontal extends Widget_Base {
     }
 
     public function get_name() {
-		return 'tabs-horizontal';
+		return 'designer-tabs-horizontal';
 	}
 
     public function get_title() {

@@ -29,7 +29,7 @@
     }
 
     $(window).on('elementor/frontend/init', function () {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/products-slider.default', productSlider );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-products-slider.default', productSlider );
     });
 
 })(jQuery);

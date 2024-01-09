@@ -16,7 +16,7 @@
     }
 
     $(window).on('elementor/frontend/init', () => {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/code-video-popup.default', videoPopup );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-video-popup.default', videoPopup );
     });
 
 })(jQuery);

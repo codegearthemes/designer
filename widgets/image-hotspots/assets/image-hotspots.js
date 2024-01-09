@@ -38,7 +38,7 @@
     }
 
     $(window).on('elementor/frontend/init', function () {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/image-hotspots.default', blockImageHotspots );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-image-hotspots.default', blockImageHotspots );
     });
 
 })(jQuery);

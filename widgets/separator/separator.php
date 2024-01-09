@@ -22,7 +22,7 @@ class Separator extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'separator';
+		return 'designer-separator';
 	}
 
     /**

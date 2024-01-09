@@ -23,7 +23,7 @@ class Tabs_Vertical extends Widget_Base {
     }
 
     public function get_name() {
-		return 'tabs-vertical';
+		return 'designer-tabs-vertical';
 	}
 
     public function get_title() {

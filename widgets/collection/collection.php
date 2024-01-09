@@ -34,7 +34,7 @@ class Collection extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'collection';
+		return 'designer-collection';
 	}
 
 	/**

@@ -22,7 +22,7 @@ class Button_Advanced extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'button-advanced';
+		return 'designer-button-advanced';
 	}
 
 	/**
