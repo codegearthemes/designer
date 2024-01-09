@@ -25,7 +25,7 @@ class Text_Marquee extends Widget_Base {
     }
 
     public function get_name() {
-		return 'text-marquee';
+		return 'designer-text-marquee';
 	}
 
     public function get_title() {

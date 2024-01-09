@@ -48,6 +48,8 @@ class Widget_Lists {
             'video-popup',
             'progress-bar',
             'icon-text',
+            'separator',
+            'template',
            
         ];
 

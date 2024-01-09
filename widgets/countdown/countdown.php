@@ -27,7 +27,7 @@ class Countdown extends Widget_Base{
     }
 
     public function get_name() {
-		return 'countdown';
+		return 'designer-countdown';
 	}
 
     public function get_title() {
@@ -835,6 +835,9 @@ class Countdown extends Widget_Base{
     }
 
     public function get_countdown_attributes( $settings ) {
+
+		$atts = '';
+
 		// Expired Actions
         $atts .= ' data-actions="'. esc_attr( $this->get_expired_actions_json( $settings ) ) .'"';
 

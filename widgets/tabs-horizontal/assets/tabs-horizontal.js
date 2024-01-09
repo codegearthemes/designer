@@ -50,7 +50,7 @@
     }
   
     $(window).on('elementor/frontend/init', function () {
-      elementorFrontend.hooks.addAction('frontend/element_ready/tabs-horizontal.default', blockHorizontalTabs);
+      elementorFrontend.hooks.addAction('frontend/element_ready/designer-tabs-horizontal.default', blockHorizontalTabs);
     });
   
 })(jQuery);

@@ -29,7 +29,7 @@ class Contact extends Widget_Base{
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'contact';
+		return 'designer-contact';
 	}
 
     /**

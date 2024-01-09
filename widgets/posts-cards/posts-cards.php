@@ -56,7 +56,7 @@ class Posts_Cards extends Widget_Base{
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-archive-posts';
+		return 'designer-icon eicon-archive-posts';
 	}
 
     /**

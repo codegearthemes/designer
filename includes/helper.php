@@ -154,21 +154,6 @@ class Helper{
     }
 
     /**
-     * Elementor templates
-     * @return array
-     */
-    public function elementor_templates_options() {
-        $templates = \Elementor\Plugin::$instance->templates_manager->get_source('local')->get_items();
-        $options = [];
-
-        foreach ($templates as $template) {
-           $options[$template['template_id']] = $template['title'];
-        }
-
-        return $options;
-    }
-
-    /**
      * Button Hover Reveal Background
      * More options to add in future
      */

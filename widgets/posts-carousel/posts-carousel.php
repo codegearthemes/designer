@@ -37,7 +37,7 @@ class Posts_Carousel extends Widget_Base{
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'posts-carousel';
+		return 'designer-posts-carousel';
 	}
 
     /**

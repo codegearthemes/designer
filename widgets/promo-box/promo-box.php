@@ -31,7 +31,7 @@ class Promo_Box extends Widget_Base{
     }
 
     public function get_name() {
-		return 'promo-box';
+		return 'designer-promo-box';
 	}
 
     public function get_title() {

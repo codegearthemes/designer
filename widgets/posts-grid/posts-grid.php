@@ -32,7 +32,7 @@ class Posts_Grid extends Widget_Base{
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'posts-grid';
+		return 'designer-posts-grid';
 	}
 
     /**

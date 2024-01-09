@@ -17,12 +17,15 @@ class Loader{
 	 */
     public function __construct() {
         add_action( 'elementor/controls/register', array( $this, 'register_elementor_control' ), 10 );
+		$this->_includes();
         add_action( 'elementor/elements/categories_registered', [ $this, 'add_elementor_widget_categories' ] );
         add_action( 'elementor/widgets/register', [ $this, 'register_elementor_widgets'] );
         add_action( 'elementor/widgets/register', [ $this, 'unregister_widgets' ] );
 
         add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'enqueue_editor_scripts' ] );
+		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'enqueue_panel_scripts' ] );
         add_action( 'elementor/preview/enqueue_styles', [ $this, 'enqueue_editor_styles' ] );
+		add_action( 'elementor/editor/after_enqueue_styles', [ $this, 'enqueue_panel_styles' ]);
 
         add_action( 'wp_enqueue_scripts', [ $this, 'register_fold_styles' ]);
         add_action( 'wp_footer', [ $this, 'register_styles' ]);
@@ -54,6 +57,12 @@ class Loader{
 	 */
     public function register_elementor_control( $controls_manager ) {
 		$controls_manager->register( new \Designer\Includes\Modules\Image_Select() );
+		$controls_manager->register( new \Designer\Includes\Modules\DesignerAjaxSelect2\Designer_Control_Ajax_Select2() );
+	}
+
+	private function _includes() {
+		// Custom Controls
+		require plugin_dir_path( __FILE__ ) . 'modules/designer-ajax-select2/designer-control-ajax-select2-api.php';
 	}
 
     /**
@@ -81,9 +90,15 @@ class Loader{
 			true
 		);
 
+		wp_enqueue_script('designer-addons-library-editor-js',\Designer::plugin_url().'assets/admin/js/editor.js',['jquery',],'1.0.0',true);
+
 		wp_localize_script( 'designer-template-script', 'designer_templates_library', array(
 			'logo'	=> \Designer::plugin_url().'assets/admin/src/logo.svg',
 		) );
+    }
+
+	public function enqueue_panel_scripts(){
+		wp_enqueue_script('designer-addons-library-editor-js',\Designer::plugin_url().'assets/admin/js/editor.js',['jquery',],'1.0.0',true);
     }
 
     /**
@@ -98,6 +113,10 @@ class Loader{
 	 */
     public function enqueue_editor_styles(){
         wp_enqueue_style( 'designer-template-style', \Designer::plugin_url().'assets/admin/css/template.style.css', array(), '1.0.0', 'all' );
+    }
+
+    public function enqueue_panel_styles(){
+        wp_enqueue_style( 'designer-addons-library-editor-css', \Designer::plugin_url().'assets/admin/css/editor.css', array(), '1.0.0', 'all' );
     }
 
     /**

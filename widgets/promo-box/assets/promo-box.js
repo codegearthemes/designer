@@ -40,6 +40,6 @@
     };
 
     $(window).on('elementor/frontend/init', function () {
-        elementorFrontend.hooks.addAction('frontend/element_ready/promo-box.default', blockPromoBox);
+        elementorFrontend.hooks.addAction('frontend/element_ready/designer-promo-box.default', blockPromoBox);
     });
 })(jQuery);

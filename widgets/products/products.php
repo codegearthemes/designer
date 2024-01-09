@@ -23,7 +23,7 @@ class Products extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'products';
+		return 'designer-products';
 	}
 
 	/**

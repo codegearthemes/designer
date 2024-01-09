@@ -25,7 +25,7 @@ class Icon_Text extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'icon-text';
+		return 'designer-icon-text';
 	}
 
     /**
@@ -302,7 +302,6 @@ class Icon_Text extends Widget_Base {
 					'normal'	=> __( 'Normal', 'designer' ),
 					'small'		=> __( 'Small', 'designer' ),
 					'large'		=> __('Large', 'designer'),
-					'full-width'	=> __('Full Width', 'designer'),
 				]
 
 			]

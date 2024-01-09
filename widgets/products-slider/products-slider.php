@@ -36,7 +36,7 @@ class Products_Slider extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'products-slider';
+		return 'designer-products-slider';
 	}
 
 	/**

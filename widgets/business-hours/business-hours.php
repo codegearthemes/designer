@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Business_Hours extends Widget_Base{
 
     public function get_name() {
-        return 'business-hours';
+        return 'designer-business-hours';
     }
 
     public function get_title() {
@@ -24,7 +24,7 @@ class Business_Hours extends Widget_Base{
     }
 
     public function get_icon() {
-        return 'designer-icon , eicon-clock-o';
+        return 'designer-icon eicon-clock-o';
     }
 
     public function get_categories() {

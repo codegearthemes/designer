@@ -28,7 +28,7 @@ class Image_Hotspots extends Widget_base {
     }
 
     public function get_name() {
-		return 'image-hotspots';
+		return 'designer-image-hotspots';
 	}
 
     public function get_title() {

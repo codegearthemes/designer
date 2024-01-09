@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Pricing_List extends Widget_Base {
 
     public function get_name() {
-		return 'pricing-list';
+		return 'designer-pricing-list';
 	}
 
     public function get_title() {

@@ -149,7 +149,7 @@
     }
     
     $(window).on('elementor/frontend/init', () => {
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/countdown.default', countDownTimer );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-countdown.default', countDownTimer );
     });
 
 })(jQuery);
