@@ -23,6 +23,7 @@
 # Pricing List
 # Video Popup
 #Icon Text
+#Template Edit Button
 # Woocommerce
     ##Products Slider and Products Grid 
 --------------------------------------------------------------*/
@@ -1394,9 +1395,126 @@
 /*-------------------------------------------------------------
 				Testimonials
 ------------------------------------------------------------- */
+.block-testimonial .author-image{
+	display: inline-block;
+}
+
+.designer-testimonial-rating i {
+  display: inline;
+  position: relative;
+  font-family: "eicons";
+  font-style: normal;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.designer-testimonial-rating i:before {
+  content: '\e934';
+  font-weight: 900;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: inherit;
+  font-family: inherit;
+  overflow: hidden;
+}
+
+.designer-testimonial-rating-style_2 .designer-testimonial-rating i:before {
+  content: '\002605';
+}
+
+.designer-testimonial-rating i:last-of-type {
+  margin-right: 0 !important;
+}
+
+.designer-rating-icon-empty:before {
+  display: none !important;
+}
+
+.designer-rating-icon-empty:before {
+  display: none !important;
+}
+
+.designer-rating-icon-0:before {
+  width: 0;
+}
+
+.designer-rating-icon-1:before {
+  width: 10%;
+}
+
+.designer-rating-icon-2:before {
+  width: 20%;
+}
+
+.designer-rating-icon-3:before {
+  width: 30%;
+}
+
+.designer-rating-icon-4:before {
+  width: 40%;
+}
+
+.designer-rating-icon-5:before {
+  width: 50%;
+}
+
+.designer-rating-icon-6:before {
+  width: 60%;
+}
+
+.designer-rating-icon-7:before {
+  width: 70%;
+}
+
+.designer-rating-icon-8:before {
+  width: 80%;
+}
+
+.designer-rating-icon-9:before {
+  width: 90%;
+}
+
+.designer-rating-icon-full:before {
+  width: 100%;
+}
+
+.designer-testimonial-date,
+.position {
+  font-size: 14px;
+}
+
 .block-testimonial .content-item {
 	display: flex;
 	flex-direction: column;
+}
+
+.designer-testimonial-meta-position-top .block-testimonial .content-item {
+  flex-direction: column-reverse;
+}
+.designer-testimonial-meta-position-right  .block-testimonial .content-item{
+flex-direction: row;
+}
+.designer-testimonial-meta-position-left  .block-testimonial .content-item,
+.designer-testimonial-image-position-right .author-meta-inner {
+  flex-direction: row-reverse;
+}
+
+.designer-testimonial-meta-position-left .block-testimonial  .designer-testimonial-meta,
+.designer-testimonial-meta-position-right .block-testimonial  .designer-testimonial-meta  {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.designer-testimonial-image-position-left .author-meta-inner,
+.designer-testimonial-image-position-right .author-meta-inner{
+	display: inline-flex;
+}
+
+.designer-testimonial-logo-image {
+    display: block;
+    overflow: hidden;
 }
 
 .block-testimonial .content-item .title{
@@ -1518,9 +1636,9 @@
     text-align: left;
 }
 
-.elementor-widget-business-hours .block-business__hours .designer-business-day,
-.elementor-widget-business-hours .block-business__hours .designer-business-time,
-.elementor-widget-business-hours .block-business__hours .designer-business-closed {
+.elementor-widget-designer-business-hours .block-business__hours .designer-business-day,
+.elementor-widget-designer-business-hours .block-business__hours .designer-business-time,
+.elementor-widget-designer-business-hours .block-business__hours .designer-business-closed {
     font-size: 16px;
     font-weight: 500;
 }
@@ -2264,8 +2382,8 @@
 /*-------------------------------------------------------------
 				Pricing Table
 ------------------------------------------------------------- */
-.elementor-widget-pricing-table .designer-pricing-table-heading,
-.elementor-widget-pricing-table .designer-pricing-table-text {
+.elementor-widget-designer-pricing-table .designer-pricing-table-heading,
+.elementor-widget-designer-pricing-table .designer-pricing-table-text {
     background-color: #f9f9f9;
 }
 
@@ -2363,9 +2481,9 @@
 
 /* Feature */
 
-.elementor-widget-pricing-table .designer-pricing-table-price,
-.elementor-widget-progress-bar .designer-prbar-hr-line-inner,
-.elementor-widget-progress-bar .designer-prbar-vr-line-inner{
+.elementor-widget-designer-pricing-table .designer-pricing-table-price,
+.elementor-widget-designer-progress-bar .designer-prbar-hr-line-inner,
+.elementor-widget-designer-progress-bar .designer-prbar-vr-line-inner{
     background-color: #333333;
 }
 
@@ -2884,11 +3002,11 @@
 
 /* Promo Box Classic */
 
-.elementor-widget-promo-box.designer-promo-box-style-classic .designer-promo-box-content {
+.elementor-widget-designer-promo-box.designer-promo-box-style-classic .designer-promo-box-content {
     background-color: #111111;
 }
 
-.elementor-widget-promo-box.designer-promo-box-style-classic .designer-promo-box:hover .designer-promo-box-content {
+.elementor-widget-designer-promo-box.designer-promo-box-style-classic .designer-promo-box:hover .designer-promo-box-content {
     background-color: #333333;
 }
 
@@ -3589,8 +3707,32 @@
     justify-content: flex-end;
 }
 
+/*--------------------------------------------------------------
+	#Template Edit button
+------------------------------------------------------------- */
+.designer-template-edit-btn {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  display: none;
+  line-height: 1;
+  padding: 8px 13px;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+  border: 1px solid #000;
+}
 
+.elementor-editor-active .designer-template-edit-btn {
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden;
+}
 
+.elementor-editor-active .elementor-element-edit-mode:hover .designer-template-edit-btn {
+  opacity: 1;
+  visibility: visible;
+}
 
 
 /*-------------------------------------------------------------
@@ -3809,28 +3951,3 @@
 	justify-content: center;
 }
 
-/* Template Edit button */
-
-.designer-template-edit-btn {
-  position: absolute;
-  top: 0;
-  right: 40px;
-  display: none;
-  line-height: 1;
-  padding: 8px 13px;
-  cursor: pointer;
-  background: #333;
-  color: #fff;
-  border: 1px solid #000;
-}
-
-.elementor-editor-active .designer-template-edit-btn {
-  display: inline-block;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.elementor-editor-active .elementor-element-edit-mode:hover .designer-template-edit-btn {
-  opacity: 1;
-  visibility: visible;
-}
