@@ -4,7 +4,7 @@
 
     const testimonialSlider = ($scope, $) => {
         if( $scope.length > 0 ){
-            $('.block-testimonial-slider').each(function(){
+            $('.block--testimonial-slider').each(function(){
                 var id = $(this).data('selector'),
                 config = $(this).data('config');
                 new Swiper( '#testimonial_slider_'+id, config );

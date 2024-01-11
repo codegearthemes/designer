@@ -1395,7 +1395,8 @@
 /*-------------------------------------------------------------
 				Testimonials
 ------------------------------------------------------------- */
-.block-testimonial .author-image{
+.block-testimonial .author-image,
+.block--testimonial-slider .author-image{
 	display: inline-block;
 }
 
@@ -1485,24 +1486,30 @@
   font-size: 14px;
 }
 
-.block-testimonial .content-item {
+.block-testimonial .content-item,
+.block--testimonial-slider .content-item {
 	display: flex;
 	flex-direction: column;
 }
 
-.designer-testimonial-meta-position-top .block-testimonial .content-item {
+.designer-testimonial-meta-position-top .block-testimonial .content-item,
+.designer-testimonial-meta-position-top .block--testimonial-slider .content-item{
   flex-direction: column-reverse;
 }
-.designer-testimonial-meta-position-right  .block-testimonial .content-item{
+.designer-testimonial-meta-position-right .block-testimonial .content-item,
+.designer-testimonial-meta-position-right .block--testimonial-slider .content-item{
 flex-direction: row;
 }
 .designer-testimonial-meta-position-left  .block-testimonial .content-item,
+.designer-testimonial-meta-position-left  .block--testimonial-slider .content-item,
 .designer-testimonial-image-position-right .author-meta-inner {
   flex-direction: row-reverse;
 }
 
 .designer-testimonial-meta-position-left .block-testimonial  .designer-testimonial-meta,
-.designer-testimonial-meta-position-right .block-testimonial  .designer-testimonial-meta  {
+.designer-testimonial-meta-position-right .block-testimonial  .designer-testimonial-meta,
+.designer-testimonial-meta-position-left  .block--testimonial-slider  .designer-testimonial-meta,
+.designer-testimonial-meta-position-right  .block--testimonial-slider  .designer-testimonial-meta  {
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
@@ -1517,11 +1524,13 @@ flex-direction: row;
     overflow: hidden;
 }
 
-.block-testimonial .content-item .title{
+.block-testimonial .content-item .title,
+.block--testimonial-slider .content-item .name{
 	margin-bottom: 10px;
 }
 
-.block-testimonial .content-item .name{
+.block-testimonial .content-item .name,
+.block--testimonial-slider .content-item .name{
 	margin-bottom: 0px;
 }
 

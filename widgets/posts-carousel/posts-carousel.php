@@ -2620,6 +2620,9 @@ class Posts_Carousel extends Widget_Base{
             ]
         );
 
+		$this->end_controls_tab();
+        $this->end_controls_tabs();
+
 		$this->end_controls_section();
 	}
 
