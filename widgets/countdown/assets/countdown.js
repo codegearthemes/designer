@@ -123,22 +123,28 @@
                         var countDownWrap = $scope.children('.elementor-widget-container').children('.block--countdown-wrapper');
                         var dataExpiredActions = countDownWrap.data('actions');
                         
-                        if(dataExpiredActions.hasOwnProperty('hide-timer')){
-                            countDownWrap.hide();
-                        }
-
-                        if(dataExpiredActions.hasOwnProperty('hide-element')){
-                            $( dataExpiredActions['hide-element'] ).hide();
-                        }
-
-                        if ( dataExpiredActions.hasOwnProperty( 'message' ) ) {
-                            if ( ! $scope.children( '.elementor-widget-container' ).children( '.designer-countdown-message' ).length ) {
-                                countDownWrap.after( '<div class="designer-countdown-message">'+ dataExpiredActions['message'] +'</div>' );
+                        if (!editorCheck()) {
+                            if(dataExpiredActions.hasOwnProperty('hide-timer')){
+                                countDownWrap.hide();
                             }
-                        }
-                    
-                        if ( dataExpiredActions.hasOwnProperty( 'redirect' ) ) {
-                            window.location.href = dataExpiredActions['redirect'];
+
+                            if(dataExpiredActions.hasOwnProperty('hide-element')){
+                                $( dataExpiredActions['hide-element'] ).hide();
+                            }
+
+                            if ( dataExpiredActions.hasOwnProperty( 'message' ) ) {
+                                if ( ! $scope.children( '.elementor-widget-container' ).children( '.designer-countdown-message' ).length ) {
+                                    countDownWrap.after( '<div class="designer-countdown-message">'+ dataExpiredActions['message'] +'</div>' );
+                                }
+                            }
+                        
+                            if ( dataExpiredActions.hasOwnProperty( 'redirect' ) ) {
+                                window.location.href = dataExpiredActions['redirect'];
+                            }
+
+                            if ( dataExpiredActions.hasOwnProperty( 'load-template' ) ) {
+                                countDownWrap.next('.elementor').show();
+                            }
                         }
 
                     }
@@ -146,6 +152,10 @@
             };
 
         }
+    }
+
+    function editorCheck() {
+        return $('body').hasClass('elementor-editor-active') ? true : false;
     }
     
     $(window).on('elementor/frontend/init', () => {
