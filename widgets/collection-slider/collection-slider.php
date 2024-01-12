@@ -2319,7 +2319,7 @@ class Collection_Slider extends Widget_Base {
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
-                    'rem' => [
+                    'px' => [
                         'min' => -100,
                         'max' => 500,
                     ],

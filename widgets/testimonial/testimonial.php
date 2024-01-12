@@ -1072,8 +1072,8 @@ class Testimonial extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-            'meta-text-align',
+		$this->add_responsive_control(
+            'meta_text_align',
             [
                 'label'     => __( 'Alignment', 'designer' ),
                 'type'      => Controls_Manager::CHOOSE,

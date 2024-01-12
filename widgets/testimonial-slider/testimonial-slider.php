@@ -394,19 +394,6 @@ class Testimonial_Slider extends Widget_Base {
 			]
 		);
 
-        $this->add_control(
-			'dots',
-			[
-				'label' => esc_html__( 'Show dots', 'designer' ),
-				'type' =>   Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'designer' ),
-				'label_off' => esc_html__( 'No', 'designer' ),
-				'return_value' => 'yes',
-				'default' => '',
-				'separator' => 'after',
-			]
-		);
-
 		$this->add_control(
 			'loop',
 			[
@@ -419,6 +406,34 @@ class Testimonial_Slider extends Widget_Base {
 				'frontend_available' => true,
 			]
         );
+
+        $this->add_control(
+            'pagination_type',
+            [
+                'label'   => __('Pagination', 'designer'),
+                'type'    => Controls_Manager::SELECT,
+                'default' => 'hide',
+                'options' => [
+					'hide'	=>  __('Hide', 'designer'),
+                    'progressbar'  => __('Progress Bar', 'designer'),
+                    'bullets' => __('Dots', 'designer'),
+                    'fraction' => __('Fraction', 'designer'),
+                    'number' => __('Number', 'designer'),
+                ],
+            ]
+        );
+
+		$this->add_control(
+			'grab_cursor',
+			[
+				'label' => esc_html__( 'Enable Grab Cursor?', 'designer' ),
+				'type' =>   Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'designer' ),
+				'label_off' => esc_html__( 'No', 'designer' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
 
         $this->add_responsive_control(
 			'slide_perpage',
@@ -435,7 +450,7 @@ class Testimonial_Slider extends Widget_Base {
 				],
 				'devices' => [ 'desktop', 'tablet', 'mobile' ],
 				'desktop_default' => [
-					'size' => 2,
+					'size' => 3,
 					'unit' => 'px',
 				],
 				'tablet_default' => [
@@ -447,7 +462,7 @@ class Testimonial_Slider extends Widget_Base {
 					'unit' => 'px',
 				],
 				'default' => [
-					'size' => 2,
+					'size' => 3,
 					'unit' => 'px',
 				],
 			]
@@ -649,6 +664,8 @@ class Testimonial_Slider extends Widget_Base {
         $this->__testimonial_meta_controls();
         $this->__testimonial_arrow_style_controls();
         $this->__testimonial_dot_style_controls();
+        $this->__testimonial_progress_bar_style_controls();
+        $this->__testimonial_fraction_style_controls();
     }
 
     protected function __testimonial_general_style_controls() {
@@ -1328,8 +1345,8 @@ class Testimonial_Slider extends Widget_Base {
 		);
 
 
-        $this->add_control(
-            'meta-text-align',
+        $this->add_responsive_control(
+            'meta_text_align',
             [
                 'label'     => __( 'Alignment', 'designer' ),
                 'type'      => Controls_Manager::CHOOSE,
@@ -2073,7 +2090,19 @@ class Testimonial_Slider extends Widget_Base {
                 'label' => __( 'Dots', 'designer' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'dots' => 'yes',
+                    'pagination_type' => ['bullets','number'],
+                ]
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'pagination_number_typography',
+                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet',
+                'condition' => [
+                    'pagination_type' =>'number',
                 ]
             ]
         );
@@ -2085,7 +2114,7 @@ class Testimonial_Slider extends Widget_Base {
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
-                    'rem' => [
+                    'px' => [
                         'min' => -100,
                         'max' => 500,
                     ],
@@ -2095,15 +2124,12 @@ class Testimonial_Slider extends Widget_Base {
                     ],
                 ],
                 'default'   => [
-                    'size' => 15,
+                    'size' => -30,
                     'unit' => 'px'
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination' => 'bottom: {{SIZE}}{{UNIT}};',
                 ],
-                'condition' => [
-                    'dots' => 'yes',
-                ]
             ]
         );
 
@@ -2114,15 +2140,12 @@ class Testimonial_Slider extends Widget_Base {
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em'],
                 'default'   => [
-                    'size' => 10,
+                    'size' => 5,
                     'unit' => 'px'
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination' => 'gap: {{SIZE}}{{UNIT}};',
                 ],
-                'condition' => [
-                    'dots' => 'yes',
-                ]
             ]
         );
 
@@ -2151,9 +2174,6 @@ class Testimonial_Slider extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination' => 'justify-content: {{VALUE}}'
                 ],
-                'condition' => [
-                    'dots' => 'yes',
-                ]
             ]
         );
 
@@ -2163,16 +2183,9 @@ class Testimonial_Slider extends Widget_Base {
                 'label' => __( 'Width', 'designer' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em'],
-                'default'   => [
-                    'size' => 15,
-                    'unit' => 'px'
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination span' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
-                'condition' => [
-                    'dots' => 'yes',
-                ]
             ]
         );
 
@@ -2182,16 +2195,9 @@ class Testimonial_Slider extends Widget_Base {
                 'label' => __( 'Height', 'designer' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em'],
-                'default'   => [
-                    'size' => 15,
-                    'unit' => 'px'
-                ],
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination span' => 'height: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
-                'condition' => [
-                    'dots' => 'yes',
-                ]
             ]
         );
 
@@ -2214,43 +2220,325 @@ class Testimonial_Slider extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .swiper-pagination span' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
                 ],
-                'condition' => [
-                    'dots' => 'yes',
-                ]
             ]
         );
 
         $this->add_control(
 			'dots_color',
 			[
-				'label' => __( 'Dots background', 'designer' ),
+				'label' => __( 'Number Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#115CFA',
+				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet' => 'color: {{VALUE}};',
 				],
 				'condition' => [
-					'dots' => 'yes',
+					'pagination_type' => 'number',
+				]
+			]
+		);
+
+        $this->add_control(
+			'dots_bg_color',
+			[
+				'label' => __( 'Dots Background', 'designer' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet' => 'background-color: {{VALUE}};',
+				],
+			]
+		);
+
+        $this->add_control(
+			'dots_active_color',
+			[
+				'label' => __( 'Number Active Color', 'designer' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet-active' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet:hover' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'pagination_type' => 'number',
 				]
 			]
 		);
 
 		$this->add_control(
-			'dots_active_color',
+			'dots_active_bg_color',
 			[
-				'label' => __( 'Dots active background', 'designer' ),
+				'label' => __( 'Dots Active Background', 'designer' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => '#FFFFFF',
+				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet-active' => 'background-color: {{VALUE}};',
-                    '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet:hover' => 'background: {{VALUE}};',
-				],
-				'condition' => [
-					'dots' => 'yes',
+                    '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet:hover' => 'background-color: {{VALUE}};',
 				],
 				'separator' => 'after',
 			]
 		);
+
+        $this->end_controls_section();
+    }
+
+    protected function __testimonial_progress_bar_style_controls() {
+
+		$this->start_controls_section(
+            '_section_style_progress',
+            [
+                'label' => __( 'Progress Bar', 'designer' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'pagination_type' => 'progressbar',
+                ]
+            ]
+        );
+
+		$this->add_responsive_control(
+            'progressbar_nav_position_y',
+            [
+                'label' => __( 'Vertical Position', 'designer' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%'],
+                'range' => [
+                    'rem' => [
+                        'min' => -100,
+                        'max' => 500,
+                    ],
+                    '%' => [
+                        'min' => -100,
+                        'max' => 150,
+                    ],
+                ],
+                'default'   => [
+                    'size' => -30,
+                    'unit' => 'px'
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-pagination' => 'bottom: {{SIZE}}{{UNIT}};top:auto;left:auto;',
+                ],
+				'condition' => [
+                    'pagination_type' => 'progressbar',
+                ]
+            ]
+        );
+
+		$this->add_responsive_control(
+            'progressbar_nav_height_size',
+            [
+                'label' => __( 'Height', 'designer' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'em'],
+                'default'   => [
+                    'size' => 2,
+                    'unit' => 'px'
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-pagination-progressbar' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'pagination_type' => 'progressbar',
+                ]
+            ]
+        );
+
+
+        $this->add_responsive_control(
+            'progressbar_width_size',
+            [
+                'label' => __( 'Width', 'designer' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'em', '%'],
+                'default'   => [
+                    'size' => 100,
+                    'unit' => '%'
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-pagination-progressbar' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+				'condition' => [
+                    'pagination_type' => 'progressbar',
+                ]
+            ]
+        );
+
+		$this->add_control(
+			'progressbar_color',
+			[
+				'label' => __( 'Progressbar background', 'designer' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .swiper-pagination-progressbar' => 'background: {{VALUE}};',
+				],
+				'condition' => [
+                    'pagination_type' => 'progressbar',
+                ]
+			]
+		);
+
+		$this->add_control(
+			'progressbar_active_color',
+			[
+				'label' => __( 'Progressbar active background', 'designer' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .swiper-pagination-progressbar-fill' => 'background-color: {{VALUE}};',
+				],
+				'condition' => [
+                    'pagination_type' => 'progressbar',
+                ],
+				'separator' => 'after',
+			]
+		);
+
+		$this->add_responsive_control(
+            'progressbar_border_radius',
+            [
+                'label' => __( 'Progressbar Border Radius', 'designer' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-pagination-progressbar' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+				'condition' => [
+                    'pagination_type' => 'progressbar',
+                ]
+            ]
+        );
+
+		$this->add_responsive_control(
+            'progressbar_active_border_radius',
+            [
+                'label' => __( 'Progressbar Active Border Radius', 'designer' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%' ],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-pagination-progressbar-fill' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+				'condition' => [
+                    'pagination_type' => 'progressbar',
+                ]
+            ]
+        );
+
+		$this->end_controls_section();
+	}
+
+    protected function __testimonial_fraction_style_controls() {
+        $this->start_controls_section(
+            '_section_style_fraction',
+            [
+                'label' => __( 'Fraction', 'designer' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'pagination_type' => 'fraction',
+                ]
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'pagination_fraction_active_typography',
+                'label'    => __( 'Fraction Active', 'designer' ),
+                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .swiper-pagination-fraction .swiper-pagination-current',
+            ]
+        );
+
+        $this->add_control(
+			'fraction_color',
+			[
+				'label' => __( 'Fraction Color', 'designer' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .swiper-pagination-fraction' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+                    'pagination_type' => 'fraction',
+                ]
+			]
+		);
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'pagination_fraction_total_typography',
+                'label'    => __( 'Fraction Total', 'designer' ),
+                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .swiper-pagination-fraction .swiper-pagination-total',
+                'condition' => [
+                    'pagination_type' => 'fraction',
+                ]
+            ]
+        );
+
+        $this->add_responsive_control(
+            'dots_fraction_position_y',
+            [
+                'label' => __( 'Vertical Position', 'designer' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%'],
+                'range' => [
+                    'px' => [
+                        'min' => -100,
+                        'max' => 500,
+                    ],
+                    '%' => [
+                        'min' => -100,
+                        'max' => 150,
+                    ],
+                ],
+                'default'   => [
+                    'size' => -30,
+                    'unit' => 'px'
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-pagination-fraction' => 'bottom: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'pagination_type' => 'fraction',
+                ]
+            ]
+        );
+
+        $this->add_responsive_control(
+            'dots_fraction_align',
+            [
+                'label' => __( 'Alignment', 'designer' ),
+                'type' => Controls_Manager::CHOOSE,
+                'label_block' => false,
+                'default' => 'center',
+                'options' => [
+                    'flex-start' => [
+                        'title' => __( 'Left', 'designer' ),
+                        'icon' => 'eicon-h-align-left',
+                    ],
+                    'center' => [
+                        'title' => __( 'Center', 'designer' ),
+                        'icon' => 'eicon-h-align-center',
+                    ],
+                    'flex-end' => [
+                        'title' => __( 'Right', 'designer' ),
+                        'icon' => 'eicon-h-align-right',
+                    ],
+                ],
+                'toggle' => true,
+                'selectors' => [
+                    '{{WRAPPER}} .swiper-pagination' => 'justify-content: {{VALUE}}'
+                ],
+                'condition' => [
+                    'pagination_type' => 'fraction',
+                ]
+            ]
+        );
+
+
 
         $this->end_controls_section();
     }
@@ -2392,19 +2680,11 @@ class Testimonial_Slider extends Widget_Base {
         $config = [
             'dots'              => !empty($settings['dots']),
             'arrows'			=> !empty($settings['arrow']),
-			'autoplay'			=> ($settings['autoplay'] == 'yes') ? true : false,
+            'grabCursor'		=> (!empty($settings['grab_cursor']) && $settings['grab_cursor'] == 'yes') ? true: false,
+            'speed'				=> !empty($settings['autoplay_speed']) ? $settings['autoplay_speed'] : 1000,
             'loop'  			=> ($settings['loop'] == 'yes') ? true : false,
-            'slidesPerView'     => 1,
-            'spaceBetween'      => 30,
-			'navigation' => [
-				'nextEl' => '.swiper-button-next-'.$this->get_id(),
-				'prevEl' => '.swiper-button-prev-'.$this->get_id(),
-            ],
-            'pagination' => [
-				'el' => '.swiper-pagination-'.$this->get_id(),
-				'type' => "bullets",
-                'clickable' => true,
-			],
+            'slidesPerView'     => isset($settings['slide_perpage']['size']) ? $settings['slide_perpage']['size'] : 3,
+            'spaceBetween'      => isset($settings['testimonial_gutter']['size']) ? $settings['testimonial_gutter']['size'] : 30,
             'breakpoints'		=> [
                 320 => [
                     'slidesPerView'    => !empty($settings['slide_perpage_mobile']['size']) ? $settings['slide_perpage_mobile']['size'] : 1,
@@ -2418,21 +2698,59 @@ class Testimonial_Slider extends Widget_Base {
                     'spaceBetween'     => !empty($settings['testimonial_gutter_tablet']['size']) ? $settings['testimonial_gutter_tablet']['size'] : 20,
                 ],
                 1024 => [
-                    'slidesPerView'    => !empty($settings['slide_perpage']['size']) ? $settings['slide_perpage']['size'] : 2,
+                    'slidesPerView'    => !empty($settings['slide_perpage']['size']) ? $settings['slide_perpage']['size'] : 3,
                     'slidesPerGroup'   => !empty($settings['slides_scroll']['size']) ? $settings['slides_scroll']['size'] : 1,
                     'spaceBetween'     => !empty($settings['testimonial_gutter']['size']) ? $settings['testimonial_gutter']['size'] : 30,
                 ]
             ]
         ];
 
+        if ('yes' === $settings['autoplay']) {
+            $config['autoplay'] = [
+                'disableOnInteraction' => false,
+                'pauseOnMouseEnter' => !empty($settings['autoplay_hover_pause']),
+            ];
+        }
+
+        if( $settings['arrow'] == 'yes') {
+			$config['navigation'] = [
+				'nextEl' => '.swiper-button-next-'.$this->get_id(),
+				'prevEl' => '.swiper-button-prev-'.$this->get_id(),
+			];
+		}
+
+        if( 'bullets' === $settings['pagination_type']){
+			$config['pagination'] = [
+				'el' => '.swiper-pagination-'.$this->get_id(),
+				'type' => 'bullets',
+				'clickable' => true,
+			];
+		}elseif( 'progressbar' === $settings['pagination_type'] ) {
+			$config['pagination'] = [
+				'el' => '.swiper-pagination-'.$this->get_id(),
+				'type' => 'progressbar',
+				'clickable' => true,
+			];
+		}elseif( 'fraction' === $settings['pagination_type'] ) {
+			$config['pagination'] = [
+				'el' => '.swiper-pagination-'.$this->get_id(),
+				'type' => 'fraction',
+			];
+		}
+
+       
         $this->add_render_attribute(
             'wrapper',
             [
                 'class' => [ 'block--testimonial-slider' ],
 				'data-selector' => $this->get_id(),
                 'data-config' => wp_json_encode($config)
+        
             ]
         );
+        if ('number' === $settings['pagination_type']) {
+            $this->add_render_attribute('wrapper', 'class', 'testimonial-number-pagination');
+        }
         ?>
         <div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
             <div id="testimonial_slider_<?php echo esc_attr( $this->get_id() ) ?>" class="swiper">
@@ -2548,9 +2866,9 @@ class Testimonial_Slider extends Widget_Base {
                 </div>
             <?php endif;?>
 
-            <?php if( $settings['dots'] == 'yes' ): ?>
-                <div class="swiper-pagination swiper-pagination-<?php echo esc_attr($this->get_id()) ?>"></div>
-            <?php endif; ?>
+            <?php if( $settings['pagination_type'] !== 'hide'): ?>
+				<div class="swiper-pagination swiper-pagination-<?php echo esc_attr( $this->get_id() ) ?>"></div>
+			<?php endif; ?>
             
         </div>
         <?php
