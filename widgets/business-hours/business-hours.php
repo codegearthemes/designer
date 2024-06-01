@@ -28,7 +28,7 @@ class Business_Hours extends Widget_Base{
     }
 
     public function get_categories() {
-        return 'designer';
+        return ['designer'];
     }
 
     public function get_keywords() {

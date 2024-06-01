@@ -2293,6 +2293,9 @@ class Collection_Slider extends Widget_Base {
             ]
         );
 
+		$this->end_controls_tab();
+        $this->end_controls_tabs();
+
 		$this->end_controls_section();
 	}
 
@@ -2316,7 +2319,7 @@ class Collection_Slider extends Widget_Base {
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
-                    'rem' => [
+                    'px' => [
                         'min' => -100,
                         'max' => 500,
                     ],
@@ -2454,11 +2457,11 @@ class Collection_Slider extends Widget_Base {
         $this->add_control(
 			'dots_color',
 			[
-				'label' => __( 'Dots background', 'designer' ),
+				'label' => __( 'Dots Background', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
                     'pagination_type' => 'bullets',
@@ -2469,12 +2472,12 @@ class Collection_Slider extends Widget_Base {
 		$this->add_control(
 			'dots_active_color',
 			[
-				'label' => __( 'Dots active background', 'designer' ),
+				'label' => __( 'Dots Active Background', 'designer' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet-active' => 'background-color: {{VALUE}};',
-                    '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet:hover' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet:hover' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
                     'pagination_type' => 'bullets',
