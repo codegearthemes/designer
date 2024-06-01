@@ -1250,7 +1250,7 @@ class Icon_Text extends Widget_Base {
 		);
 
 		$this->add_control(
-			'icon_color',
+			'button_icon_color',
 			[
 				'label' => esc_html__( 'Icon Color', 'designer' ),
 				'type' => Controls_Manager::COLOR,

@@ -19,6 +19,15 @@ Build a beautiful website with Designer in less time without any coding skills.
 
 ## 42+ Elementor Widgets
 
+= Countdown Widget =
+Create excitement on your site with Elementor's Countdown widget. Easily showcase upcoming events or product launches with this customizable, user-friendly feature. Add a sleek and dynamic countdown to your Elementor-powered pages for a visually engaging and time-sensitive touch.
+
+= Video Popup =
+Enhance your website's interactivity with Elementor's Video Popup widget. Easily embed and customize video pop-ups for dynamic content display. Perfect for showcasing promotional clips or tutorials, this widget adds a visually captivating and user-friendly touch to your site. Elevate engagement effortlessly with this versatile and seamless integration into your Elementor-powered pages.
+
+= Template =
+Optimize your site's appearance with Elementor's Template Showcase widget. Customizable and responsive, it effortlessly displays your saved templates, making it perfect for highlighting diverse content like portfolios, products, or services. Elevate your website with visually striking and user-friendly template presentations, seamlessly integrating with Elementor for a seamless user experience.
+
 = Pricing table =
 Elementor's Pricing Table widget streamlines pricing presentation, offering customization and responsiveness. Ideal for showcasing products or services, it enhances websites with visually appealing and user-friendly pricing information.
 

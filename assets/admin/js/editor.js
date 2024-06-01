@@ -17,11 +17,11 @@
 				$scope.find( '.designer-template-edit-btn' ).on( 'click', DesignerElementorEditorPopup.renderPopup );
 			} );
 
-			window.elementorFrontend.hooks.addAction( 'frontend/element_ready/tabs-horizontal.default', function( $scope ) {
+			window.elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-tabs-horizontal.default', function( $scope ) {
 				$scope.find( '.designer-template-edit-btn' ).on( 'click', DesignerElementorEditorPopup.renderPopup );
 			} );
 			
-			window.elementorFrontend.hooks.addAction( 'frontend/element_ready/tabs-vertical.default', function( $scope ) {
+			window.elementorFrontend.hooks.addAction( 'frontend/element_ready/designer-tabs-vertical.default', function( $scope ) {
 				$scope.find( '.designer-template-edit-btn' ).on( 'click', DesignerElementorEditorPopup.renderPopup );
 			} );
 

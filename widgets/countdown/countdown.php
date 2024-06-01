@@ -298,6 +298,7 @@ class Countdown extends Widget_Base{
 					'hide-element' => esc_html__( 'Hide Element', 'designer' ),
 					'message' => esc_html__( 'Display Message', 'designer' ),
 					'redirect' => esc_html__( 'Redirect', 'designer' ),
+					'load-template' => esc_html__( 'Load Template', 'designer' ),
 				],
 				'multiple' => true,
 				'separator' => 'before',
@@ -341,6 +342,20 @@ class Countdown extends Widget_Base{
 				'separator' => 'before',
 				'condition' => [
 					'timer_actions' => 'redirect',
+				],
+			]
+		);
+
+		$this->add_control(
+			'load_template' ,
+			[
+				'label'	=> esc_html__( 'Select Template', 'designer' ),
+				'type' => 'designer-ajax-select2',
+				'options' => 'ajaxselect2/get_elementor_templates',
+				'label_block' => true,
+				'separator' => 'before',
+				'condition' => [
+					'timer_actions' => 'load-template',
 				],
 			]
 		);
@@ -914,6 +929,10 @@ class Countdown extends Widget_Base{
 					case 'redirect':
 						$actions['redirect'] = $settings['redirect_url'];
 						break;
+					
+					case 'load-template':
+						$actions['load-template'] = $settings['load_template'];
+						break;
 				}
 			}
 		}
@@ -930,6 +949,19 @@ class Countdown extends Widget_Base{
 		}
 
 		return $html;
+	}
+
+	public function load_elementor_template( $settings ) {
+		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+			return;
+		}
+
+		if ( ! empty( $settings['timer_actions'] ) && ! in_array( 'redirect', $settings['timer_actions'] ) ) {
+			if ( in_array( 'load-template', $settings['timer_actions'] ) ) {
+				// Load Elementor Template
+				echo \Elementor\Plugin::instance()->frontend->get_builder_content( $settings['load_template'], false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+		}
 	}
 
 	public function render_separator($settings){
@@ -977,8 +1009,9 @@ class Countdown extends Widget_Base{
 			</div>
 
         </div>
-
     <?php
+		// Load Template
+		$this->load_elementor_template( $settings );
     }
 
    

@@ -1,0 +1,106 @@
+.block--testimonial-slider .slide-previous {
+    left: 0px;
+    z-index: 101;
+}
+
+.block--testimonial-slider .slide-next{
+    right: 0px;
+    z-index: 101;
+}
+
+.block--testimonial-slider .slide-next i,
+.block--testimonial-slider .slide-next svg{
+    transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+
+
+.block--testimonial-slider.designer-navigation__outside .slide-next{
+	right: -75px;
+    z-index: 1;
+}
+
+.block--testimonial-slider.designer-navigation__outside .slide-previous{
+	left: -75px;
+    z-index: 1;
+}
+
+.block--testimonial-slider.designer-navigation__inside .slide-next {
+    right: 30px;
+}
+
+.block--testimonial-slider.designer-navigation__inside .slide-previous {
+    left: 30px;
+}
+
+.block--testimonial-slider .designer-swiper-together-nav {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 30px;
+    z-index: 1
+}
+
+.block--testimonial-slider .designer-swiper-together-nav .designer-swiper-together-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.block--testimonial-slider .designer-swiper-together-nav .slide-next,
+.block--testimonial-slider .designer-swiper-together-nav .slide-previous {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    z-index: 15
+}
+
+.block--testimonial-slider .designer-swiper-together-nav .slide-previous{
+    margin-right: 20px!important
+}
+
+.designer-navigation-alignment--flex-start .designer-swiper-together-nav {
+    justify-content: flex-start;
+    right: auto!important;
+}
+
+.designer-navigation-alignment--flex-end .designer-swiper-together-nav {
+    justify-content: flex-end;
+    left: auto!important;
+}
+
+.designer-navigation-together--top .designer-swiper-together-nav {
+    bottom: 100%;
+    margin-top: 0!important;
+    margin-bottom: 30px;
+}
+
+
+@media screen and (max-width: 1440px) {
+    .block--testimonial-slider .slide-next{
+        right: 15px;
+    }
+
+    .block--testimonial-slider .slide-previous{
+        left: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .designer-hide-navigation__1024 .designer-swiper-together-nav,
+    .designer-hide-navigation__1024 .slide-next,
+    .designer-hide-navigation__1024 .slide-previous {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .designer-hide-navigation__1024 .designer-swiper-together-nav,
+    .designer-hide-navigation__1024 .slide-next,
+    .designer-hide-navigation__1024 .slide-previous {
+        display: none;
+    }
+}
