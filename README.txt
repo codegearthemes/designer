@@ -2,12 +2,11 @@
 Contributors: CodeGearThemes
 Tags: codegearthemes, codegear, elementor, page builder, import, sites
 Requires at least: 5.1
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Donate link: https://www.buymeacoffee.com/codegearthemes
 
 Designer plugin will add custom made elementor elements to elementor page builder to customize sites with ease.
 
@@ -66,6 +65,10 @@ This plugin adds custom made elementor widgets which helps to customize with ele
 
 
 == Changelog ==
+
+= 1.3.1 (Released: June 01, 2024) =
+* [Update] Testimonials
+* [Update] Testimonials Slider
 
 = 1.3.0 (Released: January 09, 2024) =
 * [New] Section import
