@@ -5,16 +5,17 @@ namespace Designer\Includes;
 use Designer\Traits\Singleton;
 use Designer\Includes\Widget_Lists;
 
-class Loader{
+class Loader
+{
 
     use Singleton;
 
    /**
-	 * Constructor
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
+	* Constructor
+	*
+	* @since 1.0.0
+	* @access public
+	*/
     public function __construct() {
         add_action( 'elementor/controls/register', array( $this, 'register_elementor_control' ), 10 );
 		$this->_includes();
@@ -43,6 +44,14 @@ class Loader{
             'designer',
             [
                 'title' => esc_html__( 'Designer', 'designer' ),
+                'icon' => 'fa fa-cube',
+            ]
+        );
+
+		$elements_manager->add_category(
+            'designer-woocommerce',
+            [
+                'title' => esc_html__( 'Designer - WooCommerce', 'designer' ),
                 'icon' => 'fa fa-cube',
             ]
         );

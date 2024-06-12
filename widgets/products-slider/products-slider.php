@@ -88,7 +88,7 @@ class Products_Slider extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'woocommerce-elements' ];
+		return [ 'designer-woocommerce' ];
 	}
 
 	/**
@@ -448,7 +448,7 @@ class Products_Slider extends Widget_Base {
 		$this->__products_arrow_style_controls();
 		$this->__products_dot_style_controls();
 		$this->__products_progressbar_style_controls();
-		
+
     }
 
 	protected function __products_style_controls(){
@@ -880,7 +880,7 @@ class Products_Slider extends Widget_Base {
 						'step'	=> 1,
                     ],
                 ],
-                
+
                 'selectors' => [
                     '{{WRAPPER}} .slide-previous' => 'left: {{SIZE}}{{UNIT}};',
                     '{{WRAPPER}} .slide-next' => 'right: {{SIZE}}{{UNIT}};',
@@ -959,7 +959,7 @@ class Products_Slider extends Widget_Base {
 						'step'	=> 1,
                     ],
                 ],
-                
+
                 'selectors' => [
                     '{{WRAPPER}} .designer-swiper-together-nav' => 'left:{{SIZE}}{{UNIT}};right:{{SIZE}}{{UNIT}};',
                 ],
@@ -1391,7 +1391,7 @@ class Products_Slider extends Widget_Base {
             ]
         );
 
-		
+
         $this->add_responsive_control(
             'progressbar_width_size',
             [
@@ -1559,12 +1559,12 @@ class Products_Slider extends Widget_Base {
             'wrapper',
             [
 				'id'	=> 'block_products_'.$this->get_id(),
-                'class' => [ 
-					'block-products__widget', 
-					'block-products__carousel', 
+                'class' => [
+					'block-products__widget',
+					'block-products__carousel',
                     !empty( $settings['image_hover'] ) ? 'designer-image--hover-' . $settings['image_hover'] : '',
 					! empty( $settings['image_hover_zoom_origin'] ) ? 'designer-image--hover-from-' . $settings['image_hover_zoom_origin'] : '',
-					'designer-navigation__'.$settings['_navigation_position'], 
+					'designer-navigation__'.$settings['_navigation_position'],
 					($settings['_navigation_hide'] !== 'default') ? 'designer-hide-navigation__'.$settings['_navigation_hide'] : ''  ],
 				'data-selector' => $this->get_id(),
                 'data-config' => wp_json_encode($config)
@@ -1712,8 +1712,8 @@ class Products_Slider extends Widget_Base {
 							<?php } ?>
 						</div>
 					<?php endif; ?>
-				<?php endif;?>	
-				
+				<?php endif;?>
+
 				<?php if($settings['_navigation_position'] == 'together'):?>
 					<div class="designer-swiper-together-nav">
 						<div class="designer-swiper-together-inner">
@@ -1742,7 +1742,7 @@ class Products_Slider extends Widget_Base {
 						</div>
 					</div>
 				<?php endif;?>
-				
+
 				<?php if( $settings['pagination_type'] !== 'hide'): ?>
 					<div class="swiper-pagination swiper-pagination-<?php echo esc_attr( $this->get_id() ) ?>"></div>
 				<?php endif; ?>

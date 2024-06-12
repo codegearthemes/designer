@@ -92,7 +92,7 @@ class Collection_Slider extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'woocommerce-elements' ];
+		return [ 'designer-woocommerce' ];
 	}
 
 	/**

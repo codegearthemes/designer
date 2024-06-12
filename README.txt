@@ -1,6 +1,6 @@
 === Designer - Addons for Elementor ===
 Contributors: CodeGearThemes
-Tags: codegearthemes, codegear, elementor, page builder, import, sites
+Tags: elementor, elementor widget, elementor addons, page builder
 Requires at least: 5.1
 Tested up to: 6.5
 Requires PHP: 7.2
@@ -74,6 +74,9 @@ This plugin adds custom made elementor widgets which helps to customize with ele
 
 
 == Changelog ==
+
+= 1.3.2 (Released: June 12, 2024) =
+* [Update] WooCommerce Widget
 
 = 1.3.1 (Released: June 01, 2024) =
 * [Update] Testimonials

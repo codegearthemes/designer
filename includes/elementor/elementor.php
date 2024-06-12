@@ -28,22 +28,6 @@ class Elementor{
           #elementor-panel-category-woocommerce-elements .elementor-element--promotion{
               display: none !important;
           }
-
-          #elementor-panel-category-header .elementor-element::after,
-          #elementor-panel-category-designer .elementor-element::after,
-          #elementor-panel-category-footer .elementor-element::after,
-          .designer-icon::after{
-            content: "";
-            width: 16px;
-            height: 16px;
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background-color: #fff;
-            background-size: 100%;
-            border-radius: 2px;
-            background-image: url(<?php echo esc_url(\Designer::plugin_url().'assets/admin/src/logo.svg'); ?>);
-          }
         </style>
     <?php
     }
