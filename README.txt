@@ -4,7 +4,7 @@ Tags: elementor, elementor widget, elementor addons, page builder
 Requires at least: 5.1
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
