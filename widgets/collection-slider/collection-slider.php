@@ -957,8 +957,7 @@ class Collection_Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'name_typography',
-                'selector' => '{{WRAPPER}} .block-collection .collection-inner .title',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .block-collection .collection-inner .title'
             ]
         );
 

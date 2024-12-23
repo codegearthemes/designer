@@ -630,7 +630,6 @@ class Icon_Text extends Widget_Base {
 			[
 				'name' => 'title_typography',
 				'label' => esc_html__( 'Title Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-title .designer-title-text',
 			]
 		);
@@ -651,7 +650,6 @@ class Icon_Text extends Widget_Base {
 			[
 				'name' => 'text_typography',
 				'label' => esc_html__( 'Text Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-content .designer-text',
 			]
 		);

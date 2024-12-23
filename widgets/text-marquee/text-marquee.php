@@ -74,7 +74,6 @@ class Text_Marquee extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'text_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector'	=> '{{WRAPPER}} {{CURRENT_ITEM}}.designer-text-item',
 				
 			]
@@ -187,7 +186,6 @@ class Text_Marquee extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'general_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector'	=> '{{WRAPPER}} .designer-text-item',
 			]
 		);

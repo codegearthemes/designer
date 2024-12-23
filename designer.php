@@ -4,13 +4,13 @@
  * Plugin Name: Designer - Elementor Addons
  * Plugin URI:  https://codegearthemes.com/products/designer
  * Description: Designer is the most-complete addon for Elementor.
- * Version: 1.3.3
+ * Version: 1.4.0
  * Author: CodegearThemes
  * Author URI:  https://codegearthemes.com
  * Text Domain: designer
  * Domain Path: /languages
  * Requires at least: 5.1
- * Tested up to: 6.6
+ * Tested up to: 6.7
  * Requires PHP: 7.2
  * License:  GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -39,7 +39,7 @@ final class Designer
 	 */
 	public static function version()
 	{
-		return '1.3.3';
+		return '1.4.0';
 	}
 
 	/**

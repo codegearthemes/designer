@@ -254,7 +254,6 @@ class Contact extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block-contact-form .heading .title',
 				'condition'	=> [
 					'title!' => '',
@@ -317,7 +316,6 @@ class Contact extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'content_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block-contact-form .heading .content',
 				'condition'	=> [
 					'content!' => '',
@@ -378,7 +376,6 @@ class Contact extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'label_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block-contact-form label',
             ]
         );
@@ -429,7 +426,6 @@ class Contact extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'input_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block-contact-form input:not([type="submit"]),
                     {{WRAPPER}} .block-contact-form textarea,{{WRAPPER}} .block-contact-form select',
             ]
@@ -486,7 +482,6 @@ class Contact extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'input_focus_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block-contact-form input:not([type="submit"]):focus,
                     {{WRAPPER}} .block-contact-form textarea:focus,{{WRAPPER}} .block-contact-form select:focus',
             ]
@@ -771,7 +766,6 @@ class Contact extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'button_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block-contact-form input[type=submit], {{WRAPPER}} .block-contact-form button',
             ]
         );
@@ -1024,7 +1018,6 @@ class Contact extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'error_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block-contact-form .wpcf7-not-valid-tip',
             ]
         );
@@ -1071,7 +1064,6 @@ class Contact extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'response_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block-contact-form .wpcf7-response-output',
             ]
         );

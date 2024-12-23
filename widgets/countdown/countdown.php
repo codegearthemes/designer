@@ -576,7 +576,6 @@ class Countdown extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'number_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-digit',
 			]
 		);
@@ -628,7 +627,6 @@ class Countdown extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'labels_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-label',
 			]
 		);

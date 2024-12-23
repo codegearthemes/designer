@@ -560,8 +560,7 @@ class Team_Card extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'name',
-                'selector' => '{{WRAPPER}} .block--team-card .name',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .block--team-card .name'
             ]
         );
 
@@ -621,8 +620,7 @@ class Team_Card extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'position',
-                'selector' => '{{WRAPPER}} .block--team-card .position',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .block--team-card .position'
             ]
         );
 

@@ -145,7 +145,6 @@ class Process extends Widget_Base {
 			[
 				'name' => 'item_icon_typography',
                 'label'      => esc_html__( 'Item Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} .designer-process-icon > .designer-item-icon-text',
 			]
 		);
@@ -383,7 +382,6 @@ class Process extends Widget_Base {
 			[
 				'name' => 'global_item_icon_typography',
                 'label'      => esc_html__( 'Item Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-process-icon > .designer-item-icon-text',
 			]
 		);
@@ -479,7 +477,6 @@ class Process extends Widget_Base {
 			[
 				'name' => 'item_title_typography',
                 'label'      => esc_html__( 'Title Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-process .designer-process-title',
 			]
 		);
@@ -508,7 +505,6 @@ class Process extends Widget_Base {
 			[
 				'name' => 'item_text_typography',
                 'label'      => esc_html__( 'Text Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-process .designer-process-text',
 			]
 		);
@@ -653,7 +649,6 @@ class Process extends Widget_Base {
 			[
 				'name' => 'additional_holder_typography',
                 'label'      => esc_html__( 'Additional Holder Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-process-number',
 			]
 		);

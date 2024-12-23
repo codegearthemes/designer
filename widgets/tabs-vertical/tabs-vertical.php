@@ -211,7 +211,6 @@ class Tabs_Vertical extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .designer-tabs-vertical .designer-tabs-vertical-navigation .designer-tab-title a',
             ]
         );
@@ -397,7 +396,6 @@ class Tabs_Vertical extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'text_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .designer-tabs-vertical .designer-tabs-vertical-content .d-content',
             ]
         );

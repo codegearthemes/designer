@@ -457,7 +457,6 @@ class Pricing_List extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-price-list-title',
 			]
 		);
@@ -654,7 +653,6 @@ class Pricing_List extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'price_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-price-list-price, {{WRAPPER}} .designer-price-list-old-price',
 			]
 		);
@@ -867,7 +865,6 @@ class Pricing_List extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'description_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-price-list-description',
 			]
 		);

@@ -795,7 +795,6 @@ class Progress_Bar extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-prbar-title',
 				'condition' => [
 					'title!' => '',
@@ -862,7 +861,6 @@ class Progress_Bar extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'subtitle_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-prbar-subtitle',
 				'condition' => [
 					'subtitle!' => '',
@@ -929,7 +927,6 @@ class Progress_Bar extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'counter_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-prbar-counter',
 				'condition' => [
 					'counter_switcher' => 'yes',

@@ -897,8 +897,7 @@ class Video_Popup extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name' => 'label',
-                'selector' => '{{WRAPPER}} .block-action__advanced .btn-link__text',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .block-action__advanced .btn-link__text'
             ]
         );
 

@@ -320,7 +320,6 @@ class Dual_Header extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'dual_header_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--dual-header .title',
             ]
         );
@@ -355,7 +354,6 @@ class Dual_Header extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'dual_header_highlight_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--dual-header .title .designer-highlighted-text-inner',
             ]
         );

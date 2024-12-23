@@ -597,7 +597,6 @@ class Image_Hotspots extends Widget_base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'hotspot_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-hotspot-text',
 				'separator' => 'before',
 			]
@@ -828,7 +827,6 @@ class Image_Hotspots extends Widget_base {
 			[
 				'name' => 'tooltip_typography',
 				'label' => esc_html__( 'Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-hotspot-tooltip',
 			]
 		);

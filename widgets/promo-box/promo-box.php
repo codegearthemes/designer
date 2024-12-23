@@ -2003,7 +2003,6 @@ class Promo_Box extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'content_title_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-promo-box-title',
 			]
 		);
@@ -2052,7 +2051,6 @@ class Promo_Box extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'content_description_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-promo-box-description',
 			]
 		);
@@ -2111,8 +2109,7 @@ class Promo_Box extends Widget_Base{
             Group_Control_Typography::get_type(),
             [
                 'name' => 'label',
-                'selector' => '{{WRAPPER}} .block-action__advanced .btn-link__text',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .block-action__advanced .btn-link__text'
             ]
         );
 
@@ -2910,7 +2907,6 @@ class Promo_Box extends Widget_Base{
 			[
 				'name' => 'badge_typography',
 				'label' => esc_html__( 'Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-promo-box-badge-inner'
 			]
 		);

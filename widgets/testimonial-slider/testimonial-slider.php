@@ -959,7 +959,6 @@ class Testimonial_Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'content_title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--testimonial-slider .content-item .title',
             ]
         );
@@ -1037,7 +1036,6 @@ class Testimonial_Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'content_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--testimonial-slider .content-item .content',
             ]
         );
@@ -1280,7 +1278,6 @@ class Testimonial_Slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'rating_color_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-testimonial-rating span',
 			]
 		);
@@ -1510,7 +1507,6 @@ class Testimonial_Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'author_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--testimonial-slider .content-item .author-meta .name',
             ]
         );
@@ -1562,7 +1558,6 @@ class Testimonial_Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'position_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--testimonial-slider .content-item .author-meta .position',
             ]
         );
@@ -2099,7 +2094,6 @@ class Testimonial_Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'pagination_number_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .swiper-pagination .swiper-pagination-bullet',
                 'condition' => [
                     'pagination_type' =>'number',
@@ -2445,7 +2439,6 @@ class Testimonial_Slider extends Widget_Base {
             [
                 'name'     => 'pagination_fraction_active_typography',
                 'label'    => __( 'Fraction Active', 'designer' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .swiper-pagination-fraction .swiper-pagination-current',
             ]
         );
@@ -2470,7 +2463,6 @@ class Testimonial_Slider extends Widget_Base {
             [
                 'name'     => 'pagination_fraction_total_typography',
                 'label'    => __( 'Fraction Total', 'designer' ),
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .swiper-pagination-fraction .swiper-pagination-total',
                 'condition' => [
                     'pagination_type' => 'fraction',

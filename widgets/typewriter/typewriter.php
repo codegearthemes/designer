@@ -263,7 +263,6 @@ class Typewriter extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'title_before_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--typewriter-text .title-text .title-before',
             ]
         );
@@ -309,7 +308,6 @@ class Typewriter extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'typewriter_text_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .block--typewriter-text .title-text .typewrite',
 			]
 		);
@@ -469,7 +467,6 @@ class Typewriter extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'title_after_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--typewriter-text .title-text .title-after',
             ]
         );

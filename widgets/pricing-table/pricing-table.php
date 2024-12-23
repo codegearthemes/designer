@@ -1058,7 +1058,6 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'heading_title_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-pricing-table-title',
 			]
 		);
@@ -1110,7 +1109,6 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'heading_sub_title_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-pricing-table-sub-title',
 			]
 		);
@@ -1279,7 +1277,6 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'price_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-pricing-table-price',
 			]
 		);
@@ -1530,7 +1527,6 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'period_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-pricing-table-period',
 			]
 		);
@@ -1683,7 +1679,6 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'feature_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-pricing-table-feature',
 			]
 		);
@@ -1899,8 +1894,7 @@ class Pricing_Table extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'label',
-                'selector' => '{{WRAPPER}} .block-action__advanced .btn-link__text',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .block-action__advanced .btn-link__text'
             ]
         );
 
@@ -2703,7 +2697,6 @@ class Pricing_Table extends Widget_Base {
 			[
 				'name' => 'text_typography',
 				'label' => esc_html__( 'Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-pricing-table-text'
 			]
 		);
@@ -2778,7 +2771,6 @@ class Pricing_Table extends Widget_Base {
 			[
 				'name' => 'badge_typography',
 				'label' => esc_html__( 'Typography', 'designer' ),
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-pricing-table-badge-inner'
 			]
 		);

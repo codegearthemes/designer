@@ -2,9 +2,9 @@
 Contributors: CodeGearThemes
 Tags: elementor, elementor widget, elementor addons, page builder
 Requires at least: 5.1
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.2
-Stable tag: 1.3.3
+Stable tag: 1.4.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -74,6 +74,9 @@ This plugin adds custom made elementor widgets which helps to customize with ele
 
 
 == Changelog ==
+
+= 1.4.0 (Released: December 23, 2024) =
+* [Update] Elementor compatibility
 
 = 1.3.3 (Released: September 30, 2024) =
 * [Update] Compatibility update

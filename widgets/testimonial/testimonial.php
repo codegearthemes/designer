@@ -688,7 +688,6 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'content_title_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--testimonial-slider .content-item .title',
             ]
         );
@@ -766,7 +765,6 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'content_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--testimonial-slider .content-item .content',
             ]
         );
@@ -1009,7 +1007,6 @@ class Testimonial extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'rating_color_typography',
-				'scheme' => Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .designer-testimonial-rating span',
 			]
 		);
@@ -1237,7 +1234,6 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'author_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--testimonial-slider .content-item .author-meta .name',
             ]
         );
@@ -1289,7 +1285,6 @@ class Testimonial extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'position_typography',
-                'scheme' => Typography::TYPOGRAPHY_1,
                 'selector' => '{{WRAPPER}} .block--testimonial-slider .content-item .author-meta .position',
             ]
         );
@@ -1431,11 +1426,11 @@ class Testimonial extends Widget_Base {
 
                         $this->add_render_attribute( 'logo_attribute', 'href', $settings['company_logo_url']['url'] );
 
-                        if ( $testimonial['company_logo_url']['is_external'] ) {
+                        if ( $settings['company_logo_url']['is_external'] ) {
                             $this->add_render_attribute( 'logo_attribute', 'target', '_blank' );
                         }
 
-                        if ( $testimonial['company_logo_url']['nofollow'] ) {
+                        if ( $settings['company_logo_url']['nofollow'] ) {
                             $this->add_render_attribute( 'logo_attribute', 'nofollow', '' );
                         }
 

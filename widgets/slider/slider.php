@@ -567,8 +567,7 @@ class Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'label',
-                'selector' => '{{WRAPPER}} .label',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .label'
             ]
         );
 
@@ -612,8 +611,7 @@ class Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title',
-                'selector' => '{{WRAPPER}} .title',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .title'
             ]
         );
 
@@ -657,8 +655,7 @@ class Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'subtitle',
-                'selector' => '{{WRAPPER}} .subtitle',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .subtitle'
             ]
         );
 
@@ -705,8 +702,7 @@ class Slider extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'link_typo',
-                'selector' => '{{WRAPPER}} .slider-caption-item a',
-                'scheme' => Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .slider-caption-item a'
             ]
         );
 

@@ -193,7 +193,6 @@ class Breadcrumb extends Widget_Base {
             [
                 'name' => 'label',
                 'selector' => '{{WRAPPER}} .block-breadcrumb .breadcrumbs',
-                'scheme' => Typography::TYPOGRAPHY_1,
             ]
         );
 
