@@ -797,7 +797,6 @@ class Countdown extends Widget_Base{
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'message_typography',
-				'scheme' => Typography::TYPOGRAPHY_3,
 				'selector' => '{{WRAPPER}} .designer-countdown-message',
 			]
 		);

@@ -27,7 +27,7 @@ class Tabs_Vertical extends Widget_Base {
 	}
 
     public function get_title() {
-		return esc_html__( 'Vertical Tabs', 'startupx' );
+		return esc_html__( 'Vertical Tabs', 'designer' );
 	}
 
     public function get_icon() {

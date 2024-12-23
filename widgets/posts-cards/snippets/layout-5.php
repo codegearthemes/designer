@@ -40,8 +40,9 @@ $query = new \WP_Query($args);
                                                     <?php
                                                         foreach( $categories as $key => $category ) {
                                                             if( $key < $settings['cat_limit'] ){
-                                                                $meta = get_term_meta( $category->term_id, '_taxonomy_options', true ); ?>
-                                                                <a class="entry-term" href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'designer' ), $category->name ) ); ?>">
+                                                                $meta = get_term_meta( $category->term_id, '_taxonomy_options', true );
+                                                                // Translators: %s is the category name ?>
+                                                                <a class="entry-term" href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'designer' ), esc_html( $category->name ) ) ); ?>">
                                                                     <?php echo esc_html( $category->name ); ?>
                                                                 </a>
                                                             <?php
@@ -103,8 +104,9 @@ $query = new \WP_Query($args);
                                                             <?php
                                                                 foreach( $categories as $key => $category ) {
                                                                     if( $key < $settings['cat_limit_general'] ){
-                                                                        $meta = get_term_meta( $category->term_id, '_taxonomy_options', true ); ?>
-                                                                        <a class="entry-term" href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'designer' ), $category->name ) ); ?>">
+                                                                        $meta = get_term_meta( $category->term_id, '_taxonomy_options', true );
+                                                                        // Translators: %s is the category name ?>
+                                                                        <a class="entry-term" href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'designer' ), esc_html( $category->name ) ) ); ?>">
                                                                             <?php echo esc_html( $category->name ); ?>
                                                                         </a>
                                                                     <?php

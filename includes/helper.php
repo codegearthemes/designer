@@ -45,7 +45,7 @@ class Helper{
     public function author( $icon ) {
 		$byline = sprintf(
 			/* translators: %s: post author */
-			__( '<span class="author-label screen-reader-text">By</span>%s', 'editorx' ),
+			__( '<span class="author-label screen-reader-text">By</span>%s', 'designer' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 		$raw = '<span class="byline">';
@@ -233,7 +233,10 @@ class Helper{
         $numberWords = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight'];
 
        for( $i = 1; $i <= 8; $i++) {
-            $columns_options[$i] = __($numberWords[$i-1], 'designer');
+            $columns_options[$i] = sprintf(
+                esc_html__('%s', 'designer'),
+                $numberWords[$i - 1]
+            );
        }
 
         return $columns_options;

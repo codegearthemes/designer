@@ -171,7 +171,7 @@ class Video_Popup extends Widget_Base{
 						'icon' => 'eicon-button',
 					],
                     'img' => [
-						'title' => __( 'Image', 'elementor' ),
+						'title' => __( 'Image', 'designer' ),
 						'icon' => 'eicon-image',
 					],
 				],

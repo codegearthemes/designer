@@ -1088,7 +1088,6 @@ class Testimonial_Slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'date_typography',
-				'scheme' => Typography::TYPOGRAPHY_3,
 				'selector' => '{{WRAPPER}} .designer-testimonial-date',
 			]
 		);

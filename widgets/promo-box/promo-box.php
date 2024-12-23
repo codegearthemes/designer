@@ -3033,7 +3033,7 @@ class Promo_Box extends Widget_Base{
 		$this->add_control(
 			'overlay_blend_mode',
 			[
-				'label' => esc_html__( 'Blend Mode', 'TYPOGRAPHY_1' ),
+				'label' => esc_html__( 'Blend Mode', 'designer' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'normal',
 				'options' => [
