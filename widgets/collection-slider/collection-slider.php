@@ -2749,7 +2749,22 @@ class Collection_Slider extends Widget_Base {
             <div id="block_collection__<?php echo esc_attr( $this->get_id() ) ?>" class="swiper designer-swiper-container">
 				<div class="collection-wrapper swiper-wrapper">
 					<?php
-						require \Designer::plugin_dir().'widgets/collection-slider/snippets/'.$settings['layout'].'.php';
+						// Define allowed layouts
+						$allowed_layouts = ['layout-1', 'layout-2'];
+
+						// Validate layout input
+						$layout = isset($settings['layout']) ? sanitize_text_field($settings['layout']) : 'layout-1';
+
+						if (in_array($layout, $allowed_layouts)) {
+							$file_path = \Designer::plugin_dir() . 'widgets/collection-slider/' . $layout . '.php';
+							if (file_exists($file_path)) {
+								require $file_path;
+							} else {
+								echo esc_html__('Invalid layout.', 'designer');
+							}
+						} else {
+							echo esc_html__('Invalid layout.', 'designer');
+						}
 					?>
 				</div>
                 <?php if($settings['_navigation_position'] == 'inside'):?>

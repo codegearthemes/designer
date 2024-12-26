@@ -7,7 +7,6 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -943,11 +942,27 @@ class Team_Card extends Widget_Base {
 
 		$settings = $this->get_settings_for_display();?>
 			<div class="<?php echo $this->render_holder_classes($settings); ?>">
-				<?php require \Designer::plugin_dir().'widgets/team-card/snippets/'.$settings['layout'].'.php'; ?>
+				<?php 
+					// Define allowed layouts
+					$allowed_layouts = ['info-below', 'info-below-left', 'info-from-bottom', 'info-on-hover-inset', 'info-on-hover', 'social-on-hover', 'social-position-on-hover'];
+					        
+					// Validate layout input
+					$layout = isset($settings['layout']) ? sanitize_text_field($settings['layout']) : 'info-below';
+
+					if (in_array($layout, $allowed_layouts)) {
+						$file_path = \Designer::plugin_dir() . 'widgets/team-card/snippets/' . $layout . '.php';
+						if (file_exists($file_path)) {
+							require $file_path;
+						} else {
+							echo esc_html__('Invalid layout.', 'designer');
+						}
+					} else {
+						echo esc_html__('Invalid layout.', 'designer');
+					}
+				?>
 			</div>
 
-		<?php
-		
+		<?php	
 	}
 
 	/**

@@ -923,7 +923,22 @@ class Posts_Cards extends Widget_Base{
 
         $settings = $this->get_settings_for_display();
 
-		require \Designer::plugin_dir().'widgets/posts-cards/snippets/'.$settings['layout'].'.php';
+		// Define allowed layouts
+		$allowed_layouts = ['layout-1', 'layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6'];
+
+		// Validate layout input
+		$layout = isset($settings['layout']) ? sanitize_text_field($settings['layout']) : 'layout-1';
+
+		if (in_array($layout, $allowed_layouts)) {
+			$file_path = \Designer::plugin_dir() . 'widgets/posts-cards/snippets/' . $layout . '.php';
+			if (file_exists($file_path)) {
+				require $file_path;
+			} else {
+				echo esc_html__('Invalid layout.', 'designer');
+			}
+		} else {
+			echo esc_html__('Invalid layout.', 'designer');
+		}
 
     }
 }

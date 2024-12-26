@@ -1644,7 +1644,22 @@ class Collection extends Widget_Base {
 		<div <?= $this->get_render_attribute_string( 'wrapper' ); ?> >
 			<?php if( $settings['collection'] ): ?>
 				<?php
-					require \Designer::plugin_dir().'widgets/collection/snippets/'.$settings['layout'].'.php';
+					// Define allowed layouts
+					$allowed_layouts = ['layout-1', 'layout-2'];
+
+					// Validate layout input
+					$layout = isset($settings['layout']) ? sanitize_text_field($settings['layout']) : 'layout-1';
+
+					if (in_array($layout, $allowed_layouts)) {
+						$file_path = \Designer::plugin_dir() . 'widgets/collection/snippets/' . $layout . '.php';
+						if (file_exists($file_path)) {
+							require $file_path;
+						} else {
+							echo esc_html__('Invalid layout.', 'designer');
+						}
+					} else {
+						echo esc_html__('Invalid layout.', 'designer');
+					}
 				?>
 			<?php endif; ?>
 		</div>

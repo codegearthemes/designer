@@ -2217,7 +2217,6 @@ class Posts_Grid extends Widget_Base{
 		$excerpt_length = ! empty( $settings['excerpt_length'] ) ? intval( $settings['excerpt_length'] ) : 50; // Default to 50 words
 
 		$icon_box_style = '';
-
 		if($settings['button_type'] === 'icon-boxed'){
 			$icon_box_style = 'style=width:54px;';
 		}
@@ -2252,9 +2251,26 @@ class Posts_Grid extends Widget_Base{
 					$query = new \WP_Query($args);
 						while ( $query->have_posts() ) : $query->the_post();
 							$categories = get_the_category( get_the_ID() );
-								require \Designer::plugin_dir().'widgets/posts-grid/snippets/'.$settings['layout'].'.php';
+
+							// Define allowed layouts
+							$allowed_layouts = ['classic', 'info-image', 'info-top', 'posts-grid', 'posts-list', 'side-image'];
+
+							// Validate layout input
+							$layout = isset($settings['layout']) ? sanitize_text_field($settings['layout']) : 'classic';
+
+							if (in_array($layout, $allowed_layouts)) {
+								$file_path = \Designer::plugin_dir() . 'widgets/posts-grid/snippets/' . $layout . '.php';
+								if (file_exists($file_path)) {
+									require $file_path;
+								} else {
+									echo esc_html__('Invalid layout.', 'designer');
+								}
+							} else {
+								echo esc_html__('Invalid layout.', 'designer');
+							}
 						endwhile;
-    			wp_reset_postdata();?>
+    				wp_reset_postdata();
+				?>
 			</div>
 
 		</div>
