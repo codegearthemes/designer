@@ -105,6 +105,10 @@ class Slider extends Widget_Base {
 		return [ 'slider', 'image', 'gallery', 'carousel' ];
 	}
 
+    public function get_style_depends() {
+		return [ 'swiper' ];
+	}
+
     /**
      * Widget script.
      *
