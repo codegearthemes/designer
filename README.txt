@@ -83,7 +83,6 @@ This plugin adds custom made elementor widgets which helps to customize with ele
 * [Fix] Name fix
 * [Update] Elementor compatibility
 
-
 = 1.4.0 (Released: December 23, 2024) =
 * [Update] Elementor compatibility
 
