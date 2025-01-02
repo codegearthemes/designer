@@ -103,6 +103,10 @@ class Clients extends Widget_Base {
 		return [ 'clients', 'image', 'gallery', 'carousel' ];
 	}
 
+    public function get_style_depends() {
+		return [ 'swiper' ];
+	}
+
     /**
      * Widget script.
      *
